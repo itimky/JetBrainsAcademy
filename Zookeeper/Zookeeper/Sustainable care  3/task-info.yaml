@@ -179,5 +179,5 @@ files:
         Zookeeper('zookeeper.zookeeper').run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/98/stages/542/implement
-status: Unchecked
+status: Solved
 record: -1

@@ -122,4 +122,19 @@ It seems there will be more rabbits soon!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
 
-# write your code here
+input_ = input('Which habitat # do you need? ')
+while input_ != 'exit':
+   if input_ == '0':
+      print(camel)
+   elif input_ == '1':
+      print(lion)
+   elif input_ == '2':
+      print(deer)
+   elif input_ == '3':
+      print(goose)
+   elif input_ == '4':
+      print(bat)
+   elif input_ == '5':
+      print(rabbit)
+   input_ = input('Which habitat # do you need? ')
+print('See you!')
