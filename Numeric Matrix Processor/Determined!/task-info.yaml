@@ -570,8 +570,8 @@ feedback:
     Exception in test #8
 
     Traceback (most recent call last):
-      File "processor.py", line 7, in <module>
-        op = int(input('Your choice: '))
+      File "processor.py", line 105, in <module>
+        op = int(input('\n1. Add matrices\n'
     ValueError: invalid literal for int() with base 10: '3 3'
 
     Please find below the output of your program during this failed test.
@@ -593,5 +593,5 @@ feedback:
     4. Transpose matrix
     0. Exit
     Your choice: > 3 3
-  time: Wed, 12 Aug 2020 20:39:19 UTC
+  time: Wed, 12 Aug 2020 22:25:08 UTC
 record: -1
