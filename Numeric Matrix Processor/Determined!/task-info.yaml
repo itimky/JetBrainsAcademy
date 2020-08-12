@@ -1,6 +1,70 @@
 type: edu
 custom_name: stage5
 files:
+- name: processor/processor.py
+  visible: true
+  text: "op = None\nwhile op != 0:\n    \n    print()\n    print('1. Add matrices',\
+    \ '2. Multiply matrix by a constant', \n    '3. Multiply matrices', '4. Transpose\
+    \ matrix', '0. Exit', sep='\\n')\n    op = int(input('Your choice: '))\n    \n\
+    \    if op == 1:\n        rows_a, columns_a = map(int, input('Enter size of first\
+    \ matrix: ').split())\n        print('Enter first matrix:')\n        matrix_a\
+    \ = []\n        for row in range(rows_a):\n            matrix_row = list(map(float,\
+    \ input().split()))\n            matrix_a.append(matrix_row)\n        \n     \
+    \   rows_b, columns_b = map(int, input('Enter size of second matrix: ').split())\n\
+    \        print('Enter second matrix:')\n        matrix_b = []\n        for row\
+    \ in range(rows_b):\n            matrix_row = list(map(float, input().split()))\n\
+    \            matrix_b.append(matrix_row)\n        \n        if rows_a == rows_b\
+    \ and columns_a == columns_b:\n            print('The result is:')\n         \
+    \   matrix_sum = []\n            for row in range(rows_a):\n                matrix_sum_row\
+    \ = []\n                for column in range(columns_a):\n                    matrix_sum_row.append(matrix_a[row][column]\
+    \ + matrix_b[row][column])\n                matrix_sum.append(matrix_sum_row)\n\
+    \                print(*matrix_sum_row)\n        else:\n            print('The\
+    \ operation cannot be performed.')\n    \n    elif op == 2:\n        rows_a, columns_a\
+    \ = map(int, input('Enter size of matrix: ').split())\n        print('Enter matrix:')\n\
+    \        matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
+    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
+    \        \n        c =int(input('Enter constant: '))\n        \n        print('The\
+    \ result is:')\n        matrix_mul = []\n        for row in range(rows_a):\n \
+    \           matrix_mul_row = []\n            for column in range(columns_a):\n\
+    \                matrix_mul_row.append(matrix_a[row][column] * c)\n          \
+    \  matrix_mul.append(matrix_mul_row)\n            print(*matrix_mul_row)\n   \
+    \         \n    elif op == 3:\n        rows_a, columns_a = map(int, input('Enter\
+    \ size of first matrix: ').split())\n        print('Enter first matrix:')\n  \
+    \      matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
+    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
+    \        \n        rows_b, columns_b = map(int, input('Enter size of second matrix:\
+    \ ').split())\n        print('Enter second matrix:')\n        matrix_b = []\n\
+    \        for row in range(rows_b):\n            matrix_row = list(map(float, input().split()))\n\
+    \            matrix_b.append(matrix_row)\n        \n        if columns_a == rows_b:\n\
+    \            print('The result is:')\n            matrix_mul = []\n          \
+    \  for row in range(rows_a):\n                matrix_mul_row = []\n          \
+    \      for column in range(columns_b):\n                    matrix_mul_unit =\
+    \ 0\n                    for n in range(columns_a):\n                        matrix_mul_unit\
+    \ += (matrix_a[row][n] * matrix_b[n][column])\n                    matrix_mul_row.append(matrix_mul_unit)\n\
+    \                matrix_mul.append(matrix_mul_row)\n                print(*matrix_mul_row)\n\
+    \        else:\n            print('The operation cannot be performed.')\n    \n\
+    \    elif op == 4:\n        print()\n        print('1. Main diagonal', '2. Side\
+    \ diagonal', \n        '3. Vertical line', '4. Horizontal line', sep='\\n')\n\
+    \        trans = int(input('Your choice: '))\n        \n        rows_a, columns_a\
+    \ = map(int, input('Enter size of matrix: ').split())\n        print('Enter matrix:')\n\
+    \        matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
+    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
+    \            \n        print('The result is:')\n        if trans == 1:\n     \
+    \       matrix_trans = []\n            for column in range(columns_a):\n     \
+    \           matrix_trans_row = []\n                for row in range(rows_a):\n\
+    \                    matrix_trans_row.append(matrix_a[row][column])\n        \
+    \        matrix_trans.append(matrix_trans_row)\n                print(*matrix_trans_row)\n\
+    \                \n        elif trans == 2:\n            matrix_trans = []\n \
+    \           for column in reversed(range(columns_a)):\n                matrix_trans_row\
+    \ = []\n                for row in reversed(range(rows_a)):\n                \
+    \    matrix_trans_row.append(matrix_a[row][column])\n                matrix_trans.append(matrix_trans_row)\n\
+    \                print(*matrix_trans_row)\n                \n        elif trans\
+    \ == 3:\n            matrix_trans = []\n            for row in matrix_a:\n   \
+    \             matrix_trans.append(reversed(row))\n                print(*reversed(row))\n\
+    \n        elif trans == 4:\n            matrix_trans = []\n            for row\
+    \ in reversed(matrix_a):\n                matrix_trans.append(row)\n         \
+    \       print(*row)\n"
+  learner_created: false
 - name: tests.py
   visible: false
   text: |
@@ -499,70 +563,35 @@ files:
     if __name__ == '__main__':
         CalcTest("processor.processor").run_tests()
   learner_created: false
-- name: processor/processor.py
-  visible: true
-  text: "op = None\nwhile op != 0:\n    \n    print()\n    print('1. Add matrices',\
-    \ '2. Multiply matrix by a constant', \n    '3. Multiply matrices', '4. Transpose\
-    \ matrix', '0. Exit', sep='\\n')\n    op = int(input('Your choice: '))\n    \n\
-    \    if op == 1:\n        rows_a, columns_a = map(int, input('Enter size of first\
-    \ matrix: ').split())\n        print('Enter first matrix:')\n        matrix_a\
-    \ = []\n        for row in range(rows_a):\n            matrix_row = list(map(float,\
-    \ input().split()))\n            matrix_a.append(matrix_row)\n        \n     \
-    \   rows_b, columns_b = map(int, input('Enter size of second matrix: ').split())\n\
-    \        print('Enter second matrix:')\n        matrix_b = []\n        for row\
-    \ in range(rows_b):\n            matrix_row = list(map(float, input().split()))\n\
-    \            matrix_b.append(matrix_row)\n        \n        if rows_a == rows_b\
-    \ and columns_a == columns_b:\n            print('The result is:')\n         \
-    \   matrix_sum = []\n            for row in range(rows_a):\n                matrix_sum_row\
-    \ = []\n                for column in range(columns_a):\n                    matrix_sum_row.append(matrix_a[row][column]\
-    \ + matrix_b[row][column])\n                matrix_sum.append(matrix_sum_row)\n\
-    \                print(*matrix_sum_row)\n        else:\n            print('The\
-    \ operation cannot be performed.')\n    \n    elif op == 2:\n        rows_a, columns_a\
-    \ = map(int, input('Enter size of matrix: ').split())\n        print('Enter matrix:')\n\
-    \        matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
-    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
-    \        \n        c =int(input('Enter constant: '))\n        \n        print('The\
-    \ result is:')\n        matrix_mul = []\n        for row in range(rows_a):\n \
-    \           matrix_mul_row = []\n            for column in range(columns_a):\n\
-    \                matrix_mul_row.append(matrix_a[row][column] * c)\n          \
-    \  matrix_mul.append(matrix_mul_row)\n            print(*matrix_mul_row)\n   \
-    \         \n    elif op == 3:\n        rows_a, columns_a = map(int, input('Enter\
-    \ size of first matrix: ').split())\n        print('Enter first matrix:')\n  \
-    \      matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
-    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
-    \        \n        rows_b, columns_b = map(int, input('Enter size of second matrix:\
-    \ ').split())\n        print('Enter second matrix:')\n        matrix_b = []\n\
-    \        for row in range(rows_b):\n            matrix_row = list(map(float, input().split()))\n\
-    \            matrix_b.append(matrix_row)\n        \n        if columns_a == rows_b:\n\
-    \            print('The result is:')\n            matrix_mul = []\n          \
-    \  for row in range(rows_a):\n                matrix_mul_row = []\n          \
-    \      for column in range(columns_b):\n                    matrix_mul_unit =\
-    \ 0\n                    for n in range(columns_a):\n                        matrix_mul_unit\
-    \ += (matrix_a[row][n] * matrix_b[n][column])\n                    matrix_mul_row.append(matrix_mul_unit)\n\
-    \                matrix_mul.append(matrix_mul_row)\n                print(*matrix_mul_row)\n\
-    \        else:\n            print('The operation cannot be performed.')\n    \n\
-    \    elif op == 4:\n        print()\n        print('1. Main diagonal', '2. Side\
-    \ diagonal', \n        '3. Vertical line', '4. Horizontal line', sep='\\n')\n\
-    \        trans = int(input('Your choice: '))\n        \n        rows_a, columns_a\
-    \ = map(int, input('Enter size of matrix: ').split())\n        print('Enter matrix:')\n\
-    \        matrix_a = []\n        for row in range(rows_a):\n            matrix_row\
-    \ = list(map(float, input().split()))\n            matrix_a.append(matrix_row)\n\
-    \            \n        print('The result is:')\n        if trans == 1:\n     \
-    \       matrix_trans = []\n            for column in range(columns_a):\n     \
-    \           matrix_trans_row = []\n                for row in range(rows_a):\n\
-    \                    matrix_trans_row.append(matrix_a[row][column])\n        \
-    \        matrix_trans.append(matrix_trans_row)\n                print(*matrix_trans_row)\n\
-    \                \n        elif trans == 2:\n            matrix_trans = []\n \
-    \           for column in reversed(range(columns_a)):\n                matrix_trans_row\
-    \ = []\n                for row in reversed(range(rows_a)):\n                \
-    \    matrix_trans_row.append(matrix_a[row][column])\n                matrix_trans.append(matrix_trans_row)\n\
-    \                print(*matrix_trans_row)\n                \n        elif trans\
-    \ == 3:\n            matrix_trans = []\n            for row in matrix_a:\n   \
-    \             matrix_trans.append(reversed(row))\n                print(*reversed(row))\n\
-    \n        elif trans == 4:\n            matrix_trans = []\n            for row\
-    \ in reversed(matrix_a):\n                matrix_trans.append(row)\n         \
-    \       print(*row)\n"
-  learner_created: false
 feedback_link: https://hyperskill.org/projects/96/stages/532/implement
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Exception in test #8
+
+    Traceback (most recent call last):
+      File "processor.py", line 7, in <module>
+        op = int(input('Your choice: '))
+    ValueError: invalid literal for int() with base 10: '3 3'
+
+    Please find below the output of your program during this failed test.
+    Note that the '>' character indicates the beginning of the input line.
+
+    ---
+
+
+    1. Add matrices
+    2. Multiply matrix by a constant
+    3. Multiply matrices
+    4. Transpose matrix
+    0. Exit
+    Your choice: > 5
+
+    1. Add matrices
+    2. Multiply matrix by a constant
+    3. Multiply matrices
+    4. Transpose matrix
+    0. Exit
+    Your choice: > 3 3
+  time: Wed, 12 Aug 2020 20:39:19 UTC
 record: -1

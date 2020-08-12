@@ -219,5 +219,5 @@ files:
     print('Hello, World!')
   learner_created: false
 feedback_link: https://hyperskill.org/projects/96/stages/528/implement
-status: Unchecked
-record: -1
+status: Solved
+record: 4
