@@ -564,41 +564,9 @@ files:
         CalcTest("processor.processor").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/96/stages/532/implement
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Exception in test #8
-
-    Traceback (most recent call last):
-      File "processor.py", line 178, in <module>
-        menu()
-      File "processor.py", line 172, in menu
-        m_det()
-      File "processor.py", line 147, in m_det
-        print('The result is:', det(m), sep=' ')
-      File "processor.py", line 118, in det
-        return (matrix[0][0] * cofactor(matrix, 0, 0)
-      File "processor.py", line 136, in cofactor
-        for i in range(len(m)):
-    TypeError: object of type 'float' has no len()
-
-    Please find below the output of your program during this failed test.
-    Note that the '>' character indicates the beginning of the input line.
-
-    ---
-
-
-    1. Add matrices
-    2. Multiply matrix by a constant
-    3. Multiply matrices
-    4. Transpose matrix
-    5. Calculate a determinant
-    0. Exit
-    Your choice: > 5
-    Enter size of matrix: > 3 3
-    Enter matrix:
-    > 1 2 3
-    > 4 5 7
-    > 10 22 23
-  time: Wed, 12 Aug 2020 23:44:03 UTC
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/96/stages/532/implement">JetBrains
+    Academy</a>
+  time: Thu, 13 Aug 2020 20:27:22 UTC
 record: -1

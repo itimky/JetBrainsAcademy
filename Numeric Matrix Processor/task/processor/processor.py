@@ -115,28 +115,15 @@ def det(matrix):
     elif len(matrix) == 2:
         return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
     else:
-        return (matrix[0][0] * cofactor(matrix, 0, 0)
-                + matrix[0][1] * cofactor(matrix, 0, 1)
-                + matrix[0][2] * cofactor(matrix, 0, 2))
+        return sum((-1) ** j * matrix[0][j] * det(sub_matrix(matrix, 0, j)) for j in range(len(matrix[0])))
 
 
-def minor(matrix, x, y):
+def sub_matrix(matrix, x, y):
     res = []
     for i in matrix[:x] + matrix[x + 1:]:
         row = []
         for j in i[:y] + i[y + 1:]:
             row.append(j)
-        res.append(row)
-    return det(res)
-
-
-def cofactor(matrix, x, y):
-    m = minor(matrix, x, y)
-    res = []
-    for i in range(len(m)):
-        row = []
-        for j in range(len(m[0])):
-            row.append(m[i][j] * (-1) ** (x + y))
         res.append(row)
     return res
 
@@ -144,7 +131,8 @@ def cofactor(matrix, x, y):
 def m_det():
     m = m_create()
     if len(m) == len(m[0]):
-        print('The result is:', det(m), sep=' ')
+        print('The result is:')
+        print(det(m))
     else:
         print('The operation cannot be performed.')
 
