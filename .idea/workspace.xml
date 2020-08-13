@@ -4,7 +4,10 @@
     <list default="true" id="4936537f-dbce-4cf3-9442-cdf1869e7543" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/Determined!/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/Determined!/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/Inverse matrix/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/Inverse matrix/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/task/processor/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/task/processor/processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/task/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="processor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -109,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597352236459</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="matrix">
+      <created>1597354953364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597354953364</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,26 +128,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="matrix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1436" y="268" key="CommitChangelistDialog2" timestamp="1597352235754">
+    <state x="1436" y="268" key="CommitChangelistDialog2" timestamp="1597354952942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1436" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597352235754" />
-    <state width="1494" height="400" key="GridCell.Tab.0.bottom" timestamp="1597354763311">
+    <state x="1436" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597354952942" />
+    <state width="1456" height="402" key="GridCell.Tab.0.bottom" timestamp="1597360089577">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1494" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597354763311" />
-    <state width="1494" height="400" key="GridCell.Tab.0.center" timestamp="1597354763311">
+    <state width="1456" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089577" />
+    <state width="1456" height="402" key="GridCell.Tab.0.center" timestamp="1597360089576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1494" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597354763311" />
-    <state width="1494" height="400" key="GridCell.Tab.0.left" timestamp="1597354763311">
+    <state width="1456" height="402" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
+    <state width="1456" height="402" key="GridCell.Tab.0.left" timestamp="1597360089576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1494" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597354763311" />
-    <state width="1494" height="400" key="GridCell.Tab.0.right" timestamp="1597354763311">
+    <state width="1456" height="402" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
+    <state width="1456" height="402" key="GridCell.Tab.0.right" timestamp="1597360089576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1494" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597354763311" />
+    <state width="1456" height="402" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
     <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1597275644928">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -153,9 +164,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644928" />
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597352240153">
+    <state x="1401" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597354957518">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597352240153" />
+    <state x="1401" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597354957518" />
   </component>
 </project>
