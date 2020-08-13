@@ -5,14 +5,10 @@ def m_print(m):
 
 
 def m_create(count=''):
-    rows, columns = map(int, input('Enter size of {}: '.format(count)).split())
+    rows, columns = [int(i) for i in input('Enter size of {}: '.format(count)).split()]
     print('Enter {}:'.format(count))
-    m = []
-    for i in range(rows):
-        m.append(list(map(float, input().split())))
+    m = [[int(i) if i.isdigit() else float(i) for i in input().split()] for _ in range(rows)]
     return m
-    #  rows, columns = [int(i) for i in input().split()]
-    #  matrix = [[int(i) if i.isdigit() else float(i) for i in input().split()] for _ in range(rows)]
 
 
 def m_sum():
@@ -34,15 +30,8 @@ def m_sum():
 def m_mul_const():
     m = m_create('matrix')
     c = int(input('Enter constant: '))
-
-    res = []
-    for i in range(len(m)):
-        row = []
-        for j in range(len(m[0])):
-            row.append(m[i][j] * c)
-        res.append(row)
+    res = [[element * c for element in row] for row in m]
     m_print(res)
-    #  res = [[i*scalar for i in j] for j in matrix]
 
 
 def m_mul():
@@ -73,54 +62,34 @@ def m_trans():
     m = m_create('matrix')
 
     if trans == 1:
-        res = []
-        for j in range(len(m[0])):
-            row = []
-            for i in range(len(m)):
-                row.append(m[i][j])
-            res.append(row)
+        res = [[m[row][column] for row in range(len(m[0]))] for column in range(len(m))]
         m_print(res)
-    #  result = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
 
     elif trans == 2:
-        res = []
-        for j in reversed(range(len(m[0]))):
-            row = []
-            for i in reversed(range(len(m))):
-                row.append(m[i][j])
-            res.append(row)
+        res = [[m[row][column] for row in reversed(range(len(m[0])))] for column in reversed(range(len(m)))]
         m_print(res)
-    #  result = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-    #  result = [ele for ele in reversed(result)]
-    #  result = [li[::-1] for li in result]
 
     elif trans == 3:
-        res = []
-        for i in m:
-            res.append(reversed(i))
+        res = [row[::-1] for row in m]
         m_print(res)
-    #  result = [li[::-1] for li in matrix]
 
     elif trans == 4:
-        res = []
-        for i in reversed(m):
-            res.append(i)
+        res = [row for row in reversed(m)]
         m_print(res)
-    #  result = [ele for ele in reversed(matrix)]
 
 
-def sub_matrix(m, x, y):
+def minor(m, x, y):
     res = []
     for i in m[:x] + m[x + 1:]:
         row = []
         for j in i[:y] + i[y + 1:]:
             row.append(j)
         res.append(row)
-    return res
+    return det(res)
 
 
 def cofactor(m, x, y):
-    return (-1) ** (x + y) * det(sub_matrix(m, x, y))
+    return (-1) ** (x + y) * minor(m, x, y)
 
 
 def det(m):
@@ -135,7 +104,7 @@ def det(m):
 def m_det():
     m = m_create('matrix')
     if len(m) == len(m[0]):
-        print('The result is:\n', det(m))
+        print('The result is:', det(m), sep='\n')
     else:
         print('The operation cannot be performed.')
 
