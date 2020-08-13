@@ -5,8 +5,8 @@ def m_print(m):
 
 
 def m_create(count=''):
-    rows, columns = map(int, input('Enter size of {}matrix: '.format(count)).split())
-    print('Enter {}matrix:'.format(count))
+    rows, columns = map(int, input('Enter size of {}: '.format(count)).split())
+    print('Enter {}:'.format(count))
     m = []
     for i in range(rows):
         m.append(list(map(float, input().split())))
@@ -16,8 +16,8 @@ def m_create(count=''):
 
 
 def m_sum():
-    m_a = m_create('first ')
-    m_b = m_create('second ')
+    m_a = m_create('first matrix')
+    m_b = m_create('second matrix')
 
     if len(m_a) == len(m_b) and len(m_a[0]) == len(m_b[0]):
         res = []
@@ -32,7 +32,7 @@ def m_sum():
 
 
 def m_mul_const():
-    m = m_create()
+    m = m_create('matrix')
     c = int(input('Enter constant: '))
 
     res = []
@@ -46,8 +46,8 @@ def m_mul_const():
 
 
 def m_mul():
-    m_a = m_create('first ')
-    m_b = m_create('second ')
+    m_a = m_create('first matrix')
+    m_b = m_create('second matrix')
 
     if len(m_a[0]) == len(m_b):
         res = []
@@ -70,7 +70,7 @@ def m_trans():
                       '3. Vertical line\n'
                       '4. Horizontal line\n'
                       'Your choice: '))
-    m = m_create()
+    m = m_create('matrix')
 
     if trans == 1:
         res = []
@@ -109,18 +109,18 @@ def m_trans():
     #  result = [ele for ele in reversed(matrix)]
 
 
-def det(matrix):
-    if len(matrix) == 1:
-        return matrix[0][0]
-    elif len(matrix) == 2:
-        return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+def det(m):
+    if len(m) == 1:
+        return m[0][0]
+    elif len(m) == 2:
+        return m[0][0] * m[1][1] - m[0][1] * m[1][0]
     else:
-        return sum((-1) ** j * matrix[0][j] * det(sub_matrix(matrix, 0, j)) for j in range(len(matrix[0])))
+        return sum((-1) ** j * element * det(sub_matrix(m, 0, j)) for j, element in enumerate(m[0]))
 
 
-def sub_matrix(matrix, x, y):
+def sub_matrix(m, x, y):
     res = []
-    for i in matrix[:x] + matrix[x + 1:]:
+    for i in m[:x] + m[x + 1:]:
         row = []
         for j in i[:y] + i[y + 1:]:
             row.append(j)
@@ -129,10 +129,9 @@ def sub_matrix(matrix, x, y):
 
 
 def m_det():
-    m = m_create()
+    m = m_create('matrix')
     if len(m) == len(m[0]):
-        print('The result is:')
-        print(det(m))
+        print('The result is:\n', det(m))
     else:
         print('The operation cannot be performed.')
 
