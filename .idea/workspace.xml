@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597350559652</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="matrix">
+      <created>1597351534791</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597351534791</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -103,10 +110,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="matrix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1436" y="268" key="CommitChangelistDialog2" timestamp="1597350559223">
+    <state x="1436" y="268" key="CommitChangelistDialog2" timestamp="1597351534144">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1436" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597350559223" />
+    <state x="1436" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597351534144" />
     <state width="1234" height="400" key="GridCell.Tab.0.bottom" timestamp="1597350886020">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -139,9 +146,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644928" />
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597350565802">
+    <state x="1401" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597351538984">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597350565802" />
+    <state x="1401" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597351538984" />
   </component>
 </project>

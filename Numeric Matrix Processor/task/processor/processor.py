@@ -109,15 +109,6 @@ def m_trans():
     #  result = [ele for ele in reversed(matrix)]
 
 
-def det(m):
-    if len(m) == 1:
-        return m[0][0]
-    elif len(m) == 2:
-        return m[0][0] * m[1][1] - m[0][1] * m[1][0]
-    else:
-        return sum((-1) ** j * element * det(sub_matrix(m, 0, j)) for j, element in enumerate(m[0]))
-
-
 def sub_matrix(m, x, y):
     res = []
     for i in m[:x] + m[x + 1:]:
@@ -126,6 +117,19 @@ def sub_matrix(m, x, y):
             row.append(j)
         res.append(row)
     return res
+
+
+def cofactor(m, x, y):
+    return (-1) ** (x + y) * det(sub_matrix(m, x, y))
+
+
+def det(m):
+    if len(m) == 1:
+        return m[0][0]
+    elif len(m) == 2:
+        return m[0][0] * m[1][1] - m[0][1] * m[1][0]
+    else:
+        return sum(element * cofactor(m, 0, j) for j, element in enumerate(m[0]))
 
 
 def m_det():
