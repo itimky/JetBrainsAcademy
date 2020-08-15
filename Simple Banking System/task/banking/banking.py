@@ -1,16 +1,25 @@
 import random
 
 
+def luhn(card_without_checksum):
+    checksum = 0
+    for order, n in enumerate(card_without_checksum):
+        check = int(n) * ((order + 1) % 2 + 1)
+        checksum += check if check <= 9 else check - 9
+    checksum = 10 - checksum % 10
+    return '0' if checksum == 10 else str(checksum)
+
+
 def create_account():
-    iin = '400000'
-    can = ''
+    bank_id = '400000'
+    acc_id = ''
     for i in range(9):
-        can += str(random.randint(0, 9))
-    checksum = str(random.randint(0, 9))
-    card_number = iin + can + checksum
+        acc_id += str(random.randint(0, 9))
+    checksum = luhn(bank_id + acc_id)
+    card_number = bank_id + acc_id + checksum
     pin = ''
     for _ in range(4):
-        pin += str(random.randint(1, 9))
+        pin += str(random.randint(0, 9))
     if card_number not in cards:
         cards[card_number] = pin
         balance[card_number] = 0
@@ -38,7 +47,6 @@ current = {'state': 'main', 'id': 0}
 menu = {'main': '1. Create an account\n2. Log into account\n0. Exit\n',
         'logged': '1. Balance\n2. Log out\n0. Exit\n'}
 while cmd != '0':
-    print(cards)
     cmd = input(menu[current['state']])
     if current['state'] == 'main':
         if cmd == '1':
