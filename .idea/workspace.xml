@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="770411bf-cc8b-4775-b621-b469284789b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/rating.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/ratings.txt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597499655068</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rock_paper_scissors">
+      <created>1597505333080</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597505333080</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -84,10 +85,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="rock_paper_scissors" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1530" y="272" key="CommitChangelistDialog2" timestamp="1597499653832">
+    <state x="1530" y="272" key="CommitChangelistDialog2" timestamp="1597505332426">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1530" y="272" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597499653832" />
+    <state x="1530" y="272" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597505332426" />
     <state width="1234" height="400" key="GridCell.Tab.0.bottom" timestamp="1597504805404">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -104,9 +105,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1234" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597504805404" />
-    <state x="1495" y="436" key="Vcs.Push.Dialog.v2" timestamp="1597499682336">
+    <state x="1495" y="436" key="Vcs.Push.Dialog.v2" timestamp="1597505335972">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1495" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597499682336" />
+    <state x="1495" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597505335972" />
   </component>
 </project>

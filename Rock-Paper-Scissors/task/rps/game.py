@@ -24,11 +24,10 @@ def main():
     name = input('Enter your name: ')
     print('Hello,', name)
     score = 0
-    f = open('rating.txt')
-    for line in f:
-        if line.split()[0] == name:
-            score = int(line.split()[1])
-    f.close()
+    with open('rating.txt') as f:
+        for line in f:
+            if line.split()[0] == name:
+                score = int(line.split()[1])
 
     options = input().split(',')
     if options == ['']:
