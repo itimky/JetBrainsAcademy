@@ -12,14 +12,10 @@ def luhn(card_without_checksum):
 
 def create_account():
     bank_id = '400000'
-    acc_id = ''
-    for i in range(9):
-        acc_id += str(random.randint(0, 9))
+    acc_id = ''.join([str(random.randint(0, 9)) for _ in range(9)])
     checksum = luhn(bank_id + acc_id)
     card_number = bank_id + acc_id + checksum
-    pin = ''
-    for _ in range(4):
-        pin += str(random.randint(0, 9))
+    pin = ''.join([str(random.randint(0, 9)) for _ in range(4)])
     if card_number not in cards:
         cards[card_number] = pin
         balance[card_number] = 0
@@ -38,6 +34,10 @@ def login():
         return {'state': 'logged', 'id': user_card}
     print('\nWrong card number or PIN!\n')
     return {'state': 'main', 'id': 0}
+
+
+qwe = ''.join([str(random.randint(0, 9)) for _ in range(9)])
+print(qwe)
 
 
 cards = {}
