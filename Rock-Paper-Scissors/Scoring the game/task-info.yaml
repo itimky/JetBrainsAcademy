@@ -4,7 +4,20 @@ files:
 - name: rps/game.py
   visible: true
   text: |
-    # Write your code here
+    import random
+
+    player_move = input()
+    winning_moves = {'rock': 'paper', 'paper': 'scissors', 'scissors': 'rock'}
+    computer_move = random.choice(list(winning_moves.keys()))
+
+    if player_move == winning_moves[computer_move]:
+        print('Well done. The computer chose {} and failed'.format(computer_move))
+    elif computer_move == winning_moves[player_move]:
+        print('Sorry, but the computer chose {}'.format(computer_move))
+    elif player_move == computer_move:
+        print('There is a draw {}'.format(computer_move))
+    else:
+        print('Something gone wrong')
   learner_created: false
 - name: tests.py
   visible: false
@@ -154,6 +167,13 @@ files:
     if __name__ == '__main__':
         RPSTest("rps.game").run_tests()
   learner_created: false
+- name: rps/ratings.txt.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/78/stages/434/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/78/stages/434/implement">JetBrains
+    Academy</a>
+  time: Sat, 15 Aug 2020 13:51:09 UTC
 record: -1

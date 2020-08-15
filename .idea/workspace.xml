@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4936537f-dbce-4cf3-9442-cdf1869e7543" name="Default Changelist" comment="">
+    <list default="true" id="770411bf-cc8b-4775-b621-b469284789b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pip-20.2.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pip-20.2.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/__about__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/__about__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/_structures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/markers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/requirements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/specifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/specifiers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pkg_resources/_vendor/packaging/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.3.1.dist-info/zip-safe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/__about__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/__about__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/_structures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/markers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/requirements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/specifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/specifiers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/_vendor/packaging/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/build_meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/build_meta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/command/bdist_egg.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/command/bdist_egg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/command/build_ext.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools/command/build_ext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install-3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install-3.8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/Determined!/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/Determined!/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/Inverse matrix/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/Inverse matrix/task-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/lesson-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/task/processor/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/task/processor/processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numeric Matrix Processor/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Numeric Matrix Processor/task/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Endless game/task-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Endless game/task-remote-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Endless game/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Equalizing chances/task-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Equalizing chances/task-remote-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Equalizing chances/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-remote-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-remote-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Unfair computer/task-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Unfair computer/task-remote-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Unfair computer/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/lesson-info.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,156 +73,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1g0wD9ojUAOfIoSpcuNsrcu05hu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1g6nLzMM7CGHCJScGtyCr2gE5Ch" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="restartRequiresConfirmation" value="false" />
-  </component>
-  <component name="RunManager">
-    <configuration name="processor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JetBrainsAcademy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Numeric Matrix Processor/task/processor" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Numeric Matrix Processor/task/processor/processor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.processor" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4936537f-dbce-4cf3-9442-cdf1869e7543" name="Default Changelist" comment="" />
-      <created>1597264695867</created>
+      <changelist id="770411bf-cc8b-4775-b621-b469284789b9" name="Default Changelist" comment="" />
+      <created>1597443858737</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597264695867</updated>
+      <updated>1597443858737</updated>
     </task>
-    <task id="LOCAL-00001" summary="matrix">
-      <created>1597264814687</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1597264814687</updated>
-    </task>
-    <task id="LOCAL-00002" summary="matrix">
-      <created>1597271745356</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1597271745356</updated>
-    </task>
-    <task id="LOCAL-00003" summary="matrix">
-      <created>1597340840957</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1597340840957</updated>
-    </task>
-    <task id="LOCAL-00004" summary="matrix">
-      <created>1597349577689</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1597349577689</updated>
-    </task>
-    <task id="LOCAL-00005" summary="matrix">
-      <created>1597350559652</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1597350559652</updated>
-    </task>
-    <task id="LOCAL-00006" summary="matrix">
-      <created>1597351534791</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1597351534791</updated>
-    </task>
-    <task id="LOCAL-00007" summary="matrix">
-      <created>1597352236459</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1597352236459</updated>
-    </task>
-    <task id="LOCAL-00008" summary="matrix">
-      <created>1597354953364</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1597354953364</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="matrix" />
-    <option name="LAST_COMMIT_MESSAGE" value="matrix" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1436" y="268" key="CommitChangelistDialog2" timestamp="1597354952942">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1436" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597354952942" />
-    <state width="1456" height="402" key="GridCell.Tab.0.bottom" timestamp="1597360089577">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1456" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089577" />
-    <state width="1456" height="402" key="GridCell.Tab.0.center" timestamp="1597360089576">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1456" height="402" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
-    <state width="1456" height="402" key="GridCell.Tab.0.left" timestamp="1597360089576">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1456" height="402" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
-    <state width="1456" height="402" key="GridCell.Tab.0.right" timestamp="1597360089576">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1456" height="402" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597360089576" />
-    <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1597275644928">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644928" />
-    <state width="1234" height="491" key="GridCell.Tab.1.center" timestamp="1597275644927">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="491" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644927" />
-    <state width="1234" height="491" key="GridCell.Tab.1.left" timestamp="1597275644927">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="491" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644927" />
-    <state width="1234" height="491" key="GridCell.Tab.1.right" timestamp="1597275644928">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597275644928" />
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597354957518">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1401" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597354957518" />
   </component>
 </project>

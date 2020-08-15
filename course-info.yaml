@@ -1,12 +1,11 @@
 type: hyperskill
-title: Numeric Matrix Processor
+title: Rock-Paper-Scissors
 language: English
-summary: 'Here’s a project for devoted matrix enthusiasts: learn to perform a variety
-  of operations on matrices including addition, multiplication, finding the determinant,
-  and dealing with inverse matrices. If you are working on your tech or math major,
-  this project is a good chance for you to learn matrices in action and not just in
-  your notebook.<br/><br/>Learn more at <a href="https://hyperskill.org">https://hyperskill.org/projects/96</a>'
+summary: If you’ve ever wanted to create games, this project will get you started!
+  In this project you will code a Rock-Paper-Scissors-Lizard-Spock game, a more advanced
+  version of Rock-Paper-Scissors, which can be played against the computer.<br/><br/>Learn
+  more at <a href="https://hyperskill.org">https://hyperskill.org/projects/78</a>
 programming_language: Python
 content:
-- Numeric Matrix Processor
+- Rock-Paper-Scissors
 mode: Study

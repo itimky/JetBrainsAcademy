@@ -4,7 +4,9 @@ files:
 - name: rps/game.py
   visible: true
   text: |
-    # Write your code here
+    move = input()
+    answer = {'rock': 'paper', 'paper': 'scissors', 'scissors': 'rock'}
+    print('Sorry, but the computer chose {}'.format(answer[move]))
   learner_created: false
 - name: tests.py
   visible: false
@@ -99,5 +101,5 @@ files:
     RPSTest("rps.game").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/78/stages/432/implement
-status: Unchecked
-record: -1
+status: Solved
+record: 1
