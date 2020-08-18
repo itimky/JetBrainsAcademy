@@ -79,11 +79,43 @@ def add_income(connection, current):
     return None
 
 
-# def print_card(connection):
-#     cursor = connection.cursor()
-#     cursor.execute('SELECT number FROM card')
-#     print(cursor.fetchall())
-#     cursor.close()
+def transfer(connection, current):
+    card_to = input('\nTransfer\nEnter card number:\n')
+    if luhn(card_to[:-1]) != card_to[-1]:
+        print('Probably you made mistake in the card number. Please try again!\n')
+        return None
+    cursor = connection.cursor()
+    cursor.execute(f'SELECT id FROM card WHERE number = {card_to}')
+    id_to = cursor.fetchone()
+    if id_to:
+        id_to = id_to[0]
+        if id_to == current['id']:
+            print("You can't transfer money to the same account!\n")
+        else:
+            cursor.execute('SELECT number FROM card')
+            if (card_to,) in cursor.fetchall():
+                transfer_money = int(input('Enter how much money you want to transfer:\n'))
+                balance = get_balance(connection, current)
+                if transfer_money > balance:
+                    print('Not enough money!\n')
+                else:
+                    cursor.execute(f'UPDATE card SET balance = balance - {transfer_money} WHERE id = {current["id"]}')
+                    cursor.execute(f'UPDATE card SET balance = balance + {transfer_money} WHERE id = {id_to}')
+                    connection.commit()
+                    print('Success!\n')
+    else:
+        print('Such a card does not exist.\n')
+    cursor.close()
+    return None
+
+
+def close_account(connection, current):
+    cursor = connection.cursor()
+    cursor.execute(f'DELETE FROM card WHERE id = {current["id"]}')
+    connection.commit()
+    cursor.close()
+    print('\nThe account has been closed!\n')
+    return {'state': 'main', 'id': 0}
 
 
 conn = sqlite3.connect('card.s3db')
@@ -106,17 +138,15 @@ while cmd != '0':
             create_account(conn)
         elif cmd == '2':
             curr = login(conn)
-        # elif cmd == '3':
-        #     print_card(conn)
     elif curr['state'] == 'logged':
         if cmd == '1':
             print('\nBalance:', get_balance(conn, curr), '\n')
         elif cmd == '2':
             add_income(conn, curr)
         elif cmd == '3':
-            pass
+            transfer(conn, curr)
         elif cmd == '4':
-            pass
+            curr = close_account(conn, curr)
         elif cmd == '5':
             print('\nYou have successfully logged out!\n')
             curr = {'state': 'main', 'id': 0}
