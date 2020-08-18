@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fd0ff97-eebf-42ef-b6ff-981b8f569922" name="Default Changelist" comment="">
+    <list default="true" id="4ddc4e7d-9912-42f6-bbfd-a63eada7da28" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/task.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple Banking System/task/banking/card.s3db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pip-20.2.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/pip-20.2.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.6.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Lib/site-packages/setuptools-49.6.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install-3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install-3.8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/easy_install.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VirtualEnvironment/Scripts/pip3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/More options/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/Scoring the game/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/rating.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/task/rps/rating.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simple Banking System/Advanced system/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Simple Banking System/Advanced system/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simple Banking System/Card anatomy/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Simple Banking System/Card anatomy/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simple Banking System/I'm so lite/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Simple Banking System/I'm so lite/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simple Banking System/Luhn algorithm/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Simple Banking System/Luhn algorithm/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simple Banking System/task/banking/banking.py" beforeDir="false" afterPath="$PROJECT_DIR$/Simple Banking System/task/banking/banking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +40,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1g91Rfjlh1bnNHpDc4nKfFBe1M5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1gGYw0p7V3KL98Nq9pfg22oBJGQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -54,57 +84,53 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5fd0ff97-eebf-42ef-b6ff-981b8f569922" name="Default Changelist" comment="" />
-      <created>1597511987546</created>
+      <changelist id="4ddc4e7d-9912-42f6-bbfd-a63eada7da28" name="Default Changelist" comment="" />
+      <created>1597742630393</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597511987546</updated>
+      <updated>1597742630393</updated>
     </task>
-    <task id="LOCAL-00001" summary="Simple Banking System">
-      <created>1597524911517</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1597524911517</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Simple Banking System">
-      <created>1597528300662</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1597528300662</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Simple Banking System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple Banking System" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1532" y="268" key="CommitChangelistDialog2" timestamp="1597528300180">
+    <state x="1685" y="455" key="FileChooserDialogImpl" timestamp="1597742804108">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1532" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597528300180" />
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom" timestamp="1597529042896">
+    <state x="1685" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1597742804108" />
+    <state width="1238" height="391" key="GridCell.Tab.0.bottom" timestamp="1597781688668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597529042896" />
-    <state width="1234" height="398" key="GridCell.Tab.0.center" timestamp="1597529042895">
+    <state width="1238" height="391" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597781688668" />
+    <state width="1238" height="391" key="GridCell.Tab.0.center" timestamp="1597781688668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597529042895" />
-    <state width="1234" height="398" key="GridCell.Tab.0.left" timestamp="1597529042895">
+    <state width="1238" height="391" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597781688668" />
+    <state width="1238" height="391" key="GridCell.Tab.0.left" timestamp="1597781688668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597529042895" />
-    <state width="1234" height="398" key="GridCell.Tab.0.right" timestamp="1597529042896">
+    <state width="1238" height="391" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597781688668" />
+    <state width="1238" height="391" key="GridCell.Tab.0.right" timestamp="1597781688668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597529042896" />
-    <state x="1497" y="433" key="Vcs.Push.Dialog.v2" timestamp="1597528306744">
+    <state width="1238" height="391" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597781688668" />
+    <state width="1264" height="488" key="GridCell.Tab.1.bottom" timestamp="1597772031279">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1497" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597528306744" />
+    <state width="1264" height="488" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597772031279" />
+    <state width="1264" height="488" key="GridCell.Tab.1.center" timestamp="1597772031279">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1264" height="488" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597772031279" />
+    <state width="1264" height="488" key="GridCell.Tab.1.left" timestamp="1597772031278">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1264" height="488" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597772031278" />
+    <state width="1264" height="488" key="GridCell.Tab.1.right" timestamp="1597772031279">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1264" height="488" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597772031279" />
   </component>
 </project>

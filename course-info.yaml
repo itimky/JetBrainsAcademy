@@ -1,11 +1,12 @@
 type: hyperskill
-title: Rock-Paper-Scissors
+title: Simple Banking System
 language: English
-summary: If you’ve ever wanted to create games, this project will get you started!
-  In this project you will code a Rock-Paper-Scissors-Lizard-Spock game, a more advanced
-  version of Rock-Paper-Scissors, which can be played against the computer.<br/><br/>Learn
-  more at <a href="https://hyperskill.org">https://hyperskill.org/projects/78</a>
+summary: Everything goes digital these days, and so does money. Today, most people
+  have credit cards, which save us time, energy and nerves. From not having to carry
+  a wallet full of cash to consumer protection, cards make our lives easier in many
+  ways. In this project, you will develop a simple banking system with database.<br/><br/>Learn
+  more at <a href="https://hyperskill.org">https://hyperskill.org/projects/109</a>
 programming_language: Python
 content:
-- Rock-Paper-Scissors
+- Simple Banking System
 mode: Study
