@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d64353-4f79-4b9d-9ce1-c999c6dae1e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/bloomberg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/nytimes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/tb_tabs/bloomberg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/tb_tabs/nytimes" afterDir="false" />
+    <list default="true" id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/lesson-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/bloomberg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/nytimes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/tab/bloomberg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/tab/nytimes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/tb_tabs/bloomberg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/tb_tabs/nytimes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/task/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,17 +29,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1gHyDgotJ83bMp3cFqAvT5xJi3c" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1gSI5LC9sqrO8Pknm25pztwS7RM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" />
   </component>
   <component name="RunManager">
     <configuration name="browser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -64,67 +70,34 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b4d64353-4f79-4b9d-9ce1-c999c6dae1e6" name="Default Changelist" comment="" />
-      <created>1597785694221</created>
+      <changelist id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="" />
+      <created>1598101383070</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597785694221</updated>
+      <updated>1598101383070</updated>
     </task>
-    <task id="LOCAL-00001" summary="text-based browser">
-      <created>1597790407979</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1597790407979</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="text-based browser" />
-    <option name="LAST_COMMIT_MESSAGE" value="text-based browser" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="1545" y="272" key="CommitChangelistDialog2" timestamp="1597790405974">
+    <state x="1700" y="455" key="FileChooserDialogImpl" timestamp="1598101657562">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1545" y="272" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1597790405974" />
-    <state width="1264" height="397" key="GridCell.Tab.0.bottom" timestamp="1597847975433">
+    <state x="1700" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598101657562" />
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom" timestamp="1598133587351">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1264" height="397" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597847975433" />
-    <state width="1264" height="397" key="GridCell.Tab.0.center" timestamp="1597847975432">
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598133587351" />
+    <state width="1234" height="398" key="GridCell.Tab.0.center" timestamp="1598133587351">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1264" height="397" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597847975432" />
-    <state width="1264" height="397" key="GridCell.Tab.0.left" timestamp="1597847975432">
+    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598133587351" />
+    <state width="1234" height="398" key="GridCell.Tab.0.left" timestamp="1598133587351">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1264" height="397" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597847975432" />
-    <state width="1264" height="397" key="GridCell.Tab.0.right" timestamp="1597847975433">
+    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598133587351" />
+    <state width="1234" height="398" key="GridCell.Tab.0.right" timestamp="1598133587351">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1264" height="397" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597847975433" />
-    <state width="1238" height="491" key="GridCell.Tab.1.bottom" timestamp="1597788449116">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1238" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1597788449116" />
-    <state width="1238" height="491" key="GridCell.Tab.1.center" timestamp="1597788449115">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1238" height="491" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1597788449115" />
-    <state width="1238" height="491" key="GridCell.Tab.1.left" timestamp="1597788449115">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1238" height="491" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1597788449115" />
-    <state width="1238" height="491" key="GridCell.Tab.1.right" timestamp="1597788449116">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1238" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1597788449116" />
-    <state x="1510" y="436" key="Vcs.Push.Dialog.v2" timestamp="1597790412185">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1510" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1597790412185" />
+    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598133587351" />
   </component>
 </project>

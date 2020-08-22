@@ -3,7 +3,7 @@ custom_name: stage2
 files:
 - name: browser/browser.py
   visible: true
-  text: "\nnytimes_com = '''\nThis New Liquid Is Magnetic, and Mesmerizing\n\nScientists\
+  text: "nytimes_com = '''\nThis New Liquid Is Magnetic, and Mesmerizing\n\nScientists\
     \ have created “soft” magnets that can flow \nand change shape, and that could\
     \ be a boon to medicine \nand robotics. (Source: New York Times)\n\n\nMost Wikipedia\
     \ Profiles Are of Men. This Scientist Is Changing That.\n\nJessica Wade has added\
@@ -18,7 +18,9 @@ files:
     \ Gives Talk at Apple Headquarters\n\nTwitter and Square Chief Executive Officer\
     \ Jack Dorsey \n addressed Apple Inc. employees at the iPhone maker’s headquarters\n\
     \ Tuesday, a signal of the strong ties between the Silicon Valley giants.\n'''\n\
-    \n# write your code here\n"
+    \n\nwhile True:\n    url = input()\n    if url == 'bloomberg.com':\n        print(bloomberg_com)\n\
+    \    elif url == 'nytimes.com':\n        print(nytimes_com)\n    elif url == 'exit':\n\
+    \        break\n    else:\n        print('Wrong URL!')\n"
   learner_created: false
 - name: tests.py
   visible: false
@@ -143,16 +145,6 @@ files:
 
     TextBasedBrowserTest('browser.browser').run_tests()
   learner_created: false
-- name: browser/tab/nytimes
-  visible: true
-  learner_created: true
-- name: browser/tab/bloomberg
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/projects/79/stages/437/implement
 status: Solved
-feedback:
-  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/79/stages/437/implement">JetBrains
-    Academy</a>
-  time: Wed, 19 Aug 2020 13:09:50 UTC
-record: 2
+record: 1

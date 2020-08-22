@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+				<link rel="shortcut icon" href="https://cdn.steamgifts.com/img/favicon.ico">
+		<title>Giveaways for Steam Games</title>
+		<!-- Include FontAwesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Include CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.steamgifts.com/css/minified_v41.css">
+		<!-- Include Scripts -->
+		<script src="https://cdn.steamgifts.com/js/minified_v49.js"></script>
+		<script type="text/javascript">
+			var baseUrl = "\/giveaways";
+							$(document).on('mouseover', 'a[href^="http"], a[href^="https"], a[href^="//"]', function(e){
+					var url = $(this).attr('href');
+					if (
+						(match = url.match(/^(\w+:)?\/\/((www.)?humblebundle.com($|\/(?!gift)(.)*$))/i)) ||
+						(match = url.match(/^(\w+:)?\/\/((www.)?fanatical.com($|\/(.)*$))/i)) ||
+						(match = url.match(/^(\w+:)?\/\/((www.)?greenmangaming.com($|\/(.)*$))/i)) ||
+						(match = url.match(/^(\w+:)?\/\/((www.)?bundlestars.com($|\/(.)*$))/i)) ||
+						(match = url.match(/^(\w+:)?\/\/(([a-zA-Z]+.)?gamersgate.com($|\/(.)*$))/i))
+					) {
+						$(this).attr('href', '/redirect?url=' + encodeURIComponent(url));
+					}
+				});
+						</script>
+		<meta name="viewport" content="width=1200">
+						<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5eda593bb519801b8a4d532c" data-mode="scan" async></script>
+								<script>
+					(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+					ga('create', 'UA-3791796-9', 'auto');
+					ga('set', 'anonymizeIp', true);
+					ga('send', 'pageview');
+				</script>
+					</head>
+	<body>
+					<div class="lightbox" style="display: none;">
+				<div class="lightbox_header">
+					<div class="lightbox_header_description">
+						<div class="lightbox_header_description_name"></div>
+						<div class="lightbox_header_description_count"></div>
+					</div>
+					<div class="lightbox_header_icons">
+						<i data-category="images" class="lightbox_header_icon fa fa-camera"></i>
+						<i data-category="videos" class="lightbox_header_icon fa fa-video-camera"></i>
+						<i class="lightbox_header_icon lightbox_header_icon--close fa fa-times"></i>
+					</div>
+				</div>
+				<div class="lightbox_status lightbox_status--loading">
+					<div>
+						<div class="lightbox_status_icon"><i class="fa fa-cog fa-spin"></i></div>
+						<div class="lightbox_status_text">Please Wait</div>
+					</div>
+				</div>
+				<div class="lightbox_status lightbox_status--empty">
+					<div>
+						<div class="lightbox_status_icon"><i class="fa fa-picture-o"></i></div>
+						<div class="lightbox_status_text">No Results</div>
+					</div>
+				</div>
+				<div class="lightbox_images"></div>
+				<div class="lightbox_thumbnails_outer">
+					<div class="lightbox_thumbnails_overlay">
+						<div class="lightbox_thumbnails"></div>
+					</div>
+				</div>
+			</div>
+					<header>
+			<nav>
+									<div class="nav__left-container">
+						<div class="nav__button-container is-selected">
+							<div class="nav__relative-dropdown is-hidden">
+								<div class="nav__absolute-dropdown">
+									<a class="nav__row" href="/giveaways/wishlist">
+										<i class="icon-blue fa fa-fw fa-users"></i>
+										<div class="nav__row__summary">
+											<p class="nav__row__summary__name">Community Wishlist</p>
+											<p class="nav__row__summary__description">Search for new games to share.</p>
+										</div>
+									</a>							
+								</div>
+							</div>	
+							<a class="nav__button nav__button--is-dropdown" href="/">Giveaways</a>
+							<div class="nav__button nav__button--is-dropdown-arrow"><i class="fa fa-angle-down"></i></div>
+						</div>
+						<div class="nav__button-container">
+							<a class="nav__button" href="/discussions/deals">Deals</a>
+						</div>
+						<div class="nav__button-container">
+							<a class="nav__button" href="/discussions">Discussions</a>
+						</div>
+						<div class="nav__button-container">
+							<div class="nav__relative-dropdown is-hidden">
+								<div class="nav__absolute-dropdown">
+									<a class="nav__row" href="/about/comment-formatting">
+										<i class="icon-red fa fa-fw fa-code"></i>
+										<div class="nav__row__summary">
+											<p class="nav__row__summary__name">Comment Formatting</p>
+											<p class="nav__row__summary__description">Syntax for writing comments.</p>
+										</div>
+									</a>
+									<a class="nav__row" href="/about/faq">
+										<i class="icon-grey fa fa-fw fa-question-circle"></i>
+										<div class="nav__row__summary">
+											<p class="nav__row__summary__name">FAQ</p>
+											<p class="nav__row__summary__description">Frequently asked questions.</p>
+										</div>
+									</a>
+									<a class="nav__row" href="/about/guidelines">
+										<i class="icon-blue fa fa-fw fa-file-text-o"></i>
+										<div class="nav__row__summary">
+											<p class="nav__row__summary__name">Guidelines</p>
+											<p class="nav__row__summary__description">Community rules and guidelines.</p>
+										</div>
+									</a>
+								</div>
+							</div>	
+							<a class="nav__button nav__button--is-dropdown" href="/about/faq">Help</a>
+							<div class="nav__button nav__button--is-dropdown-arrow"><i class="fa fa-angle-down"></i></div>
+						</div>
+					</div>
+					<div class="nav__right-container">
+													<div class="nav__button-container">
+							<a href="/?login" class="nav__sits"><i class="fa fa-steam"></i> Sign in through STEAM</a>
+							</div>
+												</div>
+								</nav>
+		</header>
+					<div class="featured__container">
+				<div class="featured__outer-wrap featured__outer-wrap--home" style="background-color: rgb(45,52,89);">
+					<div class="featured__inner-wrap">
+						<a href="/giveaway/qJSaA/sonic-sega-all-stars-racing" class="global__image-outer-wrap global__image-outer-wrap--game-xlarge"><img src="https://steamcdn-a.akamaihd.net/steam/apps/34190/header.jpg" /></a>
+						
+						<div class="featured__summary">
+							<div class="featured__heading">
+								<div class="featured__heading__medium"><a href="/giveaway/qJSaA/sonic-sega-all-stars-racing">Sonic &amp; SEGA All-Stars Racing</a></div>
+								
+								<div class="featured__heading__small">(10P)</div>
+							</div>
+							<div class="featured__columns">				
+								<div class="featured__column"><i style="color:rgb(102,119,204);" class="fa fa-clock-o"></i> <span data-timestamp="1598133900">1 minute</span> remaining</div>
+								<div class="featured__column featured__column--width-fill text-right"><span data-timestamp="1598065601">18 hours</span> ago by <a style="color:rgb(102,119,204);" href="/user/Chrystianz">Chrystianz</a></div><a href="/user/Chrystianz" class="featured_giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a>
+							</div>
+						</div>					</div>
+				</div>
+			</div>
+				<div class="page__outer-wrap">
+		<div class="page__inner-wrap">
+			<div class="widget-container">
+				<div class="sidebar" style="width: 300px; min-width: 300px;">
+					
+				<div class="sidebar__mpu" style="margin-bottom: 35px;">
+					<div class="vm-placement" data-id="5ede2d84a624ae2e7125806a"></div>
+				</div>
+				
+				<div class="sidebar__search-container">
+					<input class="sidebar__search-input" name="search-query" type="text" placeholder="Search..." value="" />
+					<i class="fa fa-search"></i>
+				</div>
+				<h3 class="sidebar__heading">Browse</h3>
+						<ul class="sidebar__navigation">
+						
+							<li style="display: flex; align-items: center;" class="sidebar__navigation__item is-selected"><a style="flex: 1;" class="sidebar__navigation__item__link" href="/giveaways"><i class="fa fa-caret-right"></i> 
+									<div class="sidebar__navigation__item__name">All</div>
+									<div class="sidebar__navigation__item__underline"></div>
+								</a>
+							</li>
+							<li style="display: flex; align-items: center;" class="sidebar__navigation__item"><a style="flex: 1;" class="sidebar__navigation__item__link" href="/giveaways/search?type=recommended">
+									<div class="sidebar__navigation__item__name">Recommended</div>
+									<div class="sidebar__navigation__item__underline"></div>
+								</a>
+							</li>
+							<li style="display: flex; align-items: center;" class="sidebar__navigation__item"><a style="flex: 1;" class="sidebar__navigation__item__link" href="/giveaways/search?copy_min=2">
+									<div class="sidebar__navigation__item__name">Multiple Copies</div>
+									<div class="sidebar__navigation__item__underline"></div>
+								</a>
+							</li>
+							<li style="display: flex; align-items: center;" class="sidebar__navigation__item"><a style="flex: 1;" class="sidebar__navigation__item__link" href="/giveaways/search?dlc=true">
+									<div class="sidebar__navigation__item__name">DLC</div>
+									<div class="sidebar__navigation__item__underline"></div>
+								</a>
+							</li>
+							<li style="display: flex; align-items: center;" class="sidebar__navigation__item"><a style="flex: 1;" class="sidebar__navigation__item__link" href="/giveaways/search?type=new">
+									<div class="sidebar__navigation__item__name">New</div>
+									<div class="sidebar__navigation__item__underline"></div>
+								</a>
+							</li></ul>				</div>
+				<div>
+					<div class="pinned-giveaways__outer-wrap"><div data-display="2" class="pinned-giveaways__inner-wrap pinned-giveaways__inner-wrap--minimized">
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/zlGRv/card-hog">Card Hog</a><span class="giveaway__heading__thin">(100 Copies)</span><span class="giveaway__heading__thin">(4P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/1163740/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229856995" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=1163740"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598336880">2 days</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598074981">16 hours</span> ago by <a class="giveaway__username" href="/user/SnoutUp">SnoutUp</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/zlGRv/card-hog/entries"><i class="fa fa-tag"></i> <span>5,423 entries</span></a>
+								<a href="/giveaway/zlGRv/card-hog/comments"><i class="fa fa-comment"></i> <span>30 comments</span></a>
+							</div>
+						</div><a href="/user/SnoutUp" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ef/ef3677e82e7b0630b7d27affce0e69285f363aa3_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/1163740/capsule_184x69.jpg);" href="/giveaway/zlGRv/card-hog"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/NlDbE/armored-head">ARMORED HEAD</a><span class="giveaway__heading__thin">(50 Copies)</span><span class="giveaway__heading__thin">(3P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/805590/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4230059910" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=805590"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598216340">22 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597951917">2 days</span> ago by <a class="giveaway__username" href="/user/lexby">lexby</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/NlDbE/armored-head/entries"><i class="fa fa-tag"></i> <span>6,564 entries</span></a>
+								<a href="/giveaway/NlDbE/armored-head/comments"><i class="fa fa-comment"></i> <span>41 comments</span></a>
+							</div>
+						</div><a href="/user/lexby" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b5/b51375d36861739f285f5703c647bcaae4187396_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/805590/capsule_184x69.jpg);" href="/giveaway/NlDbE/armored-head"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/Z2JCt/red-virus">Red Virus</a><span class="giveaway__heading__thin">(64 Copies)</span><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/1314250/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4230062103" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=1314250"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598470200">3 days</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597080416">1 week</span> ago by <a class="giveaway__username" href="/user/Dragoons">Dragoons</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/Z2JCt/red-virus/entries"><i class="fa fa-tag"></i> <span>2,834 entries</span></a>
+								<a href="/giveaway/Z2JCt/red-virus/comments"><i class="fa fa-comment"></i> <span>21 comments</span></a>
+							</div>
+						</div><a href="/user/Dragoons" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/0224d4404e9c5a1bf04d6950d6c36855e7a5c25d_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/1314250/capsule_184x69.jpg);" href="/giveaway/Z2JCt/red-virus"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/9H8n6/unborn">UnBorn</a><span class="giveaway__heading__thin">(200 Copies)</span><span class="giveaway__heading__thin">(6P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/886420/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229809668" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=886420"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598270820">1 day</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597921690">2 days</span> ago by <a class="giveaway__username" href="/user/DarthLoad">DarthLoad</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/9H8n6/unborn/entries"><i class="fa fa-tag"></i> <span>3,951 entries</span></a>
+								<a href="/giveaway/9H8n6/unborn/comments"><i class="fa fa-comment"></i> <span>13 comments</span></a>
+							</div>
+						</div><a href="/user/DarthLoad" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc3bfc13cdd09404651618f4fe439596fe61c566_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/886420/capsule_184x69.jpg);" href="/giveaway/9H8n6/unborn"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/VTHey/ecchi-jack">Ecchi Jack</a><span class="giveaway__heading__thin">(51 Copies)</span><span class="giveaway__heading__thin">(5P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/1340600/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4230057797" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=1340600"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598152740">5 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598009720">1 day</span> ago by <a class="giveaway__username" href="/user/GrimOrk">GrimOrk</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 1+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/VTHey/ecchi-jack/entries"><i class="fa fa-tag"></i> <span>5,616 entries</span></a>
+								<a href="/giveaway/VTHey/ecchi-jack/comments"><i class="fa fa-comment"></i> <span>23 comments</span></a>
+							</div>
+						</div><a href="/user/GrimOrk" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/5b/5b22a34cb23ce12c4f356880be0b103b23028b74_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/1340600/capsule_184x69.jpg);" href="/giveaway/VTHey/ecchi-jack"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/36mwn/sperm-runner">Sperm Runner</a><span class="giveaway__heading__thin">(75 Copies)</span><span class="giveaway__heading__thin">(1P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/1376220/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4230062559" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=1376220"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598378400">2 days</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598124323">2 hours</span> ago by <a class="giveaway__username" href="/user/StreetDog">StreetDog</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/36mwn/sperm-runner/entries"><i class="fa fa-tag"></i> <span>814 entries</span></a>
+								<a href="/giveaway/36mwn/sperm-runner/comments"><i class="fa fa-comment"></i> <span>3 comments</span></a>
+							</div>
+						</div><a href="/user/StreetDog" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/55/5529b2d0ba34d20de6aecdf76a5d687a0aa73a03_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/1376220/capsule_184x69.jpg);" href="/giveaway/36mwn/sperm-runner"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/cNgEA/arcadium">Arcadium</a><span class="giveaway__heading__thin">(50 Copies)</span><span class="giveaway__heading__thin">(5P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/1336100/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4230061414" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=1336100"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598297400">1 day</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1596911506">2 weeks</span> ago by <a class="giveaway__username" href="/user/Dragoons">Dragoons</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/cNgEA/arcadium/entries"><i class="fa fa-tag"></i> <span>6,644 entries</span></a>
+								<a href="/giveaway/cNgEA/arcadium/comments"><i class="fa fa-comment"></i> <span>26 comments</span></a>
+							</div>
+						</div><a href="/user/Dragoons" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/0224d4404e9c5a1bf04d6950d6c36855e7a5c25d_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/1336100/capsule_184x69.jpg);" href="/giveaway/cNgEA/arcadium"></a>
+				</div>
+			</div></div><div class="pinned-giveaways__button"><i class="fa fa-angle-down"></i></div></div>						<div class="page__heading">
+							<div class="page__heading__breadcrumbs"><a href="/">Giveaways</a></div>						</div>
+						<div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/qJSaA/sonic-sega-all-stars-racing">Sonic &amp; SEGA All-Stars Racing</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/34190/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="3034" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=34190"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598133900">1 minute</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598065601">18 hours</span> ago by <a class="giveaway__username" href="/user/Chrystianz">Chrystianz</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/qJSaA/sonic-sega-all-stars-racing/entries"><i class="fa fa-tag"></i> <span>1,480 entries</span></a>
+								<a href="/giveaway/qJSaA/sonic-sega-all-stars-racing/comments"><i class="fa fa-comment"></i> <span>8 comments</span></a>
+							</div>
+						</div><a href="/user/Chrystianz" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/34190/capsule_184x69.jpg);" href="/giveaway/qJSaA/sonic-sega-all-stars-racing"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/esh6r/majesty-2-collection">Majesty 2 Collection</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/73020/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4558" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=73020"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134140">5 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598065805">18 hours</span> ago by <a class="giveaway__username" href="/user/Chrystianz">Chrystianz</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/esh6r/majesty-2-collection/entries"><i class="fa fa-tag"></i> <span>987 entries</span></a>
+								<a href="/giveaway/esh6r/majesty-2-collection/comments"><i class="fa fa-comment"></i> <span>7 comments</span></a>
+							</div>
+						</div><a href="/user/Chrystianz" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/73020/capsule_184x69.jpg);" href="/giveaway/esh6r/majesty-2-collection"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/bCg2T/call-of-cthulhu">Call of Cthulhu®</a><span class="giveaway__heading__thin">(30P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/399810/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229810280" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=399810"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134620">13 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597785478">4 days</span> ago by <a class="giveaway__username" href="/user/drenai2001">drenai2001</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 6+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/bCg2T/call-of-cthulhu/entries"><i class="fa fa-tag"></i> <span>801 entries</span></a>
+								<a href="/giveaway/bCg2T/call-of-cthulhu/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/drenai2001" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc9bf799b40612c902bee803ab5c8aeb1b3fc899_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/399810/capsule_184x69.jpg);" href="/giveaway/bCg2T/call-of-cthulhu"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/5XkNe/headlander">Headlander</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/340000/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="967490876" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=340000"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134680">14 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597785529">4 days</span> ago by <a class="giveaway__username" href="/user/drenai2001">drenai2001</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 4+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/5XkNe/headlander/entries"><i class="fa fa-tag"></i> <span>540 entries</span></a>
+								<a href="/giveaway/5XkNe/headlander/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/drenai2001" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc9bf799b40612c902bee803ab5c8aeb1b3fc899_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/340000/capsule_184x69.jpg);" href="/giveaway/5XkNe/headlander"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/1CQS6/grim-fandango-remastered">Grim Fandango Remastered</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/316790/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="28907" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=316790"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134740">15 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597785576">4 days</span> ago by <a class="giveaway__username" href="/user/drenai2001">drenai2001</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 5+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/1CQS6/grim-fandango-remastered/entries"><i class="fa fa-tag"></i> <span>271 entries</span></a>
+								<a href="/giveaway/1CQS6/grim-fandango-remastered/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/drenai2001" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc9bf799b40612c902bee803ab5c8aeb1b3fc899_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/316790/capsule_184x69.jpg);" href="/giveaway/1CQS6/grim-fandango-remastered"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/TevHK/broken-age">Broken Age</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/232790/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="9531" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=232790"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134740">15 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597785612">4 days</span> ago by <a class="giveaway__username" href="/user/drenai2001">drenai2001</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 5+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/TevHK/broken-age/entries"><i class="fa fa-tag"></i> <span>202 entries</span></a>
+								<a href="/giveaway/TevHK/broken-age/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/drenai2001" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc9bf799b40612c902bee803ab5c8aeb1b3fc899_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/232790/capsule_184x69.jpg);" href="/giveaway/TevHK/broken-age"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/vu286/deadly-30">Deadly 30</a><span class="giveaway__heading__thin">(2 Copies)</span><span class="giveaway__heading__thin">(5P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/264730/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="11205" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=264730"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134800">16 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597774728">4 days</span> ago by <a class="giveaway__username" href="/user/VahidSlayerOfAll">VahidSlayerOfAll</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/vu286/deadly-30/entries"><i class="fa fa-tag"></i> <span>1,633 entries</span></a>
+								<a href="/giveaway/vu286/deadly-30/comments"><i class="fa fa-comment"></i> <span>14 comments</span></a>
+							</div>
+						</div><a href="/user/VahidSlayerOfAll" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee31498ec4c56275ab6c22ea48a73fe61901f632_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/264730/capsule_184x69.jpg);" href="/giveaway/vu286/deadly-30"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/Uh9GR/massive-chalice">MASSIVE CHALICE</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/246110/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="10148" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=246110"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598134860">17 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597785685">4 days</span> ago by <a class="giveaway__username" href="/user/drenai2001">drenai2001</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 4+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/Uh9GR/massive-chalice/entries"><i class="fa fa-tag"></i> <span>499 entries</span></a>
+								<a href="/giveaway/Uh9GR/massive-chalice/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/drenai2001" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fc9bf799b40612c902bee803ab5c8aeb1b3fc899_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/246110/capsule_184x69.jpg);" href="/giveaway/Uh9GR/massive-chalice"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/kIICS/pixel-heroes-byte-magic">Pixel Heroes: Byte &amp; Magic</a><span class="giveaway__heading__thin">(2 Copies)</span><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/338320/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="25350" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=338320"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598135040">20 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597774971">4 days</span> ago by <a class="giveaway__username" href="/user/VahidSlayerOfAll">VahidSlayerOfAll</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/kIICS/pixel-heroes-byte-magic/entries"><i class="fa fa-tag"></i> <span>1,529 entries</span></a>
+								<a href="/giveaway/kIICS/pixel-heroes-byte-magic/comments"><i class="fa fa-comment"></i> <span>12 comments</span></a>
+							</div>
+						</div><a href="/user/VahidSlayerOfAll" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee31498ec4c56275ab6c22ea48a73fe61901f632_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/338320/capsule_184x69.jpg);" href="/giveaway/kIICS/pixel-heroes-byte-magic"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/a8iTn/araya">ARAYA</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/466740/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="1935153948" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=466740"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598135220">23 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1596800098">2 weeks</span> ago by <a class="giveaway__username" href="/user/AbigailJin">AbigailJin</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 3+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/a8iTn/araya/entries"><i class="fa fa-tag"></i> <span>539 entries</span></a>
+								<a href="/giveaway/a8iTn/araya/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/AbigailJin" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/18/18e85bfe6d0ec48a275fd39979176c7ff3368198_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/466740/capsule_184x69.jpg);" href="/giveaway/a8iTn/araya"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/lLyCH/oddplanet">OddPlanet</a><span class="giveaway__heading__thin">(7P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/465930/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="994224905" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=465930"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598135340">25 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598131794">33 minutes</span> ago by <a class="giveaway__username" href="/user/MeguminShiro">MeguminShiro</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 3+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/lLyCH/oddplanet/entries"><i class="fa fa-tag"></i> <span>89 entries</span></a>
+								<a href="/giveaway/lLyCH/oddplanet/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/MeguminShiro" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/5f/5f75f16f24a0c21f9e59f6be96e3af9615ae0e93_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/465930/capsule_184x69.jpg);" href="/giveaway/lLyCH/oddplanet"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/gaGFh/vr-escape-the-space-station">VR Escape the space station</a><span class="giveaway__heading__thin">(7P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/513420/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="1577814711" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=513420"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136060">37 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132665">18 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/gaGFh/vr-escape-the-space-station/entries"><i class="fa fa-tag"></i> <span>55 entries</span></a>
+								<a href="/giveaway/gaGFh/vr-escape-the-space-station/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/513420/capsule_184x69.jpg);" href="/giveaway/gaGFh/vr-escape-the-space-station"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/Buktq/killer-is-dead-nightmare-edition">Killer is Dead - Nightmare Edition</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/261110/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="11024" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=261110"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136240">40 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597527921">1 week</span> ago by <a class="giveaway__username" href="/user/MrPuppet">MrPuppet</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/Buktq/killer-is-dead-nightmare-edition/entries"><i class="fa fa-tag"></i> <span>648 entries</span></a>
+								<a href="/giveaway/Buktq/killer-is-dead-nightmare-edition/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/MrPuppet" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/950f9f3147d4c8530a5072825d01c34ee3f1afa1_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/261110/capsule_184x69.jpg);" href="/giveaway/Buktq/killer-is-dead-nightmare-edition"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/KCwt0/grim-legends-the-forsaken-bride">Grim Legends: The Forsaken Bride</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/284850/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12245" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=284850"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136240">40 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132744">17 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/KCwt0/grim-legends-the-forsaken-bride/entries"><i class="fa fa-tag"></i> <span>35 entries</span></a>
+								<a href="/giveaway/KCwt0/grim-legends-the-forsaken-bride/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/284850/capsule_184x69.jpg);" href="/giveaway/KCwt0/grim-legends-the-forsaken-bride"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/XqkZA/aegis-defenders">Aegis Defenders</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/371140/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="3700688419" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=371140"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136360">42 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597528025">1 week</span> ago by <a class="giveaway__username" href="/user/MrPuppet">MrPuppet</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/XqkZA/aegis-defenders/entries"><i class="fa fa-tag"></i> <span>240 entries</span></a>
+								<a href="/giveaway/XqkZA/aegis-defenders/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/MrPuppet" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/950f9f3147d4c8530a5072825d01c34ee3f1afa1_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/371140/capsule_184x69.jpg);" href="/giveaway/XqkZA/aegis-defenders"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/jvBvu/left-in-the-dark-no-one-on-board">Left in the Dark: No One on Board</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/284890/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12247" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=284890"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136360">42 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132786">16 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/jvBvu/left-in-the-dark-no-one-on-board/entries"><i class="fa fa-tag"></i> <span>46 entries</span></a>
+								<a href="/giveaway/jvBvu/left-in-the-dark-no-one-on-board/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/284890/capsule_184x69.jpg);" href="/giveaway/jvBvu/left-in-the-dark-no-one-on-board"></a>
+				</div>
+			</div>											<div style="padding-top: 35px; padding-bottom: 35px; border-bottom: 1px solid #d2d6e0; box-shadow: 0 1px 0 rgba(255,255,255,0.3);">
+												<div class="vm-placement" data-id="5ede2d94f732892da8001d8a"></div>
+											</div>
+											
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/wu8ZO/enigmatis-the-ghosts-of-maple-creek">Enigmatis: The Ghosts of Maple Creek</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/284750/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12241" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=284750"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136360">42 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132825">16 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/wu8ZO/enigmatis-the-ghosts-of-maple-creek/entries"><i class="fa fa-tag"></i> <span>40 entries</span></a>
+								<a href="/giveaway/wu8ZO/enigmatis-the-ghosts-of-maple-creek/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/284750/capsule_184x69.jpg);" href="/giveaway/wu8ZO/enigmatis-the-ghosts-of-maple-creek"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/vDFwu/grim-legends-2-song-of-the-dark-swan">Grim Legends 2: Song of the Dark Swan</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/279800/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="61878294" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=279800"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136420">43 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132870">15 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/vDFwu/grim-legends-2-song-of-the-dark-swan/entries"><i class="fa fa-tag"></i> <span>30 entries</span></a>
+								<a href="/giveaway/vDFwu/grim-legends-2-song-of-the-dark-swan/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/279800/capsule_184x69.jpg);" href="/giveaway/vDFwu/grim-legends-2-song-of-the-dark-swan"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/IJv2G/the-long-dark">The Long Dark</a><span class="giveaway__heading__thin">(30P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/305620/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="13562" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=305620"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136480">44 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598021338">1 day</span> ago by <a class="giveaway__username" href="/user/101peter">101peter</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 10+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/IJv2G/the-long-dark/entries"><i class="fa fa-tag"></i> <span>28 entries</span></a>
+								<a href="/giveaway/IJv2G/the-long-dark/comments"><i class="fa fa-comment"></i> <span>1 comment</span></a>
+							</div>
+						</div><a href="/user/101peter" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/07/07b356858c940ba5fb9c008a5610c613133cf32b_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/305620/capsule_184x69.jpg);" href="/giveaway/IJv2G/the-long-dark"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/fdDVB/sword-of-asumi-deluxe-edition">Sword of Asumi - Deluxe Edition</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/sub/61462/"><i class="fa fa-fw fa-steam"></i></a><a class="giveaway__icon" href="/giveaways/search?sub=61462"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136540">45 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598132965">13 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/fdDVB/sword-of-asumi-deluxe-edition/entries"><i class="fa fa-tag"></i> <span>26 entries</span></a>
+								<a href="/giveaway/fdDVB/sword-of-asumi-deluxe-edition/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail_missing" href="/giveaway/fdDVB/sword-of-asumi-deluxe-edition"><i class="fa fa-picture-o"></i></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/lElLX/echo-tokyo-wallpapers">Echo Tokyo - Wallpapers</a><span class="giveaway__heading__thin">(1P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/372810/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="735985805" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=372810"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136540">45 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133012">13 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/lElLX/echo-tokyo-wallpapers/entries"><i class="fa fa-tag"></i> <span>5 entries</span></a>
+								<a href="/giveaway/lElLX/echo-tokyo-wallpapers/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/372810/capsule_184x69.jpg);" href="/giveaway/lElLX/echo-tokyo-wallpapers"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/9vRvX/echo-tokyo-graphic-novel">Echo Tokyo: Graphic Novel</a><span class="giveaway__heading__thin">(1P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/390490/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="635702263" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=390490"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136600">46 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133062">12 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/9vRvX/echo-tokyo-graphic-novel/entries"><i class="fa fa-tag"></i> <span>6 entries</span></a>
+								<a href="/giveaway/9vRvX/echo-tokyo-graphic-novel/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/390490/capsule_184x69.jpg);" href="/giveaway/9vRvX/echo-tokyo-graphic-novel"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/x2MZA/divine-slice-of-life-soundtrack">Divine Slice of Life - Soundtrack</a><span class="giveaway__heading__thin">(4P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/390470/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="396140230" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=390470"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136660">47 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133112">11 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/x2MZA/divine-slice-of-life-soundtrack/entries"><i class="fa fa-tag"></i> <span>4 entries</span></a>
+								<a href="/giveaway/x2MZA/divine-slice-of-life-soundtrack/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/390470/capsule_184x69.jpg);" href="/giveaway/x2MZA/divine-slice-of-life-soundtrack"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/nOL74/beach-bounce-soundtrack">Beach Bounce - Soundtrack</a><span class="giveaway__heading__thin">(3P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/394050/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="274103524" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=394050"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136720">48 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133154">10 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/nOL74/beach-bounce-soundtrack/entries"><i class="fa fa-tag"></i> <span>2 entries</span></a>
+								<a href="/giveaway/nOL74/beach-bounce-soundtrack/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/394050/capsule_184x69.jpg);" href="/giveaway/nOL74/beach-bounce-soundtrack"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/3MHzL/club-life-soundtrack">Club Life - Soundtrack</a><span class="giveaway__heading__thin">(5P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/452900/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="898736741" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=452900"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136780">49 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133197">10 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/3MHzL/club-life-soundtrack/entries"><i class="fa fa-tag"></i> <span>1 entry</span></a>
+								<a href="/giveaway/3MHzL/club-life-soundtrack/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/452900/capsule_184x69.jpg);" href="/giveaway/3MHzL/club-life-soundtrack"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/jww72/we-were-here-together">We Were Here Together</a><span class="giveaway__heading__thin">(13P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/865360/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229817546" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=865360"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136960">52 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598065090">19 hours</span> ago by <a class="giveaway__username" href="/user/byNeSLeR">byNeSLeR</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/jww72/we-were-here-together/entries"><i class="fa fa-tag"></i> <span>1,630 entries</span></a>
+								<a href="/giveaway/jww72/we-were-here-together/comments"><i class="fa fa-comment"></i> <span>7 comments</span></a>
+							</div>
+						</div><a href="/user/byNeSLeR" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/3b/3b313696d4a6ab12cd318017874556bade2d8a45_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/865360/capsule_184x69.jpg);" href="/giveaway/jww72/we-were-here-together"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/beZtC/warlocks-vs-shadows">Warlocks vs Shadows</a><span class="giveaway__heading__thin">(14P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/330270/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="42892401" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=330270"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598136960">52 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133425">6 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/beZtC/warlocks-vs-shadows/entries"><i class="fa fa-tag"></i> <span>18 entries</span></a>
+								<a href="/giveaway/beZtC/warlocks-vs-shadows/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/330270/capsule_184x69.jpg);" href="/giveaway/beZtC/warlocks-vs-shadows"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/lAGhL/elliot-quest">Elliot Quest</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/293440/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12720" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=293440"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137020">53 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133474">5 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/lAGhL/elliot-quest/entries"><i class="fa fa-tag"></i> <span>18 entries</span></a>
+								<a href="/giveaway/lAGhL/elliot-quest/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/293440/capsule_184x69.jpg);" href="/giveaway/lAGhL/elliot-quest"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/2AaLv/go-go-nippon-my-first-trip-to-japan">Go! Go! Nippon! ~My First Trip to Japan~</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/251870/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="10429" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=251870"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137080">54 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133539">4 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/2AaLv/go-go-nippon-my-first-trip-to-japan/entries"><i class="fa fa-tag"></i> <span>7 entries</span></a>
+								<a href="/giveaway/2AaLv/go-go-nippon-my-first-trip-to-japan/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/251870/capsule_184x69.jpg);" href="/giveaway/2AaLv/go-go-nippon-my-first-trip-to-japan"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/WmwIT/flatout-2">FlatOut 2™</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/2990/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="329" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=2990"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137140">55 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598129277">1 hour</span> ago by <a class="giveaway__username" href="/user/Frozenhate">Frozenhate</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/WmwIT/flatout-2/entries"><i class="fa fa-tag"></i> <span>426 entries</span></a>
+								<a href="/giveaway/WmwIT/flatout-2/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/Frozenhate" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bb/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/2990/capsule_184x69.jpg);" href="/giveaway/WmwIT/flatout-2"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/q8F0t/sword-of-asumi-deluxe-edition">Sword of Asumi - Deluxe Edition</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/sub/61462/"><i class="fa fa-fw fa-steam"></i></a><a class="giveaway__icon" href="/giveaways/search?sub=61462"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137140">55 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133588">3 minutes</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/q8F0t/sword-of-asumi-deluxe-edition/entries"><i class="fa fa-tag"></i> <span>6 entries</span></a>
+								<a href="/giveaway/q8F0t/sword-of-asumi-deluxe-edition/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail_missing" href="/giveaway/q8F0t/sword-of-asumi-deluxe-edition"><i class="fa fa-picture-o"></i></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/NPphV/aegis-defenders">Aegis Defenders</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/371140/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="3700688419" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=371140"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137200">56 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597980598">1 day</span> ago by <a class="giveaway__username" href="/user/Habaruku">Habaruku</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 3+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/NPphV/aegis-defenders/entries"><i class="fa fa-tag"></i> <span>66 entries</span></a>
+								<a href="/giveaway/NPphV/aegis-defenders/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Habaruku" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/91/91bd4c7b98416b3c476dc236c05813369ed7810c_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/371140/capsule_184x69.jpg);" href="/giveaway/NPphV/aegis-defenders"></a>
+				</div>
+			</div>											<div style="padding-top: 35px; padding-bottom: 35px; border-bottom: 1px solid #d2d6e0; box-shadow: 0 1px 0 rgba(255,255,255,0.3);">
+												<div class="vm-placement" data-id="5ede2d94f732892da8001d8a"></div>
+											</div>
+											
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/ew0QY/banzai-pecan-the-last-hope-for-the-young-century">BANZAI PECAN: The Last Hope For the Y...</a><span class="giveaway__heading__thin">(3P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/341440/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="108650" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=341440"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137380">59 minutes</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598133797">6 seconds</span> ago by <a class="giveaway__username" href="/user/Zuku7">Zuku7</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/ew0QY/banzai-pecan-the-last-hope-for-the-young-century/entries"><i class="fa fa-tag"></i> <span>0 entries</span></a>
+								<a href="/giveaway/ew0QY/banzai-pecan-the-last-hope-for-the-young-century/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/Zuku7" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4e/4e1356acd9fb290838591a62a5a9ef03e371a79a_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/341440/capsule_184x69.jpg);" href="/giveaway/ew0QY/banzai-pecan-the-last-hope-for-the-young-century"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/G2kJG/agatha-christie-the-abc-murders">Agatha Christie - The ABC Murders</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/374900/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="500803704" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=374900"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598137800">1 hour</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598065888">18 hours</span> ago by <a class="giveaway__username" href="/user/Chrystianz">Chrystianz</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/G2kJG/agatha-christie-the-abc-murders/entries"><i class="fa fa-tag"></i> <span>878 entries</span></a>
+								<a href="/giveaway/G2kJG/agatha-christie-the-abc-murders/comments"><i class="fa fa-comment"></i> <span>8 comments</span></a>
+							</div>
+						</div><a href="/user/Chrystianz" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/374900/capsule_184x69.jpg);" href="/giveaway/G2kJG/agatha-christie-the-abc-murders"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/q0ohv/mechanic-miner">Mechanic Miner</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/745010/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4203679462" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=745010"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598139420">1 hour</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1596901163">2 weeks</span> ago by <a class="giveaway__username" href="/user/Ministrix">Ministrix</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 1+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/q0ohv/mechanic-miner/entries"><i class="fa fa-tag"></i> <span>806 entries</span></a>
+								<a href="/giveaway/q0ohv/mechanic-miner/comments"><i class="fa fa-comment"></i> <span>4 comments</span></a>
+							</div>
+						</div><a href="/user/Ministrix" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/3d/3d3abd7f8985478c04c99506915ddc0607c48c51_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/745010/capsule_184x69.jpg);" href="/giveaway/q0ohv/mechanic-miner"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/YjhjH/we-were-here-together">We Were Here Together</a><span class="giveaway__heading__thin">(13P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/865360/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229817546" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=865360"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598140020">1 hour</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598050150">23 hours</span> ago by <a class="giveaway__username" href="/user/KlausKleba27">KlausKleba27</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/YjhjH/we-were-here-together/entries"><i class="fa fa-tag"></i> <span>1,598 entries</span></a>
+								<a href="/giveaway/YjhjH/we-were-here-together/comments"><i class="fa fa-comment"></i> <span>8 comments</span></a>
+							</div>
+						</div><a href="/user/KlausKleba27" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/11/112dd91a9f6afdce7cdf60223ceb762c14cd39f2_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/865360/capsule_184x69.jpg);" href="/giveaway/YjhjH/we-were-here-together"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/02r6P/brutal-legend">Brutal Legend</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/225260/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="9120" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=225260"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598140800">1 hour</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597117666">1 week</span> ago by <a class="giveaway__username" href="/user/RoanWoasbi">RoanWoasbi</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/02r6P/brutal-legend/entries"><i class="fa fa-tag"></i> <span>468 entries</span></a>
+								<a href="/giveaway/02r6P/brutal-legend/comments"><i class="fa fa-comment"></i> <span>3 comments</span></a>
+							</div>
+						</div><a href="/user/RoanWoasbi" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a2/a24007dd3862d5f3eac9219e75a5cf3bfc1c69e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/225260/capsule_184x69.jpg);" href="/giveaway/02r6P/brutal-legend"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/dVicc/dead-space">Dead Space</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/17470/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="2072" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=17470"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598141880">2 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598066373">18 hours</span> ago by <a class="giveaway__username" href="/user/Chrystianz">Chrystianz</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/dVicc/dead-space/entries"><i class="fa fa-tag"></i> <span>2,072 entries</span></a>
+								<a href="/giveaway/dVicc/dead-space/comments"><i class="fa fa-comment"></i> <span>12 comments</span></a>
+							</div>
+						</div><a href="/user/Chrystianz" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/17470/capsule_184x69.jpg);" href="/giveaway/dVicc/dead-space"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/3zBg5/take-on-mars">Take On Mars</a><span class="giveaway__heading__thin">(2 Copies)</span><span class="giveaway__heading__thin">(27P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/244030/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="10060" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=244030"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598143620">2 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597610790">6 days</span> ago by <a class="giveaway__username" href="/user/VahidSlayerOfAll">VahidSlayerOfAll</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 1+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/3zBg5/take-on-mars/entries"><i class="fa fa-tag"></i> <span>1,578 entries</span></a>
+								<a href="/giveaway/3zBg5/take-on-mars/comments"><i class="fa fa-comment"></i> <span>7 comments</span></a>
+							</div>
+						</div><a href="/user/VahidSlayerOfAll" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ee/ee31498ec4c56275ab6c22ea48a73fe61901f632_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/244030/capsule_184x69.jpg);" href="/giveaway/3zBg5/take-on-mars"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/nHrmO/rollercoaster-tycoon-deluxe">RollerCoaster Tycoon®: Deluxe</a><span class="giveaway__heading__thin">(6P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/285310/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12260" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=285310"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598143680">2 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597794582">3 days</span> ago by <a class="giveaway__username" href="/user/NeroXVLX">NeroXVLX</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/nHrmO/rollercoaster-tycoon-deluxe/entries"><i class="fa fa-tag"></i> <span>1,568 entries</span></a>
+								<a href="/giveaway/nHrmO/rollercoaster-tycoon-deluxe/comments"><i class="fa fa-comment"></i> <span>7 comments</span></a>
+							</div>
+						</div><a href="/user/NeroXVLX" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/71/715bd6994a9cbb655208bcec2d0ba5690a6a25b4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/285310/capsule_184x69.jpg);" href="/giveaway/nHrmO/rollercoaster-tycoon-deluxe"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/pnk9x/monster-loves-you">Monster Loves You!</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/226740/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="9221" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=226740"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598144400">2 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597766103">4 days</span> ago by <a class="giveaway__username" href="/user/Squatta">Squatta</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 2+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/pnk9x/monster-loves-you/entries"><i class="fa fa-tag"></i> <span>526 entries</span></a>
+								<a href="/giveaway/pnk9x/monster-loves-you/comments"><i class="fa fa-comment"></i> <span>2 comments</span></a>
+							</div>
+						</div><a href="/user/Squatta" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c0/c060523eacf126bcfeac5b51571365bafb21ee47_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/226740/capsule_184x69.jpg);" href="/giveaway/pnk9x/monster-loves-you"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/Mwlce/the-inner-world">The Inner World</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/251430/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="10411" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=251430"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598144400">2 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598066245">18 hours</span> ago by <a class="giveaway__username" href="/user/cs42">cs42</a></div><a href="/giveaway/Mwlce/the-inner-world/region-restrictions" class="giveaway__column--region-restricted" title="Region Restricted"><i class="fa fa-fw fa-globe"></i></a><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 4+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/Mwlce/the-inner-world/entries"><i class="fa fa-tag"></i> <span>53 entries</span></a>
+								<a href="/giveaway/Mwlce/the-inner-world/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/cs42" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/05/059f27b9bdf15392d8b0114d8d106bd430398cf2_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/251430/capsule_184x69.jpg);" href="/giveaway/Mwlce/the-inner-world"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/7rygK/cities-in-motion-2">Cities in Motion 2</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/225420/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="9128" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=225420"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598144880">3 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598065736">18 hours</span> ago by <a class="giveaway__username" href="/user/Chrystianz">Chrystianz</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/7rygK/cities-in-motion-2/entries"><i class="fa fa-tag"></i> <span>769 entries</span></a>
+								<a href="/giveaway/7rygK/cities-in-motion-2/comments"><i class="fa fa-comment"></i> <span>6 comments</span></a>
+							</div>
+						</div><a href="/user/Chrystianz" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82650742502c77c9c0e42e5c17ec3791fa7f50e4_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/225420/capsule_184x69.jpg);" href="/giveaway/7rygK/cities-in-motion-2"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/EXIS2/nightork-adventures-2-legacy-of-chaos">Nightork Adventures 2 - Legacy of Chaos</a><span class="giveaway__heading__thin">(0P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/688630/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4159809998" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=688630"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598146260">3 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597970355">1 day</span> ago by <a class="giveaway__username" href="/user/Eliasprocor">Eliasprocor</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/EXIS2/nightork-adventures-2-legacy-of-chaos/entries"><i class="fa fa-tag"></i> <span>775 entries</span></a>
+								<a href="/giveaway/EXIS2/nightork-adventures-2-legacy-of-chaos/comments"><i class="fa fa-comment"></i> <span>5 comments</span></a>
+							</div>
+						</div><a href="/user/Eliasprocor" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df561396ac3b758a2e16680f2dca76b02def7ef7_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/688630/capsule_184x69.jpg);" href="/giveaway/EXIS2/nightork-adventures-2-legacy-of-chaos"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/gaqrI/rain-world">Rain World</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/312520/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="39495486" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=312520"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598148000">3 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597898853">2 days</span> ago by <a class="giveaway__username" href="/user/saugus49">saugus49</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 3+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/gaqrI/rain-world/entries"><i class="fa fa-tag"></i> <span>971 entries</span></a>
+								<a href="/giveaway/gaqrI/rain-world/comments"><i class="fa fa-comment"></i> <span>4 comments</span></a>
+							</div>
+						</div><a href="/user/saugus49" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/16/161efd21fde764f2f8dcecc08298096088364a56_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/312520/capsule_184x69.jpg);" href="/giveaway/gaqrI/rain-world"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/RZkEM/clusterpuck-99">ClusterPuck 99</a><span class="giveaway__heading__thin">(5P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/337960/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="25340" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=337960"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598148000">3 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597968956">1 day</span> ago by <a class="giveaway__username" href="/user/carneval">carneval</a></div><div class="giveaway__column--contributor-level giveaway__column--contributor-level--negative" title="Contributor Level">Level 3+</div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/RZkEM/clusterpuck-99/entries"><i class="fa fa-tag"></i> <span>350 entries</span></a>
+								<a href="/giveaway/RZkEM/clusterpuck-99/comments"><i class="fa fa-comment"></i> <span>0 comments</span></a>
+							</div>
+						</div><a href="/user/carneval" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/0e/0ebc105edeac28cc1f882765bd09a0916fe4ce13_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/337960/capsule_184x69.jpg);" href="/giveaway/RZkEM/clusterpuck-99"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/hsuPm/devils-hunt">Devil's Hunt</a><span class="giveaway__heading__thin">(15P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/887720/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="4229813164" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=887720"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598149800">4 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598051203">22 hours</span> ago by <a class="giveaway__username" href="/user/gameguy29">gameguy29</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/hsuPm/devils-hunt/entries"><i class="fa fa-tag"></i> <span>1,340 entries</span></a>
+								<a href="/giveaway/hsuPm/devils-hunt/comments"><i class="fa fa-comment"></i> <span>10 comments</span></a>
+							</div>
+						</div><a href="/user/gameguy29" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bd/bdc88a2e6783157aa8be0a3b790d192db1759dc0_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/887720/capsule_184x69.jpg);" href="/giveaway/hsuPm/devils-hunt"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/vcaSD/the-surge">The Surge</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/378540/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="3056522428" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=378540"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598149800">4 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598051282">22 hours</span> ago by <a class="giveaway__username" href="/user/gameguy29">gameguy29</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/vcaSD/the-surge/entries"><i class="fa fa-tag"></i> <span>2,909 entries</span></a>
+								<a href="/giveaway/vcaSD/the-surge/comments"><i class="fa fa-comment"></i> <span>20 comments</span></a>
+							</div>
+						</div><a href="/user/gameguy29" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bd/bdc88a2e6783157aa8be0a3b790d192db1759dc0_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/378540/capsule_184x69.jpg);" href="/giveaway/vcaSD/the-surge"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/n3Q1s/this-war-of-mine">This War of Mine</a><span class="giveaway__heading__thin">(20P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/282070/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="12127" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=282070"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598149800">4 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1598051362">22 hours</span> ago by <a class="giveaway__username" href="/user/gameguy29">gameguy29</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/n3Q1s/this-war-of-mine/entries"><i class="fa fa-tag"></i> <span>2,431 entries</span></a>
+								<a href="/giveaway/n3Q1s/this-war-of-mine/comments"><i class="fa fa-comment"></i> <span>11 comments</span></a>
+							</div>
+						</div><a href="/user/gameguy29" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bd/bdc88a2e6783157aa8be0a3b790d192db1759dc0_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/282070/capsule_184x69.jpg);" href="/giveaway/n3Q1s/this-war-of-mine"></a>
+				</div>
+			</div>
+			<div class="giveaway__row-outer-wrap">
+				<div class="giveaway__row-inner-wrap">
+					<div class="giveaway__summary">
+						<h2 class="giveaway__heading">
+							<a class="giveaway__heading__name" href="/giveaway/bnXhG/badland-game-of-the-year-edition">BADLAND: Game of the Year Edition</a><span class="giveaway__heading__thin">(10P)</span><a class="giveaway__icon" rel="nofollow noopener" target="_blank" href="https://store.steampowered.com/app/269670/"><i class="fa fa-fw fa-steam"></i></a><i data-lightbox-id="3762755" class="giveaway__icon fa fa-fw fa-camera"></i><a class="giveaway__icon" href="/giveaways/search?app=269670"><i class="fa fa-fw fa-search"></i></a>
+						</h2>
+						<div class="giveaway__columns">
+							<div><i class="fa fa-clock-o"></i> <span data-timestamp="1598150160">4 hours</span> remaining</div><div class="giveaway__column--width-fill text-right"><span data-timestamp="1597974004">1 day</span> ago by <a class="giveaway__username" href="/user/legoman258">legoman258</a></div></div>
+							<div class="giveaway__links">
+								<a href="/giveaway/bnXhG/badland-game-of-the-year-edition/entries"><i class="fa fa-tag"></i> <span>1,479 entries</span></a>
+								<a href="/giveaway/bnXhG/badland-game-of-the-year-edition/comments"><i class="fa fa-comment"></i> <span>8 comments</span></a>
+							</div>
+						</div><a href="/user/legoman258" class="giveaway_image_avatar" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bb/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg);"></a><a class="giveaway_image_thumbnail" style="background-image:url(https://steamcdn-a.akamaihd.net/steam/apps/269670/capsule_184x69.jpg);" href="/giveaway/bnXhG/badland-game-of-the-year-edition"></a>
+				</div>
+			</div></div><div class="pagination"><div class="pagination__results">Displaying <strong>1</strong> to <strong>50</strong></div><div class="pagination__navigation"><a data-page-number="1" class="is-selected" href="/giveaways"><span>1</span></a><a data-page-number="2" href="/giveaways/search?page=2"><span>2</span></a> ... <a data-page-number="2" href="/giveaways/search?page=2"><span>Next</span> <i class="fa fa-angle-right"></i></a></div></div>							<div style="padding-top: 65px; padding-bottom: 35px;">
+								<div class="vm-placement" data-id="5ede2d94f732892da8001d8a"></div>
+							</div>
+													<div class="widget-container widget-container--margin-top">
+							<div class="widget-container">
+								<div>
+									<a href="/discussions/deals" class="homepage_heading">Deals</a>
+									<div class="table">
+										<div class="table__rows">
+											
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/Wvat" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a77a27c7f0941c8ade2bde5ed80eeae00ec3f46_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/kGstL/free-itchio-games-and-everything-on-100-sale">[Free] [Itch.io] Games and everything on -100% ...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/kGstL/free-itchio-games-and-everything-on-100-sale">1,571 Comments</a> - Last post <span data-timestamp="1598133629">2 minutes</span> ago by <a class="table__column__secondary-link" href="/user/Wvat">Wvat</a><a class="icon-green table__last-comment-icon" href="/go/comment/zbK3bid"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/sensualshakti" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/35/353d32359d052c5ef605342b426586eed12a35b7_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><i class="icon-heading fa fa-align-left"></i><a class="homepage_table_column_heading" href="/discussion/LKMHY/fanatical-very-positive-bundle-4">[Fanatical] Very Positive Bundle 4 💜</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/LKMHY/fanatical-very-positive-bundle-4">23 Comments</a> - Last post <span data-timestamp="1598132752">17 minutes</span> ago by <a class="table__column__secondary-link" href="/user/schastliv4ik">schastliv4ik</a><a class="icon-green table__last-comment-icon" href="/go/comment/iYEooYD"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/VovanVV1982" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/34/34ead66a97ced93d64e401d3e6db8d853bc17952_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/mr3Ny/injustice-2-legendary-edition-price-bug">Injustice 2 Legendary Edition price bug?</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/mr3Ny/injustice-2-legendary-edition-price-bug">8 Comments</a> - Last post <span data-timestamp="1598132510">21 minutes</span> ago by <a class="table__column__secondary-link" href="/user/artion33">artion33</a><a class="icon-green table__last-comment-icon" href="/go/comment/rOfD6KH"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/sensualshakti" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/35/353d32359d052c5ef605342b426586eed12a35b7_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><i class="icon-heading fa fa-align-left"></i><a class="homepage_table_column_heading" href="/discussion/kVvwR/indiegala-total-flatout-bundle">[IndieGala] Total FlatOut Bundle 💜</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/kVvwR/indiegala-total-flatout-bundle">44 Comments</a> - Last post <span data-timestamp="1598131652">35 minutes</span> ago by <a class="table__column__secondary-link" href="/user/Tzaar">Tzaar</a><a class="icon-green table__last-comment-icon" href="/go/comment/YlCBO8p"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/MetalfanBlackness" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ed/eda1d2992ddf3821e4cba29e1951a90705c15db9_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/tKiHv/amazon-prime-gaming-current-and-past-free-games-updated-2020-08-22-formally-called-twitch-prime">[Amazon Prime Gaming] Current and past free gam...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/tKiHv/amazon-prime-gaming-current-and-past-free-games-updated-2020-08-22-formally-called-twitch-prime">69 Comments</a> - Last post <span data-timestamp="1598128636">1 hour</span> ago by <a class="table__column__secondary-link" href="/user/FateOfOne">FateOfOne</a><a class="icon-green table__last-comment-icon" href="/go/comment/lBa4Rln"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/VovanVV1982" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/34/34ead66a97ced93d64e401d3e6db8d853bc17952_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/rjCWd/free-steam-storecrazy-steam-bros-2-home-darkness-escape">[free, steam store]Crazy Steam Bros 2, Home Dar...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/rjCWd/free-steam-storecrazy-steam-bros-2-home-darkness-escape">6 Comments</a> - Last post <span data-timestamp="1598128578">1 hour</span> ago by <a class="table__column__secondary-link" href="/user/krakxx">krakxx</a><a class="icon-green table__last-comment-icon" href="/go/comment/PIVsxGF"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/Garandro" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d6/d63c6dc70acb1381c457654f954d9fb16ac181fc_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/rSWOI/lootboy-codes-for-coinsdiamonds">[Lootboy] Codes for coins/diamonds</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/rSWOI/lootboy-codes-for-coinsdiamonds">20,815 Comments</a> - Last post <span data-timestamp="1598128432">1 hour</span> ago by <a class="table__column__secondary-link" href="/user/ZeTriUm">ZeTriUm</a><a class="icon-green table__last-comment-icon" href="/go/comment/R8BbcwQ"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/Polaris3" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a2/a23c10f1647f4b9d30c3d3820d8acea6fb2375cb_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/dnb7y/forza-horizon-3-and-4-and-all-dlc-for-5949">Forza Horizon 3 and 4 and all DLC for 59.49€</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/dnb7y/forza-horizon-3-and-4-and-all-dlc-for-5949">59 Comments</a> - Last post <span data-timestamp="1598125560">2 hours</span> ago by <a class="table__column__secondary-link" href="/user/DeltaBladeX">DeltaBladeX</a><a class="icon-green table__last-comment-icon" href="/go/comment/3yx2oDP"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/nhahtdh" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2b/2bbb641aef49ff580faefce7405d27a759cb9ac2_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/h6Mlc/fanatical-2020-08-2223-dreamcast-collection-87-off-for-4">[Fanatical] [2020-08-22/23] Dreamcast Collectio...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/h6Mlc/fanatical-2020-08-2223-dreamcast-collection-87-off-for-4">2,584 Comments</a> - Last post <span data-timestamp="1598114489">5 hours</span> ago by <a class="table__column__secondary-link" href="/user/nhahtdh">nhahtdh</a><a class="icon-green table__last-comment-icon" href="/go/comment/unX6HtY"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/spookypannkaka" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/59/59483e9280653295a7f22839078690acc9de444d_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/h9y9h/free-game-news-and-useful-link-collection">Free Game News and Useful Link Collection</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/h9y9h/free-game-news-and-useful-link-collection">1,227 Comments</a> - Last post <span data-timestamp="1598111587">6 hours</span> ago by <a class="table__column__secondary-link" href="/user/tidhros">tidhros</a><a class="icon-green table__last-comment-icon" href="/go/comment/Lgn476D"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+																							</div>
+									</div>
+								</div>
+							</div>
+							<div class="widget-container">
+								<div>
+									<a href="/discussions" class="homepage_heading">Discussions</a>
+									<div class="table">
+										<div class="table__rows">
+											
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/xSPYROx" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b6/b6dc135e256a6d66f1285879279dddd8a573b1aa_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/6kouS/my-account-been-hacked">my account been hacked!</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/6kouS/my-account-been-hacked">42 Comments</a> - Last post <span data-timestamp="1598133459">5 minutes</span> ago by <a class="table__column__secondary-link" href="/user/xSPYROx">xSPYROx</a><a class="icon-green table__last-comment-icon" href="/go/comment/NjQbMIe"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/twelfthdr" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ef/ef84609a870939437a9fc3025d9e7c8a5f72447c_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><i class="icon-heading fa fa-align-left"></i><a class="homepage_table_column_heading" href="/discussion/VcfYj/1660-ti-decent-card">1660 ti - decent card?</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/VcfYj/1660-ti-decent-card">11 Comments</a> - Last post <span data-timestamp="1598133345">7 minutes</span> ago by <a class="table__column__secondary-link" href="/user/RaisinCookiesAreGood">RaisinCookiesAreGood</a><a class="icon-green table__last-comment-icon" href="/go/comment/S0AMCil"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/Masafor" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/21/21e94962b46ce8c22e8f8c59e9bac81400430007_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/3DizQ/belated-3rd-cakeday-open-till-27-august-4-pm-mez">Belated 3rd Cakeday | Open till 27. August, 4 P...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/3DizQ/belated-3rd-cakeday-open-till-27-august-4-pm-mez">58 Comments</a> - Last post <span data-timestamp="1598133283">8 minutes</span> ago by <a class="table__column__secondary-link" href="/user/RaisinCookiesAreGood">RaisinCookiesAreGood</a><a class="icon-green table__last-comment-icon" href="/go/comment/VdeMatX"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/thekuribo" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/72/7242fe76ba249e3859b25628a53456e16e5ecfe6_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/NIHP5/guess-the-game-3-screenshot-boogaloo">Guess the Game 3: Screenshot Boogaloo</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/NIHP5/guess-the-game-3-screenshot-boogaloo">5,438 Comments</a> - Last post <span data-timestamp="1598133212">9 minutes</span> ago by <a class="table__column__secondary-link" href="/user/LagiNatoRRR">LagiNatoRRR</a><a class="icon-green table__last-comment-icon" href="/go/comment/4xpFzcd"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/samwise84" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/91/91abcf1a3e2c7de5cfc43bcf967ee98b57db3ce3_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><i class="icon-heading fa fa-align-left"></i><a class="homepage_table_column_heading" href="/discussion/MhWfR/august-is-a-play-a-game-you-won-on-steamgifts-month-mouses-favourite-national-days">August is a &quot;play a game you won on Steamgifts&quot;...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/MhWfR/august-is-a-play-a-game-you-won-on-steamgifts-month-mouses-favourite-national-days">367 Comments</a> - Last post <span data-timestamp="1598133021">13 minutes</span> ago by <a class="table__column__secondary-link" href="/user/krol7">krol7</a><a class="icon-green table__last-comment-icon" href="/go/comment/NEDBslv"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/starporcasa" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/15/156ce6666415e454a073ffd1ebadd4eba6eb0ca6_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/1jMl9/a-jigi-a-day">A Jigi a day...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/1jMl9/a-jigi-a-day">575 Comments</a> - Last post <span data-timestamp="1598131794">33 minutes</span> ago by <a class="table__column__secondary-link" href="/user/Gellax">Gellax</a><a class="icon-green table__last-comment-icon" href="/go/comment/U74S62J"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/Tzell" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a5/a5d31abf30cd7556aaa3918a5bee62aa3c867c6d_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/hK2kQ/orphan-keys-drop-thread">Orphan keys drop thread</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/hK2kQ/orphan-keys-drop-thread">11,624 Comments</a> - Last post <span data-timestamp="1598131702">35 minutes</span> ago by <a class="table__column__secondary-link" href="/user/nozoki4N4">nozoki4N4</a><a class="icon-green table__last-comment-icon" href="/go/comment/2KOfZX5"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/NateSCC" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fc/fcfa28a8522ed05ff21ada49371b53f0ada76e8d_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/7ukb9/20xx-edition-updated-august-22">💙 20xx Edition (Updated August 22)</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/7ukb9/20xx-edition-updated-august-22">1,495 Comments</a> - Last post <span data-timestamp="1598131679">35 minutes</span> ago by <a class="table__column__secondary-link" href="/user/Riil">Riil</a><a class="icon-green table__last-comment-icon" href="/go/comment/33LpsDk"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/jm" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7d/7d4f243e387f645899d1f64c789c9deaf05b5b42_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/APhTk/vr-train-70-x-3-19-x-4-1-x-5-until-friday-evening-28-aug">VR Train [70 x 3+, 19 x 4+, 1 x 5+] (until Frid...</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/APhTk/vr-train-70-x-3-19-x-4-1-x-5-until-friday-evening-28-aug">0 Comments</a> - Created <span data-timestamp="1598131092">45 minutes</span> ago by <a class="table__column__secondary-link" href="/user/jm">jm</a></p>
+																</div>
+															</div>
+														</div>
+													
+														<div class="table__row-outer-wrap" style="padding: 12px 0;">
+															<div class="table__row-inner-wrap">
+																<div>
+																	<a class="table_image_avatar" href="/user/alfredwallace" style="background-image:url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a151c7fc7397a6d0e61e307ca53524842254ed68_medium.jpg);"></a>
+																</div>
+																<div class="table__column--width-fill">
+																	<h3 style="margin-bottom: 2px;"><a class="homepage_table_column_heading" href="/discussion/qhUei/elite-one-giveaways">⭐ Elite One Giveaways ⭐</a></h3>
+																	<p><a class="table__column__secondary-link" href="/discussion/qhUei/elite-one-giveaways">401 Comments</a> - Last post <span data-timestamp="1598129510">1 hour</span> ago by <a class="table__column__secondary-link" href="/user/yoshirules">yoshirules</a><a class="icon-green table__last-comment-icon" href="/go/comment/soInRQ3"><i class="fa fa-chevron-circle-right"></i></a></p>
+																</div>
+															</div>
+														</div>
+																							</div>
+									</div>
+								</div>
+							</div>
+						</div>
+																</div>
+			</div>
+		</div>
+	</div>
+		<div class="footer__outer-wrap">
+			<div class="footer__inner-wrap">
+				<div>
+					<div>Powered by <a target="_blank" rel="nofollow noopener" href="https://store.steampowered.com">Steam</a>.</div>
+				</div>
+				<div>
+					<div><i class="fa fa-folder-open"></i> <a href="/archive">Archive</a></div>
+										<div><i class="fa fa-wrench"></i> <a href="/roles">Roles</a></div>
+					<div><i class="fa fa-user"></i> <a href="/users">Users</a></div>
+					<div><i class="fa fa-steam"></i> <a rel="nofollow noopener" target="_blank" href="https://steamcommunity.com/groups/steamgifts">Steam Group</a></div>
+					<div><i class="fa fa-comment"></i> <a href="steam://friends/joinchat/103582791432125620">Chat</a></div>
+					<div><i class="fa fa-book"></i> <a href="/legal/privacy-policy">Privacy Policy</a></div>
+					<div><i class="fa fa-support"></i> <a href="/legal/cookie-policy">Cookie Policy</a></div>
+					<div><i class="fa fa-gavel"></i> <a href="/legal/terms-of-service">Terms of Service</a></div>
+					<div><i class="fa fa-bullhorn"></i> <a href="mailto:advertising@steamgifts.com">Advertise</a></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
