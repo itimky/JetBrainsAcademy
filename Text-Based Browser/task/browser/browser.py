@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+from bs4 import BeautifulSoup
 
 
 class Browser:
@@ -30,7 +31,7 @@ class Browser:
 
     def check_for_cache(self, file_name):
         try:
-            file = open(self.dir + file_name, 'r')
+            file = open(self.dir + file_name, 'r', encoding='utf-8')
             cache = file.read()
             file.close()
             return cache
@@ -45,7 +46,7 @@ class Browser:
     def short_url(self, url):
         short_url = url.replace('https://', '')
         short_url = short_url.replace('www.', '')
-        short_url = short_url.split('.')[0]
+        short_url = short_url.replace('.', '_')
         return short_url
 
     def show(self, url):
@@ -53,9 +54,9 @@ class Browser:
             if not url.startswith('https://'):
                 url = 'https://' + url
             r = requests.get(url)
-            self.save_to_dir(self.short_url(url), r.text)
+            self.save_to_dir(self.short_url(url), self.soupify(r))
             self.history.append(self.short_url(url))
-            return r.text
+            return self.soupify(r)
         else:
             if url == 'exit':
                 sys.exit()
@@ -69,6 +70,14 @@ class Browser:
                 return cache
             else:
                 return 'error, wrong url without dot'
+
+    def soupify(self, request):
+        soup = BeautifulSoup(request.content, 'html.parser')
+        paragraphs = soup.find_all(['title', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li'])
+        result = ''
+        for p in paragraphs:
+            result += p.text + '\n'
+        return result
 
     def start(self):
         while True:
