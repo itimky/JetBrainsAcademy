@@ -7,9 +7,9 @@
 <p>At this stage, your program should: </p>
 
 <ol>
-	<li>Check if the user has entered a valid URL. It must contain at least one dot, for example, <code class="java">bloomberg.com</code>. If the URL is incorrect, the browser should output an error message (it should contain the word <code class="java">error</code>) and wait for another URL.</li>
 	<li>Accept a command-line argument which is a directory for saved tabs. For example, if the argument is <code class="java">dir</code>, then you need to create a folder with the name <code class="java">dir</code> and save all web pages that the user downloads in this folder.</li>
-	<li>Save this web page in a file. After that, the user needs to have a simple way to see the saved web page by typing "bloomberg". The rule is simple: you just need to remove the last dot and everything that comes after it. <code class="java">bloomberg.com</code> becomes <code class="java">bloomberg</code>, <code class="java">en.wikipedia.org</code> becomes <code class="java">en.wikipedia</code>.</li>
+	<li>Check if the user has entered a valid URL. It must contain at least one dot, for example, <code class="java">bloomberg.com</code>. If the URL is incorrect, the browser should output an error message (it should contain the word <code class="java">error</code>) and wait for another URL.</li>
+	<li>Save the web page to a file in the aforementioned directory. The name of the file should correspond to the web page name. To get the name of the file, remove the last dot and everything that comes after it. This way, the file for the page <code class="java">bloomberg.com</code> will be named<code class="java">bloomberg</code>, and the file for <code class="java">en.wikipedia.org</code> will be named <code class="java">en.wikipedia</code>.</li>
 </ol>
 
 <p>Check out a tutorial to learn how to <a target="_blank" href="https://www.techbeamers.com/read-write-file-in-python/" rel="noopener noreferrer nofollow">work with files</a> and <a target="_blank" href="https://thispointer.com/how-to-create-a-directory-in-python/" rel="noopener noreferrer nofollow">create folders</a> in Python.</p>

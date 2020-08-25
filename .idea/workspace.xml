@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/d.o.c.s._.p.y.t.h.o.n._.o.r.g" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/docs.python" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/docs_python_org" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/nytimes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/s.t.e.a.m.g.i.f.t.s._.c.o.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/google_com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/lesson-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/lesson-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/google" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/steamgifts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/steamgifts_com" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/task/browser/tmp/steamgifts_com" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/task/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/task/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,22 +105,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1700" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598101657562" />
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom" timestamp="1598218106832">
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom" timestamp="1598395533144">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598218106832" />
-    <state width="1234" height="398" key="GridCell.Tab.0.center" timestamp="1598218106831">
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598395533144" />
+    <state width="1234" height="398" key="GridCell.Tab.0.center" timestamp="1598395533144">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598218106831" />
-    <state width="1234" height="398" key="GridCell.Tab.0.left" timestamp="1598218106831">
+    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598395533144" />
+    <state width="1234" height="398" key="GridCell.Tab.0.left" timestamp="1598395533144">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598218106831" />
-    <state width="1234" height="398" key="GridCell.Tab.0.right" timestamp="1598218106832">
+    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598395533144" />
+    <state width="1234" height="398" key="GridCell.Tab.0.right" timestamp="1598395533144">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598218106832" />
+    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598395533144" />
     <state x="1512" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598133859976">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

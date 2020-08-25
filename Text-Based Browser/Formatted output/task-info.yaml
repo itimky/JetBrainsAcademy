@@ -46,12 +46,6 @@ files:
     \            return 'error, wrong url without dot'\n\n\nsafari = Browser()\nwhile\
     \ True:\n    print(safari.show(input()))\n"
   learner_created: false
-- name: tb_tabs/nytimes
-  visible: true
-  learner_created: false
-- name: tb_tabs/bloomberg
-  visible: true
-  learner_created: false
 - name: tests.py
   visible: false
   text: |
@@ -162,6 +156,19 @@ files:
 
     TextBasedBrowserTest('browser.browser').run_tests()
   learner_created: false
+- name: browser/tmp/steamgifts_com
+  visible: true
+  learner_created: true
+- name: browser/tmp/google_com
+  visible: true
+  learner_created: true
+- name: browser/tmp/docs_python_org
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/79/stages/441/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/79/stages/441/implement">JetBrains
+    Academy</a>
+  time: Tue, 25 Aug 2020 22:32:33 UTC
 record: -1

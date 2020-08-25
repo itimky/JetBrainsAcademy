@@ -2,6 +2,7 @@ import os
 import sys
 import requests
 from bs4 import BeautifulSoup
+from colorama import Fore, Style
 
 
 class Browser:
@@ -73,10 +74,14 @@ class Browser:
 
     def soupify(self, request):
         soup = BeautifulSoup(request.content, 'html.parser')
-        paragraphs = soup.find_all(['title', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li'])
+        paragraphs = soup.find_all(['title', 'a', 'p', 'h'])
         result = ''
         for p in paragraphs:
-            result += p.text + '\n'
+            print(p.name, p)
+            if p.name == 'a':
+                result += Fore.BLUE + p.text + Style.RESET_ALL + '\n'
+            else:
+                result += p.text + '\n'
         return result
 
     def start(self):
