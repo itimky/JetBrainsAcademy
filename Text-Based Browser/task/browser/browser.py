@@ -77,11 +77,10 @@ class Browser:
         paragraphs = soup.find_all(['title', 'a', 'p', 'h'])
         result = ''
         for p in paragraphs:
-            print(p.name, p)
             if p.name == 'a':
-                result += Fore.BLUE + p.text + Style.RESET_ALL + '\n'
+                result += Fore.BLUE + p.text.strip() + Style.RESET_ALL + '\n'
             else:
-                result += p.text + '\n'
+                result += p.text.strip() + '\n'
         return result
 
     def start(self):
