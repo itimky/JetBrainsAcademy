@@ -1,5 +1,5 @@
-requests==2.22.0
-beautifulsoup4==4.8.0
-colorama==0.4.1
-https://github.com/hyperskill/hs-test-python/archive/v2.0.1.tar.gz
+requests==2.24.0
+beautifulsoup4==4.9.1
+colorama==0.4.3
+https://github.com/hyperskill/hs-test-python/archive/release.tar.gz
 

@@ -12,9 +12,9 @@
 
 <h2 style="text-align: center;">Objectives</h2>
 
-<p>At this stage, you need to cut all content outside of these tags and output what remains. No more <code class="java">&lt;div&gt;, &lt;script&gt;, &lt;p&gt;</code> and so on, just text! You need to show only the content of a limited list of tags (<code class="java">&lt;p&gt;</code>, headers, <code class="java">&lt;a&gt;</code> and <code class="java">&lt;ul&gt;</code>, <code class="java">&lt;ol&gt;</code>, <code class="java">&lt;li&gt;</code>) without the tags themselves.</p>
+<p>At this stage, instead of outputting and saving to the file raw HTML, you need to parse the web page, cut all content outside of the HTML tags, and output and save to the file what remains. Strip the text of all HTML tags: no more <code class="java">&lt;div&gt;, &lt;script&gt;, &lt;p&gt;</code> and so on, just a pure text that everybody can read easily! You need to show only the content of a limited list of tags (<code class="java">&lt;p&gt;</code>, headers, <code class="java">&lt;a&gt;</code> and <code class="java">&lt;ul&gt;</code>, <code class="java">&lt;ol&gt;</code>, <code class="java">&lt;li&gt;</code>) without the tags themselves.</p>
 
-<p>Use <code class="java">beautifulsoup4</code> library for solving this, it is installed in your project already. Feel free to get curious and browse through some more information about <a target="_blank" href="https://www.dataquest.io/blog/web-scraping-tutorial-python/" rel="noopener noreferrer nofollow">parsing</a>!</p>
+<p>Use <code class="java">beautifulsoup4</code> library for solving this, it is installed in your project already. To pass the test, it's enough to simply <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" rel="noopener noreferrer nofollow">find</a> the function allowing us to extract the human-readable text from a web page. However, feel free to get curious and browse through some more information about <a target="_blank" href="https://www.dataquest.io/blog/web-scraping-tutorial-python/" rel="noopener noreferrer nofollow">parsing</a>! </p>
 
 <h2 style="text-align: center;">Example</h2>
 

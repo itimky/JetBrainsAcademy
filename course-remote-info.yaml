@@ -6,16 +6,22 @@ hyperskill_project:
 stages:
 - id: 436
   step: 7210
+  is_completed: true
 - id: 437
   step: 7211
+  is_completed: true
 - id: 438
   step: 7212
+  is_completed: true
 - id: 439
   step: 7213
+  is_completed: true
 - id: 440
   step: 7214
+  is_completed: true
 - id: 441
   step: 7215
+  is_completed: true
 topics:
   0:
   - title: Introduction to Python
@@ -28,41 +34,33 @@ topics:
     theory_id: 5879
   - title: Comments
     theory_id: 6081
-  - title: Basic data types
-    theory_id: 5852
-  - title: Variables
-    theory_id: 5859
-  - title: Integer arithmetic
-    theory_id: 5865
   - title: Naming variables
     theory_id: 5885
   - title: Taking input
     theory_id: 5913
   - title: Program with numbers
     theory_id: 5872
-  - title: Comparisons
-    theory_id: 5920
   - title: List
     theory_id: 5979
   - title: If statement
     theory_id: 5953
   - title: For loop
     theory_id: 6065
+  - title: Basic data types
+    theory_id: 5852
+  - title: Integer arithmetic
+    theory_id: 5865
+  - title: Variables
+    theory_id: 5859
   - title: Boolean logic
     theory_id: 6025
+  - title: Comparisons
+    theory_id: 5920
   1:
   - title: Files
     theory_id: 6989
   - title: IDE
     theory_id: 3805
-  - title: Quotes and multi-line strings
-    theory_id: 5814
-  - title: Type casting
-    theory_id: 6224
-  - title: Escape sequences
-    theory_id: 7130
-  - title: String formatting
-    theory_id: 6037
   - title: Indexes
     theory_id: 6189
   - title: Invoking a function
@@ -73,10 +71,6 @@ topics:
     theory_id: 7248
   - title: Operations with list
     theory_id: 6031
-  - title: Basic string methods
-    theory_id: 6842
-  - title: Split and join
-    theory_id: 6972
   - title: Load module
     theory_id: 6019
   - title: Files in Python
@@ -97,6 +91,18 @@ topics:
     theory_id: 7981
   - title: PyCharm basics
     theory_id: 6193
+  - title: Quotes and multi-line strings
+    theory_id: 5814
+  - title: Escape sequences
+    theory_id: 7130
+  - title: Type casting
+    theory_id: 6224
+  - title: String formatting
+    theory_id: 6037
+  - title: Basic string methods
+    theory_id: 6842
+  - title: Split and join
+    theory_id: 6972
   2:
   - title: Computer algorithms
     theory_id: 4953
@@ -108,8 +114,6 @@ topics:
     theory_id: 5161
   - title: Stack
     theory_id: 5252
-  - title: Computer programming
-    theory_id: 8739
   - title: Intro to computational thinking
     theory_id: 8742
   - title: Components of computational thinking
@@ -154,7 +158,5 @@ topics:
   4:
   - title: XML
     theory_id: 6901
-  - title: 'Requests: manipulating data'
-    theory_id: 8681
   - title: BeautifulSoup
     theory_id: 10209
