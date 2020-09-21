@@ -58,10 +58,10 @@ def medium(state):
     xo = x_or_o(state)
     ox = 'X' if xo == 'O' else 'O'
     if is_winning(state, xo):
-        state[is_winning(state, xo)] = xo
+        state[int(is_winning(state, xo))] = xo
         return state
     elif is_winning(state, ox):
-        state[is_winning(state, ox)] = xo
+        state[int(is_winning(state, ox))] = xo
         return state
     empty_cell_list = [i for i, item in enumerate(state) if item == ' ']
     state[random.choice(empty_cell_list)] = xo
@@ -69,15 +69,44 @@ def medium(state):
     
 
 def hard(state):
-    print('pass')
-    
+    pass
+
+
+def min_max(state, sum_=0):
+    xo = x_or_o(state)
+    ox = 'X' if xo == 'O' else 'O'
+    win = min_max_win(state, xo)
+    if win:
+        return win
+    new_state = state[:]
+    for idx in empty_indexes(state):
+        new_state[idx] = xo
+        sum_ += min_max(new_state, sum_)
+        print(sum_)
+        new_state[idx] = ' '
+        
+
+def min_max_win(state, xo):
+    for pos in MEANINGFUL_POSITIONS:
+        if pos[0] == pos[1] == pos[2]:
+            if pos[0] == xo:
+                return 10
+            elif pos[0] != ' ':
+                return -10
+            return False
+
+
+def empty_indexes(state):
+    return [i for i, idx in enumerate(state) if idx == ' ']
+
 
 def is_winning(state, xo):
     for pos in MEANINGFUL_POSITIONS:
         line = state[pos[0]] + state[pos[1]] + state[pos[2]]
         if line.count(xo) == 2 and ' ' in line:
-            return pos[line.index(' ')]
-    return False
+            print('ага', pos[line.index(' ')])
+            return str(pos[line.index(' ')])
+    return 
     
 
 def user(state):
@@ -104,11 +133,13 @@ def main():
             while True:
                 state = possible_players[command[1]](state)
                 print_field(state)
+                print()
                 if state_analyze(state) != 'Game not finished':
                     print(state_analyze(state))
                     break
                 state = possible_players[command[2]](state)
                 print_field(state)
+                print()
                 if state_analyze(state) != 'Game not finished':
                     print(state_analyze(state))
                     break
@@ -117,5 +148,5 @@ def main():
         else:
             print('Bad parameters!')
 
-
+print(min_max(['X','X',' ',' ',' ',' ',' ',' ']))
 main()
