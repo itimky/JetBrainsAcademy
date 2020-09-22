@@ -69,30 +69,47 @@ def medium(state):
     
 
 def hard(state):
-    pass
-
-
-def min_max(state, sum_=0):
+    print('Making move level "hard"')
     xo = x_or_o(state)
-    ox = 'X' if xo == 'O' else 'O'
-    win = min_max_win(state, xo)
+    new_state = state[:]
+    moves = {}
+    for idx in empty_indexes(state):
+        new_state[idx] = xo
+        moves[idx] = min_max(new_state, xo)
+        new_state[idx] = ' '
+    best_move = [-10, -10]
+    for move in moves:
+        if moves[move] > best_move[1]:
+            best_move[0] = move
+            best_move[1] = moves[move]
+    print(moves, best_move)
+    state[best_move[0]] = xo
+    return state
+
+
+def min_max(state, sign):
+    xo = x_or_o(state)
+    if len(empty_indexes(state)) == 0:
+        return 0
+    win = min_max_win(state, sign)
     if win:
         return win
+    scores = []
     new_state = state[:]
     for idx in empty_indexes(state):
         new_state[idx] = xo
-        sum_ += min_max(new_state, sum_)
-        print(sum_)
+        scores.append(min_max(new_state, sign))
         new_state[idx] = ' '
-        
+    return max(scores) if xo == sign else min(scores)
 
-def min_max_win(state, xo):
+
+def min_max_win(state, sign):
     for pos in MEANINGFUL_POSITIONS:
-        if pos[0] == pos[1] == pos[2]:
-            if pos[0] == xo:
-                return 10
-            elif pos[0] != ' ':
-                return -10
+        if state[pos[0]] == state[pos[1]] == state[pos[2]]:
+            if state[pos[0]] == sign:
+                return 1
+            elif state[pos[0]] != ' ':
+                return -1
             return False
 
 
@@ -148,5 +165,5 @@ def main():
         else:
             print('Bad parameters!')
 
-print(min_max(['X','X',' ',' ',' ',' ',' ',' ']))
 main()
+
