@@ -1,19 +1,19 @@
 <h2 style="text-align: center;">Description</h2>
 
-<p>Every browser has a “back” button. If the user presses this button, the browser shows the previous web page. This feature can be realized using a stack. You save the pages visited by the user: google, wikipedia, bloomberg, but when the user types <code class="java">back</code>, you will see the last visited pages in the reverse order: wikipedia, google. </p>
+<p>Every browser has a “back” button. If the user presses this button, the browser shows the previous web page. This feature can be implemented using a stack. This will allow the browser to save the pages visited by the user – google, wikipedia, bloomberg, … – but when the user types <code class="java">back</code>, you will see the pages in the reverse order – … bloomberg, wikipedia, google.</p>
 
 <h2 style="text-align: center;">Objectives</h2>
 
-<p>The functionality of the program is the same as in the previous task, but now the program has a new feature:</p>
+<p>The result of this task is the same as in the previous one, but now the program has a new feature:</p>
 
 <ol>
-	<li>The program should show the previous web page saved to a file if the user's input is the string <code class="java">back</code>. Note that the <em>last </em>page you saved to a file is considered to be the <em>current </em>page, and when input is the string <code class="java">back</code>, you should output the page that was <em>before </em>the current one. You can implement a stack to do this (but the current page shouldn't be put in the stack). For example, if the user inputs <code class="java">bloomberg.com</code>, then <code class="java">nytimes.com</code>, then <code class="java">back</code>, after the command <code class="java">back</code> the content of the web page <code class="java">bloomberg.com</code> should be printed. </li>
-	<li>If there are no more pages in the browser history, don’t output anything. For example, if the first input of the user is the string <code class="java">back</code>, your program shouldn't output anything. </li>
+	<li>The program should show the previous web page saved to a file if the user types <code class="java">back</code>. Note that the last<em> </em>page you saved to a file is actually the current<em> </em>page; when the user types <code class="java">back</code>, you should output the page that was before<em> </em>the current one. You can implement a stack to do this, but note that the current page should not be in that stack. For example, if the user inputs <code class="java">bloomberg.com</code>, then <code class="java">nytimes.com</code>, and then <code class="java">back</code>, the user should see the content of <code class="java">bloomberg.com</code>. </li>
+	<li>If there are no more pages in the browser history, don’t output anything. For example, if the first input of the user is the string <code class="java">back</code>, your program shouldn't output anything.</li>
 </ol>
 
 <h2 style="text-align: center;">Example</h2>
 
-<p>The greater-than symbol followed by space (<code class="java">&gt; </code>) represents the user input. Notice that it's not the part of the input.</p>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
 
 <pre><code class="language-no-highlight">&gt; python browser.py dir-for-files
 &gt; bloomberg.com

@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" afterDir="false" />
@@ -39,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -71,7 +69,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="" />
