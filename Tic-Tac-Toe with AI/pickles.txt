@@ -3162,3 +3162,4 @@ O,O, ,X, ,O, ,X,X;6
 X,X, ,O, ,X, ,O,O;2
  ,X,O,X,X, , ,O,O;5
 X, ,O,O, ,X,O,X,X;4
+X,O,X, ,O,X,X,O,O;3
