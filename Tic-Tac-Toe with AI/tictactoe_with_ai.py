@@ -174,6 +174,19 @@ class TicTacToe:
     def start(self):
         possible_players = {'user': self.user, 'easy': self.easy,
                             'medium': self.medium, 'hard': self.hard}
+        print('''
+possible commands:
+"start <player1> <player2>"
+"exit"
+
+possible players:
+"user" "easy" "medium" "hard"
+
+coordinates are in form "x y"
+"x" - columns, "y" - rows
+"1 1" - left bottom corner     
+              ''')
+        self.print_state()
         while True:
             self.state = [' '] * 9
             self.turn = 'X'
