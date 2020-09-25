@@ -4,18 +4,19 @@ MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (
 
 
 def print_field(state):
-    print('---------')
-    print('|', state[0], state[1], state[2], '|')
-    print('|', state[3], state[4], state[5], '|')
-    print('|', state[6], state[7], state[8], '|')
-    print('---------')
+    print('y^--------')
+    print('3|', state[0], state[1], state[2], '|')
+    print('2|', state[3], state[4], state[5], '|')
+    print('1|', state[6], state[7], state[8], '|')
+    print(' -------->x')
+    print('   1 2 3')
     
 
 def position(coordinates):
     return 9 - 3 * (int(coordinates[1]) - 1) - (4 - int(coordinates[0]))
     
 
-def state_analyze(state):
+def state_analyze(state, command):
     wins = ''
     for pos in MEANINGFUL_POSITIONS:
         if state[pos[0]] == state[pos[1]] == state[pos[2]] and state[pos[0]] != ' ':
@@ -25,9 +26,9 @@ def state_analyze(state):
     elif wins == '' and ' ' not in state:
         return 'Draw'
     elif wins == 'X':
-        return 'X wins'
+        return f'{command[1] + " AI" if command[1] != "user" else ""} wins'
     elif wins == 'O':
-        return 'O wins'
+        return f'{command[2] + " AI" if command[2] != "user" else ""} wins'
     else:
         return 'Wrong state!'
         
@@ -47,15 +48,16 @@ def validate_input(x_y, state):
     
 
 def easy(state):
-    print('Making move level "easy"')
+    xo = x_or_o(state)
+    print(f'Making move level "easy" with "{xo}"')
     empty_cell_list = [i for i, item in enumerate(state) if item == ' ']
-    state[random.choice(empty_cell_list)] = x_or_o(state)
+    state[random.choice(empty_cell_list)] = xo
     return state
 
 
 def medium(state):
-    print('Making move level "medium"')
     xo = x_or_o(state)
+    print(f'Making move level "medium" with "{xo}"')
     ox = 'X' if xo == 'O' else 'O'
     if is_winning(state, xo):
         state[int(is_winning(state, xo))] = xo
@@ -69,31 +71,37 @@ def medium(state):
     
 
 def hard(state):
-    print('Making move level "hard"')
     xo = x_or_o(state)
-    new_state = state[:]
-    moves = {}
-    for idx in empty_indexes(state):
-        new_state[idx] = xo
-        moves[idx] = min_max(new_state, xo)
-        new_state[idx] = ' '
-    best_move = [-10, -10]
-    for move in moves:
-        if moves[move] > best_move[1]:
-            best_move[0] = move
-            best_move[1] = moves[move]
-    print(moves, best_move)
-    state[best_move[0]] = xo
+    print(f'Making move level "hard" with "{xo}"')
+    with open('pickles.txt', 'a+') as file:
+        file.seek(0, 0)
+        for line in file:
+            if ','.join(str(i) for i in state) in line:
+                best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
+                file.seek(0, 2)
+                break
+        else:
+            new_state = state[:]
+            moves = [' '] * 9
+            for idx in empty_indexes(state):
+                new_state[idx] = xo
+                moves[idx] = min_max(new_state, xo)
+                new_state[idx] = ' '
+            best_moves = [i for i, n in enumerate(moves) if (n == 1
+                                                             or n == 0 and 1 not in moves
+                                                             or n == -1 and 1 not in moves and 0 not in moves)]
+            file.write(','.join(str(i) for i in state) + ';' + ','.join(str(i) for i in best_moves) + '\n')
+    state[random.choice(best_moves)] = xo
     return state
 
 
 def min_max(state, sign):
     xo = x_or_o(state)
-    if len(empty_indexes(state)) == 0:
-        return 0
     win = min_max_win(state, sign)
     if win:
         return win
+    elif len(empty_indexes(state)) == 0:
+        return 0
     scores = []
     new_state = state[:]
     for idx in empty_indexes(state):
@@ -110,7 +118,7 @@ def min_max_win(state, sign):
                 return 1
             elif state[pos[0]] != ' ':
                 return -1
-            return False
+    return False
 
 
 def empty_indexes(state):
@@ -121,14 +129,14 @@ def is_winning(state, xo):
     for pos in MEANINGFUL_POSITIONS:
         line = state[pos[0]] + state[pos[1]] + state[pos[2]]
         if line.count(xo) == 2 and ' ' in line:
-            print('ага', pos[line.index(' ')])
             return str(pos[line.index(' ')])
     return 
     
 
 def user(state):
+    xo = x_or_o(state)
     while True:
-        x_y = input('Enter the coordinates: ').split()
+        x_y = input(f'Enter the coordinates for "{xo}" (x y): ').split()
         if validate_input(x_y, state):
             state[position(x_y)] = x_or_o(state)
             return state
@@ -151,19 +159,20 @@ def main():
                 state = possible_players[command[1]](state)
                 print_field(state)
                 print()
-                if state_analyze(state) != 'Game not finished':
-                    print(state_analyze(state))
+                if state_analyze(state, command) != 'Game not finished':
+                    print(state_analyze(state, command) + '\n')
                     break
                 state = possible_players[command[2]](state)
                 print_field(state)
                 print()
-                if state_analyze(state) != 'Game not finished':
-                    print(state_analyze(state))
+                if state_analyze(state, command) != 'Game not finished':
+                    print(state_analyze(state, command) + '\n')
                     break
         elif command[0] == 'exit':
             break
         else:
             print('Bad parameters!')
 
-main()
 
+if __name__ == '__main__':
+    main()
