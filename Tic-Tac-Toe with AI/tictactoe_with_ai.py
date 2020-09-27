@@ -2,18 +2,32 @@ import random
 
 
 class TicTacToe:
-
     MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals
                             (0, 3, 6), (1, 4, 7), (2, 5, 8),
                             (0, 4, 8), (2, 4, 6))
-    POSITION = {'1 3': 0, '2 3': 1, '3 3': 2,  # translating x,y coordinates to position in state list
-                '1 2': 3, '2 2': 4, '3 2': 5,
-                '1 1': 6, '2 1': 7, '3 1': 8, }
 
     def __init__(self):
         self.state = [' '] * 9
         self.turn = 'X'
         self.opp_turn = 'O'
+        self.player = None
+        self.next_player = None
+
+    def get_state(self):
+        return self.state
+
+    def get_xo(self):
+        return self.turn
+
+    def set_state(self, state):
+        self.state = state
+
+    def set_players(self, player1, player2):
+        self.player = player1
+        self.next_player = player2
+
+    def player(self):
+        return self.player
 
     def print_state(self):
         print('y^--------')
@@ -25,7 +39,7 @@ class TicTacToe:
 
     def state_analyze(self, command):
         """
-        Checking state of the game.
+        Checking state of the game. Defining is the game finished and how
         """
         wins = ''
         for pos in self.MEANINGFUL_POSITIONS:
@@ -43,13 +57,35 @@ class TicTacToe:
         else:
             return 'Wrong state!'
 
-    def validate_input(self, x_y):
+    def change_turn(self):
+        self.turn, self.opp_turn = self.opp_turn, self.turn
+        self.player, self.next_player = self.next_player, self.player
+
+
+class TicTacToeUser:
+    POSITION = {'1 3': 0, '2 3': 1, '3 3': 2,  # translating x,y coordinates to position in state list
+                '1 2': 3, '2 2': 4, '3 2': 5,
+                '1 1': 6, '2 1': 7, '3 1': 8, }
+
+    @staticmethod
+    def make_move(state, xo):
+        """
+        get coordinates from user, validate it, and make a move
+        """
+        while True:
+            x_y = input(f'Enter the coordinates for "{xo}" (x y): ')
+            if TicTacToeUser.validate_input(state, x_y):
+                state[TicTacToeUser.POSITION[x_y]] = xo
+                return state
+
+    @staticmethod
+    def validate_input(state, x_y):
         """
         Validating user input: 2 integers from 1 to 3 separated by a space
         """
         if x_y[0].isdigit() and x_y[2].isdigit:
             if 0 < int(x_y[0]) < 4 and 0 < int(x_y[2]) < 4:
-                if self.state[self.POSITION[x_y]] == ' ':
+                if state[TicTacToeUser.POSITION[x_y]] == ' ':
                     return True
                 else:
                     print('This cell is occupied! Choose another one!')
@@ -59,44 +95,65 @@ class TicTacToe:
             print('You should enter numbers!')
         return False
 
-    def change_turn(self):
-        self.turn, self.opp_turn = self.opp_turn, self.turn
 
-    def easy(self):
+class TicTacToeAI:
+    MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals
+                            (0, 3, 6), (1, 4, 7), (2, 5, 8),
+                            (0, 4, 8), (2, 4, 6))
+
+    @staticmethod
+    def empty_indexes(state):
+        return [i for i, idx in enumerate(state) if idx == ' ']
+
+
+class TicTacToeEasyAI(TicTacToeAI):
+
+    @staticmethod
+    def make_move(state, xo):
         """
         easy AI, just random moves
         """
-        self.state[random.choice(TicTacToe.empty_indexes(self.state))] = self.turn
-        self.change_turn()
-        return f'Making move level "easy" with "{self.opp_turn}"'
+        state[random.choice(TicTacToeAI.empty_indexes(state))] = xo
+        print(f'Making move level "easy" with "{xo}"')
+        return state
 
-    def ready_to_win(self, xo):
+
+class TicTacToeMediumAI(TicTacToeAI):
+
+    @staticmethod
+    def make_move(state, xo):
+        """
+        medium AI, if two Xs or Os in one line it uses it, otherwise random move
+        """
+        ox = 'O' if xo == 'X' else 'X'
+        if TicTacToeMediumAI.ready_to_win(state, xo):
+            state[int(TicTacToeMediumAI.ready_to_win(state, xo))] = xo
+            print(f'Making move level "medium" with "{xo}"')
+            return state
+        elif TicTacToeMediumAI.ready_to_win(state, ox):
+            state[int(TicTacToeMediumAI.ready_to_win(state, ox))] = xo
+            print(f'Making move level "medium" with "{xo}"')
+            return state
+        state[random.choice(TicTacToeAI.empty_indexes(state))] = xo
+        print(f'Making move level "medium" with "{xo}"')
+        return state
+
+    @staticmethod
+    def ready_to_win(state, xo):
         """
         helper function for medium AI, determines is X o O player ready to vin in one move
         """
-        for pos in self.MEANINGFUL_POSITIONS:
-            line = self.state[pos[0]] + self.state[pos[1]] + self.state[pos[2]]
+        for pos in TicTacToeAI.MEANINGFUL_POSITIONS:
+            line = state[pos[0]] + state[pos[1]] + state[pos[2]]
             if line.count(xo) == 2 and ' ' in line:
                 return str(pos[line.index(' ')])
         return
 
-    def medium(self):
-        """
-        medium AI, if two Xs or Os in one line it uses it, otherwise random move
-        """
-        if self.ready_to_win(self.turn):
-            self.state[int(self.ready_to_win(self.turn))] = self.turn
-            self.change_turn()
-            return f'Making move level "medium" with "{self.turn}"'
-        elif self.ready_to_win(self.opp_turn):
-            self.state[int(self.ready_to_win(self.opp_turn))] = self.turn
-            self.change_turn()
-            return f'Making move level "medium" with "{self.turn}"'
-        self.state[random.choice(TicTacToe.empty_indexes(self.state))] = self.turn
-        self.change_turn()
-        return f'Making move level "medium" with "{self.opp_turn}"'
 
-    def hard(self):
+class TicTacToeHardAI(TicTacToeAI):
+
+    @staticmethod
+    def make_move(state, xo):
         """
         hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move
         randomly select from the best moves, add best moves to pickles.txt
@@ -104,28 +161,24 @@ class TicTacToe:
         with open('pickles.txt', 'a+') as file:
             file.seek(0, 0)
             for line in file:
-                if ','.join(str(i) for i in self.state) in line:
+                if ','.join(str(i) for i in state) in line:
                     best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
                     file.seek(0, 2)
                     break
             else:
-                new_state = self.state[:]
+                new_state = state[:]
                 moves = [' '] * 9
-                for idx in TicTacToe.empty_indexes(self.state):
-                    new_state[idx] = self.turn
-                    moves[idx] = TicTacToe.min_max(new_state, self.turn)
+                for idx in TicTacToeAI.empty_indexes(state):
+                    new_state[idx] = xo
+                    moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
                     new_state[idx] = ' '
                 best_moves = [i for i, n in enumerate(moves) if (n == 1
                                                                  or n == 0 and 1 not in moves
                                                                  or n == -1 and 1 not in moves and 0 not in moves)]
-                file.write(','.join(str(i) for i in self.state) + ';' + ','.join(str(i) for i in best_moves) + '\n')
-        self.state[random.choice(best_moves)] = self.turn
-        self.change_turn()
-        return f'Making move level "hard" with "{self.opp_turn}"'
-
-    @staticmethod
-    def empty_indexes(state):
-        return [i for i, idx in enumerate(state) if idx == ' ']
+                file.write(','.join(str(i) for i in state) + ';' + ','.join(str(i) for i in best_moves) + '\n')
+        state[random.choice(best_moves)] = xo
+        print(f'Making move level "hard" with "{xo}"')
+        return state
 
     @staticmethod
     def min_max(state, xo):
@@ -133,16 +186,16 @@ class TicTacToe:
         minimax recursive function. goes all over the tree, MAX on player turn, MIN on opponent turn
         """
         changing_xo = 'X' if state.count('X') == state.count('O') else 'O'
-        win = TicTacToe.min_max_win(state, xo)
+        win = TicTacToeHardAI.min_max_win(state, xo)
         if win:
             return win
-        elif len(TicTacToe.empty_indexes(state)) == 0:
+        elif len(TicTacToeHardAI.empty_indexes(state)) == 0:
             return 0
         scores = []
         new_state = state[:]
-        for idx in TicTacToe.empty_indexes(state):
+        for idx in TicTacToeHardAI.empty_indexes(state):
             new_state[idx] = changing_xo
-            scores.append(TicTacToe.min_max(new_state, xo))
+            scores.append(TicTacToeHardAI.min_max(new_state, xo))
             new_state[idx] = ' '
         return max(scores) if changing_xo == xo else min(scores)
 
@@ -152,7 +205,7 @@ class TicTacToe:
         helper function for minimax,
         returns +1 if X (or O) already wins and -1 if O (or X) already wins
         """
-        for pos in TicTacToe.MEANINGFUL_POSITIONS:
+        for pos in TicTacToeAI.MEANINGFUL_POSITIONS:
             if state[pos[0]] == state[pos[1]] == state[pos[2]]:
                 if state[pos[0]] == xo:
                     return 1
@@ -160,57 +213,54 @@ class TicTacToe:
                     return -1
         return False
 
-    def user(self):
-        """
-        get coordinates from user, validate it, and make a move
-        """
-        while True:
-            x_y = input(f'Enter the coordinates for "{self.turn}" (x y): ')
-            if self.validate_input(x_y):
-                self.state[self.POSITION[x_y]] = self.turn
-                self.change_turn()
-                return f'Placing {self.opp_turn}'
 
-    def start(self):
-        possible_players = {'user': self.user, 'easy': self.easy,
-                            'medium': self.medium, 'hard': self.hard}
-        print('''
-possible commands:
-"start <player1> <player2>"
-"exit"
-
-possible players:
-"user" "easy" "medium" "hard"
-
-coordinates are in form "x y"
-"x" - columns, "y" - rows
-"1 1" - left bottom corner     
-              ''')
-        self.print_state()
-        while True:
-            self.state = [' '] * 9
-            self.turn = 'X'
-            self.opp_turn = 'O'
-            command = input('Input command: ').split()
-            if command[0] == 'start' and command[1] in possible_players and command[2] in possible_players:
-                while True:
-                    print(possible_players[command[1]]())
-                    self.print_state()
-                    print()
-                    if self.state_analyze(command) != 'Game not finished':
-                        print(self.state_analyze(command) + '\n')
-                        break
-                    print(possible_players[command[2]]())
-                    self.print_state()
-                    print()
-                    if self.state_analyze(command) != 'Game not finished':
-                        print(self.state_analyze(command) + '\n')
-                        break
-            elif command[0] == 'exit':
-                break
-            else:
-                print('Bad parameters!')
+def main():
+    possible_players = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
+                        'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
+    command = ['start', 'hard', 'user']
+    game = TicTacToe()
+    game.set_players(possible_players[command[1]], possible_players[command[2]])
+    while game.state_analyze(command) == 'Game not finished':
+        game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
+        game.change_turn()
+        game.print_state()
+        print()
 
 
-game = TicTacToe()
-game.start()
+#     def start(self):
+#         print('''
+# possible commands: "start <player1> <player2>", "exit"
+#
+# possible players: "user", "easy", "medium", "hard"
+#
+# coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom corner
+#
+# "X" plays first
+#               ''')
+#         self.print_state()
+#         while True:
+#             self.state = [' '] * 9
+#             self.turn = 'X'
+#             self.opp_turn = 'O'
+#             command = input('Input command: ').split()
+#             if command[0] == 'start' and command[1] in possible_players and command[2] in possible_players:
+#                 while True:
+#                     print(possible_players[command[1]]())
+#                     self.print_state()
+#                     print()
+#                     if self.state_analyze(command) != 'Game not finished':
+#                         print(self.state_analyze(command) + '\n')
+#                         break
+#                     print(possible_players[command[2]]())
+#                     self.print_state()
+#                     print()
+#                     if self.state_analyze(command) != 'Game not finished':
+#                         print(self.state_analyze(command) + '\n')
+#                         break
+#             elif command[0] == 'exit':
+#                 break
+#             else:
+#                 print('Bad parameters!')
+
+if __name__ == '__main__':
+    main()
