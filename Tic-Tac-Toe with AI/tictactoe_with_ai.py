@@ -215,52 +215,32 @@ class TicTacToeHardAI(TicTacToeAI):
 
 
 def main():
-    possible_players = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
+    POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
                         'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
-    command = ['start', 'hard', 'user']
+    print('''
+possible commands: "start <player1> <player2>", "exit"
+possible players: "user", "easy", "medium", "hard"
+coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom corner
+"X" plays first
+        ''')
     game = TicTacToe()
-    game.set_players(possible_players[command[1]], possible_players[command[2]])
-    while game.state_analyze(command) == 'Game not finished':
-        game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
-        game.change_turn()
-        game.print_state()
-        print()
+    while True:
+        command = input('Input command: ').split()
+        if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:
+            if command[1] == 'user' or command[2] == 'user':
+                    game.print_state()
+            game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
+            while game.state_analyze(command) == 'Game not finished':
+                game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
+                game.print_state()
+                game.change_turn()
+                print()
+            print(game.state_analyze(command) + '\n')
+        elif command[0] == 'exit':
+            break
+        else:
+            print('Bad parameters!')
 
-
-#     def start(self):
-#         print('''
-# possible commands: "start <player1> <player2>", "exit"
-#
-# possible players: "user", "easy", "medium", "hard"
-#
-# coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom corner
-#
-# "X" plays first
-#               ''')
-#         self.print_state()
-#         while True:
-#             self.state = [' '] * 9
-#             self.turn = 'X'
-#             self.opp_turn = 'O'
-#             command = input('Input command: ').split()
-#             if command[0] == 'start' and command[1] in possible_players and command[2] in possible_players:
-#                 while True:
-#                     print(possible_players[command[1]]())
-#                     self.print_state()
-#                     print()
-#                     if self.state_analyze(command) != 'Game not finished':
-#                         print(self.state_analyze(command) + '\n')
-#                         break
-#                     print(possible_players[command[2]]())
-#                     self.print_state()
-#                     print()
-#                     if self.state_analyze(command) != 'Game not finished':
-#                         print(self.state_analyze(command) + '\n')
-#                         break
-#             elif command[0] == 'exit':
-#                 break
-#             else:
-#                 print('Bad parameters!')
 
 if __name__ == '__main__':
     main()
