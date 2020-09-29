@@ -19,41 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2dbddbc-fd33-44fa-bbcb-22870da929a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Catching exception/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Catching exception/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Establishing a connection/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Establishing a connection/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Simple brute force/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Simple brute force/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Smarter, dictionary-based brute force/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Smarter, dictionary-based brute force/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Time-based vulnerability/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/Time-based vulnerability/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Password Hacker/lesson-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Bye, completed tasks/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Bye, completed tasks/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Deadlines are scary/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Deadlines are scary/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/I am an Alchemist!/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/I am an Alchemist!/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Plan it/task-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/Plan it/task-remote-info.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/To-Do List/lesson-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" afterDir="false" />
+    <list default="true" id="d2dbddbc-fd33-44fa-bbcb-22870da929a5" name="Default Changelist" comment="bug fixes. Caching for AI.">
+      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe with AI/pickles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe with AI/pickles.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,28 +63,49 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="bug fixes. Caching for AI.">
+      <created>1601420180386</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601420180386</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bug fixes. Caching for AI." />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes. Caching for AI." />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1601419969350">
+    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1601420333282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
-    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1601419969350">
+    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601420333282" />
+    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1601420333282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
-    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1601419969350">
+    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601420333282" />
+    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1601420333282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
-    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1601419969350">
+    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601420333282" />
+    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1601420333282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
+    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601420333282" />
     <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1601418598624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -133,6 +122,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601418598624" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601420195761">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601420195761" />
     <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1601417829277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
