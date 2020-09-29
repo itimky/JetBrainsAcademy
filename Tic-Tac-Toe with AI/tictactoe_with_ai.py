@@ -46,7 +46,7 @@ class TicTacToe:
 
     def state_analyze(self, cmnd):
         """
-        Checking state of the game. Defining is the game finished and how
+        Checking state of the game. Is the game finished and how
         """
         wins = ''
         for pos in self.MEANINGFUL_POSITIONS:
