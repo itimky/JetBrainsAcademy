@@ -228,7 +228,7 @@ coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom cor
         command = input('Input command: ').split()
         if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:
             if command[1] == 'user' or command[2] == 'user':
-                    game.print_state()
+                game.print_state()
             game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
             while game.state_analyze(command) == 'Game not finished':
                 game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
