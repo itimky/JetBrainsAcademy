@@ -148,7 +148,7 @@ class TicTacToeMediumAI(TicTacToeAI):
     @staticmethod
     def ready_to_win(state, xo):
         """
-        helper function for medium AI, determines is X o O player ready to vin in one move
+        helper function for medium AI, determines if X or O player ready to win in one move
         """
         for pos in TicTacToeAI.MEANINGFUL_POSITIONS:
             line = state[pos[0]] + state[pos[1]] + state[pos[2]]
@@ -160,7 +160,7 @@ class TicTacToeMediumAI(TicTacToeAI):
 class TicTacToeHardAI(TicTacToeAI):
     BEST_MOVES_FILE = 'pickles.txt'
 
-    def __init__(self):
+    def __init__(self):  # reading file to memory
         self.pickles = {}
         with open(TicTacToeHardAI.BEST_MOVES_FILE, 'a+', encoding='utf-8') as f:
             for line in f:
@@ -170,8 +170,8 @@ class TicTacToeHardAI(TicTacToeAI):
 
     def make_move(self, state, xo):
         """
-        hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move
-        randomly select from the best moves, add best moves to pickles.txt
+        hard AI, check for best move in self.pickles, if not found: use minimax on every possible move
+        randomly select from the best moves, add best moves to BEST_MOVES_FILE
         """
 
         if tuple(state) in self.pickles:
