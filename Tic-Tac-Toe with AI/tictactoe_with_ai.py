@@ -44,7 +44,7 @@ class TicTacToe:
         print(' -------->x')
         print('   1 2 3')
 
-    def state_analyze(self, command):
+    def state_analyze(self, cmnd):
         """
         Checking state of the game. Defining is the game finished and how
         """
@@ -58,9 +58,9 @@ class TicTacToe:
         elif wins == '' and ' ' not in self.state:
             return 'Draw'
         elif wins == 'X':
-            return f'{command[1] + (" AI" if command[1] != "user" else ("" if command[2] != "user" else " 1"))} wins'
+            return f'{cmnd[1] + (" AI" if cmnd[1] != "user" else "") + (" 1" if cmnd[1] == cmnd[2] else "")} wins'
         elif wins == 'O':
-            return f'{command[2] + (" AI" if command[2] != "user" else ("" if command[1] != "user" else " 2"))} wins'
+            return f'{cmnd[2] + (" AI" if cmnd[2] != "user" else "") + (" 2" if cmnd[1] == cmnd[2] else "")} wins'
         else:
             return 'Wrong state!'
 
