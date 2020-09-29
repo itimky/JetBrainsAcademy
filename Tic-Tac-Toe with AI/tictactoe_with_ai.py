@@ -1,12 +1,47 @@
 import random
+'''
+Все, что в ревью названо константой, стоит сделать в виде
+CONST_NAME = const_value
+
+Вне класса или внутри стоит решать исходя из области использования.
+'''
+
+'''
+Так же упомянуты enum'ы. Это перечисление возможных значений (констант) в каком либо контексте.
+Обычно используются, когда есть больше двух возможных значений, поэтому через bool не получается представить.
+Могут использоваться и при двух возможных значениях для удобочитаемости.
+
+Пример:
+
+from enum import Enum
+
+
+class GameResult(Enum):
+    WIN = 'WIN'
+    LOSE = 'LOSE'
+    DRAW = 'DRAW'
+
+
+def get_result():
+    if ...:
+        return GameResult.WIN
+    else if ...:
+        return GameResult.LOSE
+    else:
+        return GameResult.DRAW
+
+Доп. информация: https://docs.python.org/3/library/enum.html
+'''
 
 
 class TicTacToe:
+    # Такой хардкод – не гуд. Если захочется передалать игру в 4x4/NxN, то нужно будет много хардкодить
     MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals
                             (0, 3, 6), (1, 4, 7), (2, 5, 8),
                             (0, 4, 8), (2, 4, 6))
 
     def __init__(self):
+        # Стоит все поля класса называть с приставкой _, чтобы они были приватными
         self.state = [' '] * 9
         self.turn = 'X'
         self.opp_turn = 'O'
@@ -83,6 +118,12 @@ class TicTacToeUser:
         """
         Validating user input: 2 integers from 1 to 3 separated by a space
         """
+        # Такая валидация исходит из предположения, что пользователь точно ввел пробел вторым символом
+        # Код ломается, если ввести 1,1
+        # Если не добавлять возможные пользователю форматы ввода, то стоит делать x_y.split(' ').
+        # Проверить, что split вернул ровно два значения, и их уже проверять на is_digit()
+        #
+        # Так же забыты скобки: второго параметра isdigit не вызывается
         if x_y[0].isdigit() and x_y[2].isdigit:
             if 0 < int(x_y[0]) < 4 and 0 < int(x_y[2]) < 4:
                 if state[TicTacToeUser.POSITION[x_y]] == ' ':
@@ -96,11 +137,17 @@ class TicTacToeUser:
         return False
 
 
+# Вынести все AI в отдельный модуль.
+# Это поможет отделить логику игры от логики AI
 class TicTacToeAI:
+    # Дублирование кода, можно вынести в константу вне класса
     MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals
                             (0, 3, 6), (1, 4, 7), (2, 5, 8),
                             (0, 4, 8), (2, 4, 6))
 
+    # Ко всем остальным методам наследников добавить _, чтобы было видно, что они приватные
+    # Так же можно добавить абстрактный метод make_move в этот класс, чтобы был понятен интерфейс,
+    # но это необязательно, т.к. дело вкуса
     @staticmethod
     def empty_indexes(state):
         return [i for i, idx in enumerate(state) if idx == ' ']
@@ -158,6 +205,11 @@ class TicTacToeHardAI(TicTacToeAI):
         hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move
         randomly select from the best moves, add best moves to pickles.txt
         """
+        # Тут происходит полный перебор, что не очень эффективно.
+        # Можно составить dict, где ключ – ','.join(str(i) for i in state), а значение – best_moves
+        # Его можно дампить в файл с помощью pickle или json. Если в нем не нашлось нужного состояния,
+        # то добавить и перезаписать в файл. В целях оптимизации стоит загружать этот словарь при запуске приложения,
+        # а сохранять в файл при выходе из него
         with open('pickles.txt', 'a+') as file:
             file.seek(0, 0)
             for line in file:
@@ -211,10 +263,14 @@ class TicTacToeHardAI(TicTacToeAI):
                     return 1
                 elif state[pos[0]] != ' ':
                     return -1
+        # Метод возвращает разные типы: int и bool
+        # Стоит сделать константы одного типа и использовать их
+        # Так же можно сделать enum, чтобы их объединить
         return False
 
 
 def main():
+    # Все ключи сделать константами в константы
     POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
                         'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
     print('''
@@ -230,7 +286,12 @@ coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom cor
             if command[1] == 'user' or command[2] == 'user':
                 game.print_state()
             game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
+            # 'Game not finished' и все остальные возвращаемые строки стоит сделать константами,
+            # чтобы их легче было переиспользовать
+            # Это и защитит от опечаток, и улучшит читаемость
+            # Так же можно сделать enum, чтобы их объединить
             while game.state_analyze(command) == 'Game not finished':
+                # Не стоит напрямую обращаться к game.player, у game есть метод, который его вернет
                 game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
                 game.print_state()
                 game.change_turn()
