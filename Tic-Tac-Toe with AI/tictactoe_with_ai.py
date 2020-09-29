@@ -163,6 +163,7 @@ class TicTacToeHardAI(TicTacToeAI):
     def __init__(self):  # reading file to memory
         self.pickles = {}
         with open(TicTacToeHardAI.BEST_MOVES_FILE, 'a+', encoding='utf-8') as f:
+            f.seek(0, 0)
             for line in f:
                 best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
                 position = [str(i) for i in line.split(';')[0].split(',')]
