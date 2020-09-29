@@ -19,10 +19,41 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="Updated tictactoe to OOP">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d2dbddbc-fd33-44fa-bbcb-22870da929a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Catching exception/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Catching exception/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Establishing a connection/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Establishing a connection/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Simple brute force/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Simple brute force/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Smarter, dictionary-based brute force/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Smarter, dictionary-based brute force/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Time-based vulnerability/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/Time-based vulnerability/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Password Hacker/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Bye, completed tasks/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Bye, completed tasks/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Deadlines are scary/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Deadlines are scary/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/I am an Alchemist!/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/I am an Alchemist!/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Plan it/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/Plan it/task-remote-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/To-Do List/lesson-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JetBrainsAcademy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frameworkLessonHistory/storage.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Address line/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Formatted output/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Hotkeys/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Parsing/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Requesting/task-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Text-Based Browser/Tabs/task-remote-info.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,44 +63,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1gSI5LC9sqrO8Pknm25pztwS7RM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.tictactoe_with_ai">
-    <configuration name="browser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JetBrainsAcademy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Text-Based Browser/task/browser" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="tictactoe_with_ai" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JetBrainsAcademy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,158 +91,51 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.tictactoe_with_ai" />
-        <item itemvalue="Python.browser" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="" />
-      <created>1598101383070</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1598101383070</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Text-based browser">
-      <created>1598133855764</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1598133855764</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Text-based browser">
-      <created>1598395709364</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1598395709364</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Text-based browser">
-      <created>1598472802767</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1598472802767</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Updating tictactoe to OOP in progress">
-      <created>1601045152524</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1601045152524</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Updating tictactoe to OOP in progress">
-      <created>1601070039726</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1601070039726</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Updated tictactoe to OOP">
-      <created>1601070579178</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1601070579178</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Text-based browser" />
-    <MESSAGE value="Updating tictactoe to OOP in progress" />
-    <MESSAGE value="Updated tictactoe to OOP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated tictactoe to OOP" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="1199" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600960621541">
+    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1601419969350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1199" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600960621541" />
-    <state x="1599" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599748027457" />
-    <state x="1547" y="268" key="CommitChangelistDialog2" timestamp="1598472802308">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1547" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1598472802308" />
-    <state x="1275" y="338" key="FileChooserDialogImpl" timestamp="1600954174259">
+    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
+    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1601419969350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1275" y="338" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600954174259" />
-    <state x="1700" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598101657562" />
-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1601243477559">
+    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
+    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1601419969350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477559" />
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264498" />
-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1601243477558">
+    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
+    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1601419969350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264497" />
-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1601243477558">
+    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601419969350" />
+    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1601418598624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264497" />
-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041230" />
-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1601243477558">
+    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601418598624" />
+    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1601418598624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264498" />
-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
-    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1601239766859">
+    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601418598624" />
+    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1601418598624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
-    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1601239766859">
+    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601418598624" />
+    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1601418598624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
-    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1601239766859">
+    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601418598624" />
+    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1601417829277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
-    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1601239766859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
-    <state x="922" y="256" key="SettingsEditor" timestamp="1600877994002">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="922" y="256" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600877994002" />
-    <state x="1421" y="345" key="SettingsEditor/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464257042" />
-    <state x="1104" y="322" key="Vcs.Push.Dialog.v2" timestamp="1601070588017">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1104" y="322" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601070588017" />
-    <state x="1512" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598472805511" />
-    <state x="1257" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601021420673">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1257" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601021420673" />
-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1601064033630">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601064033630" />
+    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601417829277" />
   </component>
 </project>

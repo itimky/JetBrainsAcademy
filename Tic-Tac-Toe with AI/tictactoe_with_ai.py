@@ -13,6 +13,13 @@ class TicTacToe:
         self.player = None
         self.next_player = None
 
+    def reset(self):
+        self.state = [' '] * 9
+        self.turn = 'X'
+        self.opp_turn = 'O'
+        self.player = None
+        self.next_player = None
+
     def get_state(self):
         return self.state
 
@@ -83,7 +90,7 @@ class TicTacToeUser:
         """
         Validating user input: 2 integers from 1 to 3 separated by a space
         """
-        if x_y[0].isdigit() and x_y[2].isdigit:
+        if len(x_y) == 3 and x_y[0].isdigit() and x_y[2].isdigit:
             if 0 < int(x_y[0]) < 4 and 0 < int(x_y[2]) < 4:
                 if state[TicTacToeUser.POSITION[x_y]] == ' ':
                     return True
@@ -92,7 +99,7 @@ class TicTacToeUser:
             else:
                 print('Coordinates should be from 1 to 3!')
         else:
-            print('You should enter numbers!')
+            print('You should enter two numbers!')
         return False
 
 
@@ -151,30 +158,36 @@ class TicTacToeMediumAI(TicTacToeAI):
 
 
 class TicTacToeHardAI(TicTacToeAI):
+    BEST_MOVES_FILE = 'pickles.txt'
 
-    @staticmethod
-    def make_move(state, xo):
+    def __init__(self):
+        self.pickles = {}
+        with open(TicTacToeHardAI.BEST_MOVES_FILE, 'r', encoding='utf-8') as f:
+            for line in f:
+                best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
+                position = [str(i) for i in line.split(';')[0].split(',')]
+                self.pickles[tuple(position)] = best_moves
+
+    def make_move(self, state, xo):
         """
         hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move
         randomly select from the best moves, add best moves to pickles.txt
         """
-        with open('pickles.txt', 'a+') as file:
-            file.seek(0, 0)
-            for line in file:
-                if ','.join(str(i) for i in state) in line:
-                    best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
-                    file.seek(0, 2)
-                    break
-            else:
-                new_state = state[:]
-                moves = [' '] * 9
-                for idx in TicTacToeAI.empty_indexes(state):
-                    new_state[idx] = xo
-                    moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
-                    new_state[idx] = ' '
-                best_moves = [i for i, n in enumerate(moves) if (n == 1
-                                                                 or n == 0 and 1 not in moves
-                                                                 or n == -1 and 1 not in moves and 0 not in moves)]
+
+        if tuple(state) in self.pickles:
+            best_moves = self.pickles[tuple(state)]
+        else:
+            new_state = state[:]
+            moves = [' '] * 9
+            for idx in TicTacToeAI.empty_indexes(state):
+                new_state[idx] = xo
+                moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
+                new_state[idx] = ' '
+            best_moves = [i for i, n in enumerate(moves) if (n == 1
+                                                             or n == 0 and 1 not in moves
+                                                             or n == -1 and 1 not in moves and 0 not in moves)]
+            self.pickles[tuple(state)] = best_moves
+            with open('pickles.txt', 'a+') as file:
                 file.write(','.join(str(i) for i in state) + ';' + ','.join(str(i) for i in best_moves) + '\n')
         state[random.choice(best_moves)] = xo
         print(f'Making move level "hard" with "{xo}"')
@@ -215,8 +228,6 @@ class TicTacToeHardAI(TicTacToeAI):
 
 
 def main():
-    POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
-                        'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
     print('''
 possible commands: "start <player1> <player2>", "exit"
 possible players: "user", "easy", "medium", "hard"
@@ -224,18 +235,25 @@ coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom cor
 "X" plays first
         ''')
     game = TicTacToe()
+    user = TicTacToeUser()
+    easy = TicTacToeEasyAI()
+    medium = TicTacToeMediumAI()
+    hard = TicTacToeHardAI()
+    possible_players = {'user': user, 'easy': easy,
+                        'medium': medium, 'hard': hard}
     while True:
         command = input('Input command: ').split()
-        if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:
+        if command[0] == 'start' and command[1] in possible_players and command[2] in possible_players:
             if command[1] == 'user' or command[2] == 'user':
                 game.print_state()
-            game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
+            game.set_players(possible_players[command[1]], possible_players[command[2]])
             while game.state_analyze(command) == 'Game not finished':
                 game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
                 game.print_state()
                 game.change_turn()
                 print()
             print(game.state_analyze(command) + '\n')
+            game.reset()
         elif command[0] == 'exit':
             break
         else:

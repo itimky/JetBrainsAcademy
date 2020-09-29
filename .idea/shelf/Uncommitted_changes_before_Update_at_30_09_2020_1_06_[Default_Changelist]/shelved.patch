@@ -1,0 +1,18 @@
+diff --git Text-Based Browser/Tabs/task.html
+rename from Text-Based
+rename to Browser/Tabs/task.html
+diff --git Text-Based Browser/Hotkeys/task.html
+rename from Text-Based
+rename to Browser/Hotkeys/task.html
+diff --git Text-Based Browser/Parsing/task.html
+rename from Text-Based
+rename to Browser/Parsing/task.html
+diff --git Text-Based Browser/Requesting/task.html
+rename from Text-Based
+rename to Browser/Requesting/task.html
+diff --git Text-Based Browser/Address
+rename from Text-Based
+rename to Browser/Address
+diff --git Text-Based Browser/Formatted
+rename from Text-Based
+rename to Browser/Formatted
