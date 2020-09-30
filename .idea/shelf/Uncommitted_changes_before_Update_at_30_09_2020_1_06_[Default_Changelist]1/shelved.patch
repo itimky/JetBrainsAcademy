@@ -1,0 +1,2452 @@
+Index: Tic-Tac-Toe with AI/tictactoe_with_ai.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import random\r\n\r\n\r\nclass TicTacToe:\r\n    MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals\r\n                            (0, 3, 6), (1, 4, 7), (2, 5, 8),\r\n                            (0, 4, 8), (2, 4, 6))\r\n\r\n    def __init__(self):\r\n        self.state = [' '] * 9\r\n        self.turn = 'X'\r\n        self.opp_turn = 'O'\r\n        self.player = None\r\n        self.next_player = None\r\n\r\n    def get_state(self):\r\n        return self.state\r\n\r\n    def get_xo(self):\r\n        return self.turn\r\n\r\n    def set_state(self, state):\r\n        self.state = state\r\n\r\n    def set_players(self, player1, player2):\r\n        self.player = player1\r\n        self.next_player = player2\r\n\r\n    def player(self):\r\n        return self.player\r\n\r\n    def print_state(self):\r\n        print('y^--------')\r\n        print('3|', self.state[0], self.state[1], self.state[2], '|')\r\n        print('2|', self.state[3], self.state[4], self.state[5], '|')\r\n        print('1|', self.state[6], self.state[7], self.state[8], '|')\r\n        print(' -------->x')\r\n        print('   1 2 3')\r\n\r\n    def state_analyze(self, command):\r\n        \"\"\"\r\n        Checking state of the game. Defining is the game finished and how\r\n        \"\"\"\r\n        wins = ''\r\n        for pos in self.MEANINGFUL_POSITIONS:\r\n            if self.state[pos[0]] == self.state[pos[1]] == self.state[pos[2]] \\\r\n                    and self.state[pos[0]] != ' ':\r\n                wins += self.state[pos[0]]\r\n        if wins == '' and ' ' in self.state:\r\n            return 'Game not finished'\r\n        elif wins == '' and ' ' not in self.state:\r\n            return 'Draw'\r\n        elif wins == 'X':\r\n            return f'{command[1] + (\" AI\" if command[1] != \"user\" else (\"\" if command[2] != \"user\" else \" 1\"))} wins'\r\n        elif wins == 'O':\r\n            return f'{command[2] + (\" AI\" if command[2] != \"user\" else (\"\" if command[1] != \"user\" else \" 2\"))} wins'\r\n        else:\r\n            return 'Wrong state!'\r\n\r\n    def change_turn(self):\r\n        self.turn, self.opp_turn = self.opp_turn, self.turn\r\n        self.player, self.next_player = self.next_player, self.player\r\n\r\n\r\nclass TicTacToeUser:\r\n    POSITION = {'1 3': 0, '2 3': 1, '3 3': 2,  # translating x,y coordinates to position in state list\r\n                '1 2': 3, '2 2': 4, '3 2': 5,\r\n                '1 1': 6, '2 1': 7, '3 1': 8, }\r\n\r\n    @staticmethod\r\n    def make_move(state, xo):\r\n        \"\"\"\r\n        get coordinates from user, validate it, and make a move\r\n        \"\"\"\r\n        while True:\r\n            x_y = input(f'Enter the coordinates for \"{xo}\" (x y): ')\r\n            if TicTacToeUser.validate_input(state, x_y):\r\n                state[TicTacToeUser.POSITION[x_y]] = xo\r\n                return state\r\n\r\n    @staticmethod\r\n    def validate_input(state, x_y):\r\n        \"\"\"\r\n        Validating user input: 2 integers from 1 to 3 separated by a space\r\n        \"\"\"\r\n        if x_y[0].isdigit() and x_y[2].isdigit:\r\n            if 0 < int(x_y[0]) < 4 and 0 < int(x_y[2]) < 4:\r\n                if state[TicTacToeUser.POSITION[x_y]] == ' ':\r\n                    return True\r\n                else:\r\n                    print('This cell is occupied! Choose another one!')\r\n            else:\r\n                print('Coordinates should be from 1 to 3!')\r\n        else:\r\n            print('You should enter numbers!')\r\n        return False\r\n\r\n\r\nclass TicTacToeAI:\r\n    MEANINGFUL_POSITIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows, columns, diagonals\r\n                            (0, 3, 6), (1, 4, 7), (2, 5, 8),\r\n                            (0, 4, 8), (2, 4, 6))\r\n\r\n    @staticmethod\r\n    def empty_indexes(state):\r\n        return [i for i, idx in enumerate(state) if idx == ' ']\r\n\r\n\r\nclass TicTacToeEasyAI(TicTacToeAI):\r\n\r\n    @staticmethod\r\n    def make_move(state, xo):\r\n        \"\"\"\r\n        easy AI, just random moves\r\n        \"\"\"\r\n        state[random.choice(TicTacToeAI.empty_indexes(state))] = xo\r\n        print(f'Making move level \"easy\" with \"{xo}\"')\r\n        return state\r\n\r\n\r\nclass TicTacToeMediumAI(TicTacToeAI):\r\n\r\n    @staticmethod\r\n    def make_move(state, xo):\r\n        \"\"\"\r\n        medium AI, if two Xs or Os in one line it uses it, otherwise random move\r\n        \"\"\"\r\n        ox = 'O' if xo == 'X' else 'X'\r\n        if TicTacToeMediumAI.ready_to_win(state, xo):\r\n            state[int(TicTacToeMediumAI.ready_to_win(state, xo))] = xo\r\n            print(f'Making move level \"medium\" with \"{xo}\"')\r\n            return state\r\n        elif TicTacToeMediumAI.ready_to_win(state, ox):\r\n            state[int(TicTacToeMediumAI.ready_to_win(state, ox))] = xo\r\n            print(f'Making move level \"medium\" with \"{xo}\"')\r\n            return state\r\n        state[random.choice(TicTacToeAI.empty_indexes(state))] = xo\r\n        print(f'Making move level \"medium\" with \"{xo}\"')\r\n        return state\r\n\r\n    @staticmethod\r\n    def ready_to_win(state, xo):\r\n        \"\"\"\r\n        helper function for medium AI, determines is X o O player ready to vin in one move\r\n        \"\"\"\r\n        for pos in TicTacToeAI.MEANINGFUL_POSITIONS:\r\n            line = state[pos[0]] + state[pos[1]] + state[pos[2]]\r\n            if line.count(xo) == 2 and ' ' in line:\r\n                return str(pos[line.index(' ')])\r\n        return\r\n\r\n\r\nclass TicTacToeHardAI(TicTacToeAI):\r\n\r\n    @staticmethod\r\n    def make_move(state, xo):\r\n        \"\"\"\r\n        hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move\r\n        randomly select from the best moves, add best moves to pickles.txt\r\n        \"\"\"\r\n        with open('pickles.txt', 'a+') as file:\r\n            file.seek(0, 0)\r\n            for line in file:\r\n                if ','.join(str(i) for i in state) in line:\r\n                    best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]\r\n                    file.seek(0, 2)\r\n                    break\r\n            else:\r\n                new_state = state[:]\r\n                moves = [' '] * 9\r\n                for idx in TicTacToeAI.empty_indexes(state):\r\n                    new_state[idx] = xo\r\n                    moves[idx] = TicTacToeHardAI.min_max(new_state, xo)\r\n                    new_state[idx] = ' '\r\n                best_moves = [i for i, n in enumerate(moves) if (n == 1\r\n                                                                 or n == 0 and 1 not in moves\r\n                                                                 or n == -1 and 1 not in moves and 0 not in moves)]\r\n                file.write(','.join(str(i) for i in state) + ';' + ','.join(str(i) for i in best_moves) + '\\n')\r\n        state[random.choice(best_moves)] = xo\r\n        print(f'Making move level \"hard\" with \"{xo}\"')\r\n        return state\r\n\r\n    @staticmethod\r\n    def min_max(state, xo):\r\n        \"\"\"\r\n        minimax recursive function. goes all over the tree, MAX on player turn, MIN on opponent turn\r\n        \"\"\"\r\n        changing_xo = 'X' if state.count('X') == state.count('O') else 'O'\r\n        win = TicTacToeHardAI.min_max_win(state, xo)\r\n        if win:\r\n            return win\r\n        elif len(TicTacToeHardAI.empty_indexes(state)) == 0:\r\n            return 0\r\n        scores = []\r\n        new_state = state[:]\r\n        for idx in TicTacToeHardAI.empty_indexes(state):\r\n            new_state[idx] = changing_xo\r\n            scores.append(TicTacToeHardAI.min_max(new_state, xo))\r\n            new_state[idx] = ' '\r\n        return max(scores) if changing_xo == xo else min(scores)\r\n\r\n    @staticmethod\r\n    def min_max_win(state, xo):\r\n        \"\"\"\r\n        helper function for minimax,\r\n        returns +1 if X (or O) already wins and -1 if O (or X) already wins\r\n        \"\"\"\r\n        for pos in TicTacToeAI.MEANINGFUL_POSITIONS:\r\n            if state[pos[0]] == state[pos[1]] == state[pos[2]]:\r\n                if state[pos[0]] == xo:\r\n                    return 1\r\n                elif state[pos[0]] != ' ':\r\n                    return -1\r\n        return False\r\n\r\n\r\ndef main():\r\n    POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,\r\n                        'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}\r\n    print('''\r\npossible commands: \"start <player1> <player2>\", \"exit\"\r\npossible players: \"user\", \"easy\", \"medium\", \"hard\"\r\ncoordinates are in form \"x y\" <x> - columns, <y> - rows, \"1 1\" - left bottom corner\r\n\"X\" plays first\r\n        ''')\r\n    game = TicTacToe()\r\n    while True:\r\n        command = input('Input command: ').split()\r\n        if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:\r\n            if command[1] == 'user' or command[2] == 'user':\r\n                    game.print_state()\r\n            game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])\r\n            while game.state_analyze(command) == 'Game not finished':\r\n                game.set_state(game.player.make_move(game.get_state(), game.get_xo()))\r\n                game.print_state()\r\n                game.change_turn()\r\n                print()\r\n            print(game.state_analyze(command) + '\\n')\r\n        elif command[0] == 'exit':\r\n            break\r\n        else:\r\n            print('Bad parameters!')\r\n\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Tic-Tac-Toe with AI/tictactoe_with_ai.py	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Tic-Tac-Toe with AI/tictactoe_with_ai.py	(date 1601324827520)
+@@ -228,7 +228,7 @@
+         command = input('Input command: ').split()
+         if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:
+             if command[1] == 'user' or command[2] == 'user':
+-                    game.print_state()
++                game.print_state()
+             game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
+             while game.state_analyze(command) == 'Game not finished':
+                 game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
+Index: .idea/workspace.xml
+===================================================================
+--- .idea/workspace.xml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ .idea/workspace.xml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
+@@ -1,251 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="BranchesTreeState">
+-    <expand>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-    </expand>
+-    <select />
+-  </component>
+-  <component name="ChangeListManager">
+-    <list default="true" id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="Updated tictactoe to OOP">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/course-remote-info.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/course-remote-info.yaml" afterDir="false" />
+-    </list>
+-    <option name="SHOW_DIALOG" value="false" />
+-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-    <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="ProjectId" id="1gSI5LC9sqrO8Pknm25pztwS7RM" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-  <component name="PropertiesComponent">
+-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" />
+-    <property name="restartRequiresConfirmation" value="false" />
+-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+-  </component>
+-  <component name="RunManager" selected="Python.tictactoe_with_ai">
+-    <configuration name="browser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="JetBrainsAcademy" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Text-Based Browser/task/browser" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Text-Based Browser/task/browser/browser.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="tictactoe_with_ai" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="JetBrainsAcademy" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tic-Tac-Toe with AI" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tic-Tac-Toe with AI/tictactoe_with_ai.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Python.tictactoe_with_ai" />
+-        <item itemvalue="Python.browser" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-  <component name="SvnConfiguration">
+-    <configuration />
+-  </component>
+-  <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="2743c2b1-081d-45db-a56d-39a3b57ca860" name="Default Changelist" comment="" />
+-      <created>1598101383070</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1598101383070</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="Text-based browser">
+-      <created>1598133855764</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1598133855764</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="Text-based browser">
+-      <created>1598395709364</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1598395709364</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="Text-based browser">
+-      <created>1598472802767</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1598472802767</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="Updating tictactoe to OOP in progress">
+-      <created>1601045152524</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1601045152524</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="Updating tictactoe to OOP in progress">
+-      <created>1601070039726</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1601070039726</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Updated tictactoe to OOP">
+-      <created>1601070579178</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1601070579178</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
+-    <servers />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-    <MESSAGE value="Text-based browser" />
+-    <MESSAGE value="Updating tictactoe to OOP in progress" />
+-    <MESSAGE value="Updated tictactoe to OOP" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Updated tictactoe to OOP" />
+-  </component>
+-  <component name="WindowStateProjectService">
+-    <state x="1199" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600960621541">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="1199" y="324" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600960621541" />
+-    <state x="1599" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599748027457" />
+-    <state x="1547" y="268" key="CommitChangelistDialog2" timestamp="1598472802308">
+-      <screen x="0" y="0" width="2560" height="1400" />
+-    </state>
+-    <state x="1547" y="268" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1598472802308" />
+-    <state x="1275" y="338" key="FileChooserDialogImpl" timestamp="1600954174259">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="1275" y="338" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600954174259" />
+-    <state x="1700" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598101657562" />
+-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1601243477559">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477559" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264498" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
+-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1601243477558">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264497" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
+-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1601243477558">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264497" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041230" />
+-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1601243477558">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601243477558" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464264498" />
+-    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598475041231" />
+-    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1601239766859">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
+-    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1601239766859">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
+-    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1601239766859">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
+-    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1601239766859">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601239766859" />
+-    <state x="922" y="256" key="SettingsEditor" timestamp="1600877994002">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="922" y="256" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600877994002" />
+-    <state x="1421" y="345" key="SettingsEditor/0.0.2560.1400/2560.0.1280.680@0.0.2560.1400" timestamp="1598464257042" />
+-    <state x="1104" y="322" key="Vcs.Push.Dialog.v2" timestamp="1601070588017">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="1104" y="322" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601070588017" />
+-    <state x="1512" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1598472805511" />
+-    <state x="1257" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601021420673">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="1257" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601021420673" />
+-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1601064033630">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601064033630" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: To-Do List/Bye, completed tasks/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Bye, completed tasks/task-info.yaml	(date 1601415109763)
++++ To-Do List/Bye, completed tasks/task-info.yaml	(date 1601415109763)
+@@ -0,0 +1,374 @@
++type: edu
++files:
++- name: todolist/todolist.py
++  visible: true
++  text: |
++    # Write your code here
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from sqlalchemy.ext.declarative import declarative_base
++    from sqlalchemy import Column, Integer, String, Date
++    from hstest.check_result import CheckResult
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from datetime import datetime, timedelta
++    from typing import List
++    import os
++    import shutil
++
++    from sqlalchemy import create_engine
++    from sqlalchemy.orm import sessionmaker
++
++    menu = """
++    1) Today's tasks
++    2) Week's tasks
++    3) All tasks
++    4) Missed tasks
++    5) Add task
++    6) Delete task
++    0) Exit
++    """.strip().lower()
++
++    weekdays = [
++        'monday',
++        'tuesday',
++        'wednesday',
++        'thursday',
++        'friday',
++        'saturday',
++        'sunday'
++    ]
++
++
++    class ToDoList(StageTest):
++        db_name = 'todo.db'
++        tasks_before_delete = None
++        is_completed = False
++
++        def generate(self) -> List[TestCase]:
++            return [
++                TestCase(
++                    stdin='0',
++                    check_function=ToDoList.check_menu
++                ),
++                TestCase(
++                    stdin='0',
++                    check_function=self.check_db_file
++                ),
++                TestCase(
++                    stdin=[self.clear_table,
++                           self.check_empty_list,
++                           self.check_weeks_tasks,
++                           self.check_added_task]
++
++                ),
++                TestCase(
++                    stdin=[self.add_tasks_with_deadlines,
++                           self.ignore_output,
++                           self.check_weeks_task_output]
++                ),
++                TestCase(
++                    stdin=[self.add_tasks_with_deadlines,
++                           '3',
++                           self.check_all_tasks_list]
++                ),
++                TestCase(
++                    stdin=[self.check_missed_tasks,
++                           self.check_missed_tasks_ignore_output,
++                           self.check_list_of_missed_tasks]
++                ),
++                TestCase(
++                    stdin=[
++                        self.check_delete_task,
++                        self.delete_tasks,
++                        self.check_if_tasks_deleted]
++                )
++            ]
++
++        @staticmethod
++        def check_menu(reply, attach):
++            if menu in reply.lower():
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t show the menu from example\n '
++                                         ' Make sure you didn\'t print any extra spaces')
++
++        def check_db_file(self, reply, attach):
++            if not os.path.exists('todo.db'):
++                return CheckResult.wrong('You didn\'t create the database file. It should be named todo.db')
++            shutil.copy2('todo.db', 'temp.db')
++
++            tables_in_db = self.execute('SELECT name FROM sqlite_master '
++                                        'WHERE type =\'table\' AND name '
++                                        'NOT LIKE \'sqlite_%\';')
++
++            try:
++                tables_in_db = [table[0] for table in tables_in_db]
++            except Exception:
++                return CheckResult.wrong('Your database or its content are written in the wrong format.')
++            if 'task' not in tables_in_db:
++                return CheckResult.wrong('Your database doesn\'t have \'task\' table.')
++
++            columns_in_table = self.execute('PRAGMA table_info(task)')
++            columns_in_table = [[*column[1:3]] for column in columns_in_table]
++            correct_columns = ['id', 'INTEGER'], ['task', 'VARCHAR'], ['deadline', 'DATE']
++            for column in correct_columns:
++                if column not in columns_in_table:
++                    CheckResult.wrong(
++                        'Your table should contain \'{}\' column with \'{}\' type'.format(column[0], column[1]))
++            return CheckResult.correct()
++
++        def clear_table(self, output):
++            self.execute('DELETE FROM task')
++            return '1'
++
++        def check_empty_list(self, output):
++            if 'nothing' not in output.lower():
++                return CheckResult.wrong('When the to-do list is empty you should output \'Nothing to do!\'')
++            return '2'
++
++        def check_weeks_tasks(self, output):
++            for day in weekdays:
++                if day not in output.lower():
++                    return CheckResult.wrong(
++                        'There is no {} in the output.\nIn week\'s task you should output all the tasks for 7 days.'.format(
++                            day.title()))
++
++            today = datetime.today().date()
++            return '5\nFirst task\n{}\n5\nSecond task\n{}\n1'.format(today, today)
++
++        def check_added_task(self, output):
++            tasks = self.execute('SELECT * FROM task')
++            if not tasks:
++                return CheckResult.wrong('You should save tasks in the database!')
++            for task in tasks:
++                task = list(task)
++                if 'First task' in task:
++                    today = datetime.today().date()
++                    if not str(today) in task:
++                        return CheckResult.wrong('You saved wrong deadline for the tasks. Expected {}'.format(today))
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            for task in tasks:
++                task = list(task)
++                if 'Second task' in task:
++                    today = datetime.today().date()
++                    if not str(today) in task:
++                        return CheckResult.wrong('You saved wrong deadline for the tasks. Expected {}'.format(today))
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            self.execute("DELETE FROM task")
++            self.is_completed = True
++            return '0'
++
++        def add_tasks_with_deadlines(self, output):
++            self.execute('DELETE FROM task')
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++            test_input = "5\nDeadline is today\n{}\n5\nDeadline in 3 days\n{}\n5\nDeadline in 6 days\n{}" \
++                .format(first_date, second_date, last_date).strip()
++            return test_input
++
++        def ignore_output(self, output):
++            return '2'
++
++        def check_weeks_task_output(self, output):
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++            first_date_month = first_date.strftime('%b').lower()
++            second_date_month = second_date.strftime('%b').lower()
++            last_date_month = last_date.strftime('%b').lower()
++            first_date_day = first_date.day
++            second_date_day = second_date.day
++            last_date_day = last_date.day
++            first_date_weekday = weekdays[first_date.weekday()]
++            second_date_weekday = weekdays[second_date.weekday()]
++            last_date_weekday = weekdays[last_date.weekday()]
++
++            blocks = output.strip().split('\n\n')
++            if len(blocks) < 7:
++                return CheckResult.wrong('There is should be 7 days when you output the week\'s task.\n'
++                                         'Make sure that you print empty lines before and after output and between each day')
++
++            first_block = blocks[0].lower()
++            second_block = blocks[3].lower()
++            last_block = blocks[6].lower()
++
++            if (first_date_month not in first_block
++                or str(first_date_day) not in first_block
++                or first_date_weekday not in first_block):
++                return CheckResult.wrong('When you output the week\'s tasks the first date should be today\'s date.\n'
++                                         'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline is today' not in first_block:
++                return CheckResult.wrong('When you output the week\'s tasks the first date doesn\'t contain added task.')
++
++            if (second_date_month not in second_block
++                or str(second_date_day) not in second_block
++                or second_date_weekday not in second_block):
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the fourth date should be the day that in 4 days from today.\n'
++                    'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline in 3 days' not in second_block:
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the fourth date doesn\'t contain added task for which deadline is in 4 days.')
++
++            if (last_date_month not in last_block
++                or str(last_date_day) not in last_block
++                or last_date_weekday not in last_block):
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the last date should be the day that in 6 days from today.\n'
++                    'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline in 6 days' not in last_block:
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the last date doesn\'t contain added task for which deadline is in 6 days.')
++
++            self.is_completed = True
++            return '0'
++
++        def check_all_tasks_list(self, output):
++
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++
++            firs_task = f'Deadline is today. {first_date.day} {first_date.strftime("%b")}'
++            second_task = f'Deadline in 3 days. {second_date.day} {second_date.strftime("%b")}'
++            third_task = f'Deadline in 6 days. {last_date.day} {last_date.strftime("%b")}'
++
++            if firs_task not in output:
++                return CheckResult.wrong(f"Can't find '{firs_task}' task in the all tasks list!")
++            if second_task not in output:
++                return CheckResult.wrong(f"Can't find '{second_task}' task in the all tasks list!")
++            if third_task not in output:
++                return CheckResult.wrong(f"Can't find '{third_task}' task in the all tasks list!")
++
++            first = output.index('Deadline is today')
++            second = output.index('Deadline in 3 days')
++            third = output.index('Deadline in 6 days')
++
++            if first > second or second > third:
++                return CheckResult.wrong("In the all tasks list tasks should be sorted by their deadlines!")
++
++            self.is_completed = True
++            return '0'
++
++        def check_missed_tasks(self, output):
++            today = datetime.today().date()
++            minus_one_day = today - timedelta(days=1)
++            minus_two_days = today - timedelta(days=2)
++            return '5\nFirst missed task\n{}\n5\nSecond missed task\n{}'.format(minus_two_days, minus_one_day)
++
++        def check_missed_tasks_ignore_output(self, output):
++            return '4'
++
++        def check_list_of_missed_tasks(self, output):
++            if 'missed tasks' not in output.lower():
++                return CheckResult.wrong('Your program doesn\'t show missed tasks!')
++
++            blocks = output.strip().split('\n\n')
++            if len(blocks) != 2:
++                return CheckResult.wrong(
++                    'There is something wrong with format of output. Please make sure that you print only one empty line after printing missed tasks!')
++
++            tasks = blocks[0].lower()
++
++            if ('first missed task' not in tasks
++                or 'second missed task' not in tasks):
++                return CheckResult.wrong('When you print missed task you don\'t print all of them!')
++
++            lines = tasks.splitlines()
++            index_of_first_task = 0
++            index_of_second_task = 0
++            for i, line in enumerate(lines):
++                if 'first missed task' in line:
++                    index_of_first_task = i
++                if 'second missed task' in line:
++                    index_of_second_task = i
++
++            if index_of_first_task > index_of_second_task:
++                return CheckResult.wrong('Missed tasks should be sorted by their deadlines!')
++
++            self.is_completed = True
++            return '0'
++
++        def check_delete_task(self, output):
++            self.execute('DELETE FROM task')
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++            test_input = "5\nDeadline is today\n{}\n5\nDeadline in 3 days\n{}\n5\nDeadline in 6 days\n{}\n6" \
++                .format(first_date, second_date, last_date).strip()
++            return test_input
++
++        def delete_tasks(self, output):
++            ToDoList.tasks_before_delete = len(self.execute('SELECT * FROM task'))
++            return '1\n6\n1\n6\n1'
++
++        def check_if_tasks_deleted(self, output):
++            tasks_after_delete = len(self.execute('SELECT * FROM task'))
++            if not tasks_after_delete < ToDoList.tasks_before_delete:
++                return CheckResult.wrong('Once a task has been deleted, there should be less rows in the table.')
++            self.is_completed = True
++            return '0'
++
++        def after_all_tests(self):
++            if not os.path.exists('todo.db'):
++                return
++            with open('todo.db', 'w') as main_db:
++                if os.path.exists('temp.db'):
++                    temp_file = open('temp.db', 'r')
++                    main_db.write(temp_file.read())
++                    temp_file.close()
++                    os.remove('temp.db')
++
++        def check(self, reply, attach):
++            if self.is_completed:
++                self.is_completed = False
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t read all inputs!')
++
++        def execute(self, query: str):
++            db = DbTool('main.db')
++            try:
++                result = db.session.execute(query).fetchall()
++            except Exception:
++                result = None
++            db.session.commit()
++            db.session.close()
++            return result
++
++
++    class DbTool:
++
++        def __init__(self, file):
++            self.engine = create_engine('sqlite:///todo.db?check_same_thread=false')
++            self.session = sessionmaker(bind=self.engine)()
++
++        def close(self):
++            self.session.close()
++
++        Base = declarative_base()
++
++        class Task(Base):
++            __tablename__ = 'task'
++            id = Column(Integer, primary_key=True)
++            task = Column(String)
++            deadline = Column(Date)
++
++
++    if __name__ == '__main__':
++        ToDoList('todolist.todolist').run_tests()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/105/stages/573/implement
++status: Unchecked
++record: -1
+Index: To-Do List/lesson-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/lesson-info.yaml	(date 1601415109807)
++++ To-Do List/lesson-info.yaml	(date 1601415109807)
+@@ -0,0 +1,7 @@
++type: framework
++content:
++- Plan it
++- I am an Alchemist!
++- Deadlines are scary
++- Bye, completed tasks
++current_task: 0
+Index: To-Do List/Plan it/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Plan it/task-remote-info.yaml	(date 1601415109742)
++++ To-Do List/Plan it/task-remote-info.yaml	(date 1601415109742)
+@@ -0,0 +1,2 @@
++id: 9619
++update_date: Wed, 16 Sep 2020 17:37:25 UTC
+Index: To-Do List/I am an Alchemist!/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/I am an Alchemist!/task-remote-info.yaml	(date 1601415109768)
++++ To-Do List/I am an Alchemist!/task-remote-info.yaml	(date 1601415109768)
+@@ -0,0 +1,2 @@
++id: 9620
++update_date: Wed, 16 Sep 2020 17:37:25 UTC
+Index: To-Do List/Deadlines are scary/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Deadlines are scary/task-remote-info.yaml	(date 1601415109782)
++++ To-Do List/Deadlines are scary/task-remote-info.yaml	(date 1601415109782)
+@@ -0,0 +1,2 @@
++id: 9621
++update_date: Wed, 16 Sep 2020 17:37:25 UTC
+Index: To-Do List/Bye, completed tasks/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Bye, completed tasks/task-remote-info.yaml	(date 1601415109789)
++++ To-Do List/Bye, completed tasks/task-remote-info.yaml	(date 1601415109789)
+@@ -0,0 +1,2 @@
++id: 9622
++update_date: Wed, 16 Sep 2020 17:37:25 UTC
+Index: course-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>hyperskill_project:\r\n  id: 79\r\n  ide_files: https://stepik.org/media/attachments/lesson/255229/additional_files.json\r\n  is_template_based: false\r\n  use_ide: true\r\nstages:\r\n- id: 436\r\n  step: 7210\r\n  is_completed: true\r\n- id: 437\r\n  step: 7211\r\n  is_completed: true\r\n- id: 438\r\n  step: 7212\r\n  is_completed: true\r\n- id: 439\r\n  step: 7213\r\n  is_completed: true\r\n- id: 440\r\n  step: 7214\r\n  is_completed: true\r\n- id: 441\r\n  step: 7215\r\n  is_completed: true\r\ntopics:\r\n  0:\r\n  - title: Introduction to Python\r\n    theory_id: 5204\r\n  - title: Overview of the basic program\r\n    theory_id: 5208\r\n  - title: Multi-line programs\r\n    theory_id: 5233\r\n  - title: PEP 8\r\n    theory_id: 5879\r\n  - title: Comments\r\n    theory_id: 6081\r\n  - title: Naming variables\r\n    theory_id: 5885\r\n  - title: Taking input\r\n    theory_id: 5913\r\n  - title: Program with numbers\r\n    theory_id: 5872\r\n  - title: List\r\n    theory_id: 5979\r\n  - title: If statement\r\n    theory_id: 5953\r\n  - title: For loop\r\n    theory_id: 6065\r\n  - title: Basic data types\r\n    theory_id: 5852\r\n  - title: Integer arithmetic\r\n    theory_id: 5865\r\n  - title: Variables\r\n    theory_id: 5859\r\n  - title: Boolean logic\r\n    theory_id: 6025\r\n  - title: Comparisons\r\n    theory_id: 5920\r\n  1:\r\n  - title: Files\r\n    theory_id: 6989\r\n  - title: IDE\r\n    theory_id: 3805\r\n  - title: Indexes\r\n    theory_id: 6189\r\n  - title: Invoking a function\r\n    theory_id: 5891\r\n  - title: Declaring a function\r\n    theory_id: 5900\r\n  - title: Arguments\r\n    theory_id: 7248\r\n  - title: Operations with list\r\n    theory_id: 6031\r\n  - title: Load module\r\n    theory_id: 6019\r\n  - title: Files in Python\r\n    theory_id: 8691\r\n  - title: Reading files\r\n    theory_id: 8139\r\n  - title: Writing files\r\n    theory_id: 8334\r\n  - title: Context manager\r\n    theory_id: 8702\r\n  - title: Introduction to operating systems\r\n    theory_id: 9704\r\n  - title: Command line overview\r\n    theory_id: 8977\r\n  - title: Parameters and options\r\n    theory_id: 9746\r\n  - title: Command line arguments\r\n    theory_id: 7981\r\n  - title: PyCharm basics\r\n    theory_id: 6193\r\n  - title: Quotes and multi-line strings\r\n    theory_id: 5814\r\n  - title: Escape sequences\r\n    theory_id: 7130\r\n  - title: Type casting\r\n    theory_id: 6224\r\n  - title: String formatting\r\n    theory_id: 6037\r\n  - title: Basic string methods\r\n    theory_id: 6842\r\n  - title: Split and join\r\n    theory_id: 6972\r\n  2:\r\n  - title: Computer algorithms\r\n    theory_id: 4953\r\n  - title: Introducing the first algorithm\r\n    theory_id: 10336\r\n  - title: The big O notation\r\n    theory_id: 4991\r\n  - title: Data structures\r\n    theory_id: 5161\r\n  - title: Stack\r\n    theory_id: 5252\r\n  - title: Intro to computational thinking\r\n    theory_id: 8742\r\n  - title: Components of computational thinking\r\n    theory_id: 8745\r\n  - title: Else statement\r\n    theory_id: 5932\r\n  - title: Elif statement\r\n    theory_id: 5926\r\n  - title: Functional decomposition\r\n    theory_id: 9571\r\n  - title: List comprehension\r\n    theory_id: 6315\r\n  - title: Algorithms in Python\r\n    theory_id: 7316\r\n  - title: Stack in Python\r\n    theory_id: 8915\r\n  3:\r\n  - title: World Wide Web\r\n    theory_id: 6633\r\n  - title: HyperText Transfer Protocol\r\n    theory_id: 6569\r\n  - title: HTTP URL\r\n    theory_id: 6740\r\n  - title: HTTP messages\r\n    theory_id: 6752\r\n  - title: Dictionary\r\n    theory_id: 6481\r\n  - title: Create module\r\n    theory_id: 6057\r\n  - title: Packages\r\n    theory_id: 6384\r\n  - title: Pip\r\n    theory_id: 6230\r\n  - title: 'Requests: retrieving data'\r\n    theory_id: 8603\r\n  - title: HTML basics\r\n    theory_id: 6434\r\n  - title: Tags and attributes\r\n    theory_id: 7536\r\n  - title: HTML page structure\r\n    theory_id: 6491\r\n  4:\r\n  - title: XML\r\n    theory_id: 6901\r\n  - title: BeautifulSoup\r\n    theory_id: 10209\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- course-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ course-remote-info.yaml	(date 1601415380221)
+@@ -3,160 +3,3 @@
+   ide_files: https://stepik.org/media/attachments/lesson/255229/additional_files.json
+   is_template_based: false
+   use_ide: true
+-stages:
+-- id: 436
+-  step: 7210
+-  is_completed: true
+-- id: 437
+-  step: 7211
+-  is_completed: true
+-- id: 438
+-  step: 7212
+-  is_completed: true
+-- id: 439
+-  step: 7213
+-  is_completed: true
+-- id: 440
+-  step: 7214
+-  is_completed: true
+-- id: 441
+-  step: 7215
+-  is_completed: true
+-topics:
+-  0:
+-  - title: Introduction to Python
+-    theory_id: 5204
+-  - title: Overview of the basic program
+-    theory_id: 5208
+-  - title: Multi-line programs
+-    theory_id: 5233
+-  - title: PEP 8
+-    theory_id: 5879
+-  - title: Comments
+-    theory_id: 6081
+-  - title: Naming variables
+-    theory_id: 5885
+-  - title: Taking input
+-    theory_id: 5913
+-  - title: Program with numbers
+-    theory_id: 5872
+-  - title: List
+-    theory_id: 5979
+-  - title: If statement
+-    theory_id: 5953
+-  - title: For loop
+-    theory_id: 6065
+-  - title: Basic data types
+-    theory_id: 5852
+-  - title: Integer arithmetic
+-    theory_id: 5865
+-  - title: Variables
+-    theory_id: 5859
+-  - title: Boolean logic
+-    theory_id: 6025
+-  - title: Comparisons
+-    theory_id: 5920
+-  1:
+-  - title: Files
+-    theory_id: 6989
+-  - title: IDE
+-    theory_id: 3805
+-  - title: Indexes
+-    theory_id: 6189
+-  - title: Invoking a function
+-    theory_id: 5891
+-  - title: Declaring a function
+-    theory_id: 5900
+-  - title: Arguments
+-    theory_id: 7248
+-  - title: Operations with list
+-    theory_id: 6031
+-  - title: Load module
+-    theory_id: 6019
+-  - title: Files in Python
+-    theory_id: 8691
+-  - title: Reading files
+-    theory_id: 8139
+-  - title: Writing files
+-    theory_id: 8334
+-  - title: Context manager
+-    theory_id: 8702
+-  - title: Introduction to operating systems
+-    theory_id: 9704
+-  - title: Command line overview
+-    theory_id: 8977
+-  - title: Parameters and options
+-    theory_id: 9746
+-  - title: Command line arguments
+-    theory_id: 7981
+-  - title: PyCharm basics
+-    theory_id: 6193
+-  - title: Quotes and multi-line strings
+-    theory_id: 5814
+-  - title: Escape sequences
+-    theory_id: 7130
+-  - title: Type casting
+-    theory_id: 6224
+-  - title: String formatting
+-    theory_id: 6037
+-  - title: Basic string methods
+-    theory_id: 6842
+-  - title: Split and join
+-    theory_id: 6972
+-  2:
+-  - title: Computer algorithms
+-    theory_id: 4953
+-  - title: Introducing the first algorithm
+-    theory_id: 10336
+-  - title: The big O notation
+-    theory_id: 4991
+-  - title: Data structures
+-    theory_id: 5161
+-  - title: Stack
+-    theory_id: 5252
+-  - title: Intro to computational thinking
+-    theory_id: 8742
+-  - title: Components of computational thinking
+-    theory_id: 8745
+-  - title: Else statement
+-    theory_id: 5932
+-  - title: Elif statement
+-    theory_id: 5926
+-  - title: Functional decomposition
+-    theory_id: 9571
+-  - title: List comprehension
+-    theory_id: 6315
+-  - title: Algorithms in Python
+-    theory_id: 7316
+-  - title: Stack in Python
+-    theory_id: 8915
+-  3:
+-  - title: World Wide Web
+-    theory_id: 6633
+-  - title: HyperText Transfer Protocol
+-    theory_id: 6569
+-  - title: HTTP URL
+-    theory_id: 6740
+-  - title: HTTP messages
+-    theory_id: 6752
+-  - title: Dictionary
+-    theory_id: 6481
+-  - title: Create module
+-    theory_id: 6057
+-  - title: Packages
+-    theory_id: 6384
+-  - title: Pip
+-    theory_id: 6230
+-  - title: 'Requests: retrieving data'
+-    theory_id: 8603
+-  - title: HTML basics
+-    theory_id: 6434
+-  - title: Tags and attributes
+-    theory_id: 7536
+-  - title: HTML page structure
+-    theory_id: 6491
+-  4:
+-  - title: XML
+-    theory_id: 6901
+-  - title: BeautifulSoup
+-    theory_id: 10209
+Index: Text-Based Browser/Address line/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7210\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Address line/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Address line/task-remote-info.yaml	(date 1601324690128)
+@@ -1,2 +1,2 @@
+ id: 7210
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Text-Based Browser/Tabs/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7211\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Tabs/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Tabs/task-remote-info.yaml	(date 1601324690133)
+@@ -1,2 +1,2 @@
+ id: 7211
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Text-Based Browser/Hotkeys/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7212\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Hotkeys/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Hotkeys/task-remote-info.yaml	(date 1601324690139)
+@@ -1,2 +1,2 @@
+ id: 7212
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Text-Based Browser/Requesting/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7213\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Requesting/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Requesting/task-remote-info.yaml	(date 1601324690145)
+@@ -1,2 +1,2 @@
+ id: 7213
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Text-Based Browser/Parsing/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7214\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Parsing/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Parsing/task-remote-info.yaml	(date 1601324690150)
+@@ -1,2 +1,2 @@
+ id: 7214
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Text-Based Browser/Formatted output/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id: 7215\r\nupdate_date: Tue, 22 Sep 2020 02:04:00 UTC\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Text-Based Browser/Formatted output/task-remote-info.yaml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ Text-Based Browser/Formatted output/task-remote-info.yaml	(date 1601324690155)
+@@ -1,2 +1,2 @@
+ id: 7215
+-update_date: Tue, 22 Sep 2020 02:04:00 UTC
++update_date: Mon, 28 Sep 2020 00:03:56 UTC
+Index: Password Hacker/Establishing a connection/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Establishing a connection/task-info.yaml	(date 1601415211941)
++++ Password Hacker/Establishing a connection/task-info.yaml	(date 1601415211941)
+@@ -0,0 +1,111 @@
++type: edu
++custom_name: stage1
++files:
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++    from hstest.exceptions import WrongAnswerException
++    from threading import Thread
++    from time import sleep
++    import socket
++    import random
++
++    CheckResult.correct = lambda: CheckResult(True, '')
++    CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
++
++    abc = 'abcdefghijklmnopqrstuvwxyz1234567890'
++
++
++    def random_password():
++        '''function - generating random password of length from 2 to 3'''
++        return ''.join(random.choice(abc) for i in range(random.randint(2, 3)))
++
++
++    class Hacking(StageTest):
++
++        def __init__(self, module):
++            super().__init__(module)
++            self.ready = False
++            self.sock = None
++            self.serv = None
++            self.connected = False
++            self.message = []
++
++        def start_server(self):
++            self.serv = Thread(target=lambda: self.server())
++            self.serv.start()
++            self.ready = False
++            while not self.ready:
++                try:
++                    sleep(0.1)  # socket needs to be set up before test
++                except KeyboardInterrupt:
++                    pass
++
++        def stop_server(self):
++            self.sock.close()
++            self.serv.join()
++
++        def server(self):
++            ''' creating a server and answering clients '''
++            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.sock.bind(('localhost', 9090))
++            self.ready = True
++            try:
++                self.sock.listen(1)
++                conn, addr = self.sock.accept()
++                self.connected = True
++                conn.settimeout(15)
++                while True:
++                    data = conn.recv(1024)
++                    if not data:
++                        break
++                    self.message.append(data.decode('utf8'))
++                    conn.send('Wrong password!'.encode('utf8'))
++                conn.close()
++            except:
++                pass
++
++        def generate(self):
++            self.start_server()
++            test_word = random_password()
++            return [
++                TestCase(
++                    args=['localhost', '9090', test_word], attach=[test_word])
++            ]
++
++        def check(self, reply, attach):
++            self.stop_server()
++
++            if not self.connected:
++                return CheckResult.wrong("You didn't connect to the server")
++            if len(self.message) == 0:
++                return CheckResult.wrong('You sent nothing to the server')
++            if len(reply) == 0:
++                return CheckResult.wrong(
++                    'You did not print anything')
++            if reply.split('\n')[0] != 'Wrong password!':
++                return CheckResult.wrong(
++                    'The line you printed is not the one sent by server')
++
++            if self.message != attach:
++                return CheckResult.wrong(
++                    'You sent the wrong information to the server')
++            return CheckResult.correct()
++
++
++    if __name__ == '__main__':
++        test = Hacking('hacking.hack')
++        test.run_tests()
++        test.stop_server()
++  learner_created: false
++- name: hacking/hack.py
++  visible: true
++  text: '# write your code here'
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/80/stages/442/implement
++status: Unchecked
++record: -1
+Index: Password Hacker/Simple brute force/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Simple brute force/task-info.yaml	(date 1601415211882)
++++ Password Hacker/Simple brute force/task-info.yaml	(date 1601415211882)
+@@ -0,0 +1,130 @@
++type: edu
++custom_name: stage2
++files:
++- name: hacking/hack.py
++  visible: true
++  text: '# write your code here'
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++    from threading import Thread
++    from time import sleep
++    from itertools import product
++    import socket
++    import random
++
++    CheckResult.correct = lambda: CheckResult(True, '')
++    CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
++
++    abc = 'abcdefghijklmnopqrstuvwxyz1234567890'
++
++
++    def generate_password():
++        index = 1
++        while True:
++            abc = 'abcdefghijklmnopqrstuvwxyz1234567890'
++            yield from product(abc, repeat=index)
++            index += 1
++
++
++    def random_password():
++        '''function - generating random password of length from 2 to 3'''
++        return ''.join(random.choice(abc) for i in range(random.randint(2, 3)))
++
++
++    class Hacking(StageTest):
++
++        def __init__(self, module):
++            super().__init__(module)
++            self.ready = False
++            self.sock = None
++            self.serv = None
++            self.connected = False
++            self.message = []
++            self.password = None
++
++        def start_server(self):
++            self.serv = Thread(target=lambda: self.server())
++            self.serv.start()
++            self.ready = False
++            while not self.ready:
++                try:
++                    sleep(0.1)  # socket needs to be set up before test
++                except KeyboardInterrupt:
++                    pass
++
++        def stop_server(self):
++            self.sock.close()
++            self.serv.join()
++
++        def server(self):
++            '''function - creating a server and answering clients'''
++            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.sock.bind(('localhost', 9090))
++            self.ready = True
++            try:
++                self.sock.listen(1)
++                conn, addr = self.sock.accept()
++                self.connected = True
++                conn.settimeout(15)
++                while True:
++                    data = conn.recv(1024)
++                    self.message.append(data.decode('utf8'))
++                    if len(self.message) > 1_000_000:
++                        conn.send('Too many attempts to connect!'.encode('utf8'))
++                        break
++                    if not data:
++                        break
++                    if data.decode('utf8') == self.password:
++                        conn.send('Connection success!'.encode('utf8'))
++                    else:
++                        conn.send('Wrong password!'.encode('utf8'))
++                conn.close()
++            except:
++                pass
++
++        def generate(self):
++            self.message = []
++            self.password = random_password()
++            self.start_server()
++            return [
++                TestCase(args=['localhost', '9090'],
++                         attach=[self.password])
++            ]
++
++        def check(self, reply, attach):
++
++            if not self.connected:
++                return CheckResult.wrong("You didn't connect to the server")
++
++            real_password = attach[0]
++            if reply.split('\n')[0] != real_password:
++                return CheckResult.wrong(f'The password you printed is not correct. The password is "{real_password}"')
++            success = True
++            for i in generate_password():
++                if len(i) == len(real_password):
++                    break
++                try:
++                    self.message.remove(''.join(i))
++                except ValueError:
++                    success = False
++                    break
++            if success:
++                return CheckResult.correct()
++            return CheckResult.wrong(
++                'Your generator algorithm does not include all the variants')
++
++
++    if __name__ == '__main__':
++        test = Hacking('hacking.hack')
++        test.run_tests()
++        test.stop_server()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/80/stages/443/implement
++status: Unchecked
++record: -1
+Index: Password Hacker/Smarter, dictionary-based brute force/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Smarter, dictionary-based brute force/task-info.yaml	(date 1601415211887)
++++ Password Hacker/Smarter, dictionary-based brute force/task-info.yaml	(date 1601415211887)
+@@ -0,0 +1,139 @@
++type: edu
++custom_name: stage3
++files:
++- name: hacking/hack.py
++  visible: true
++  text: '# write your code here'
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++    from threading import Thread
++    from time import sleep
++    import socket
++    import random
++
++    CheckResult.correct = lambda: CheckResult(True, '')
++    CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
++
++    abc = 'abcdefghijklmnopqrstuvwxyz1234567890'
++
++
++    passwords = [
++        'chance', 'frankie', 'killer', 'forest', 'penguin'
++        'jackson', 'rangers', 'monica', 'qweasdzxc', 'explorer'
++        'gabriel', 'chelsea', 'simpsons', 'duncan', 'valentin',
++        'classic', 'titanic', 'logitech', 'fantasy', 'scotland',
++        'pamela', 'christin', 'birdie', 'benjamin', 'jonathan',
++        'knight', 'morgan', 'melissa', 'darkness', 'cassie'
++    ]
++
++
++    def generate_password():
++        '''function - generator of all passwords from dictionary'''
++        for password in passwords:
++            yield password.rstrip().lower()
++
++
++    def random_password():
++        '''function - generating random password from dictionary'''
++        pas = random.choice(list(generate_password()))
++        uppers = []
++        for i in range(len(pas)):
++            uppers.append(random.randint(0, 1))
++
++        return ''.join(
++            pas[j].upper() if uppers[j] == 1
++            else pas[j]
++            for j in range(len(pas)))
++
++
++    class Hacking(StageTest):
++
++        def __init__(self, module):
++            super().__init__(module)
++            self.ready = False
++            self.sock = None
++            self.serv = None
++            self.connected = False
++            self.message = []
++            self.password = None
++
++        def start_server(self):
++            self.serv = Thread(target=lambda: self.server())
++            self.serv.start()
++            self.ready = False
++            while not self.ready:
++                try:
++                    sleep(0.1)  # socket needs to be set up before test
++                except KeyboardInterrupt:
++                    pass
++
++        def stop_server(self):
++            self.sock.close()
++            self.serv.join()
++
++        def server(self):
++            '''function - creating a server and answering clients'''
++            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.sock.bind(('localhost', 9090))
++            self.ready = True
++            try:
++                self.sock.listen(1)
++                conn, addr = self.sock.accept()
++                self.connected = True
++                conn.settimeout(15)
++                while True:
++                    data = conn.recv(1024)
++                    self.message.append(data.decode('utf8'))
++                    if len(self.message) > 1_000_000:
++                        conn.send('Too many attempts to connect!'.encode('utf8'))
++                        break
++                    if not data:
++                        break
++                    if data.decode('utf8') == self.password:
++                        conn.send('Connection success!'.encode('utf8'))
++                        break
++                    else:
++                        conn.send('Wrong password!'.encode('utf8'))
++                conn.close()
++            except:
++                pass
++
++        def generate(self):
++            self.message = []
++            self.password = random_password()
++            self.start_server()
++            return [TestCase(args=['localhost', '9090'],
++                             attach=[self.password])]
++
++        def check(self, reply, attach):
++            self.stop_server()
++
++            if not self.connected:
++                return CheckResult.wrong("You didn't connect to the server")
++
++            real_password = attach[0]
++            printed_password = reply.split('\n')[0]
++            if reply.split('\n')[0] != real_password:
++                return CheckResult.wrong(
++                    'The password you printed is not correct\n'
++                    'You printed: \"' + printed_password + '\"\n'
++                    'Correct password: \"' + real_password + '\"'
++                )
++
++            return CheckResult.correct()
++
++
++    if __name__ == '__main__':
++        test = Hacking('hacking.hack')
++        test.run_tests()
++        test.stop_server()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/80/stages/444/implement
++status: Unchecked
++record: -1
+Index: Password Hacker/Catching exception/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Catching exception/task-info.yaml	(date 1601415211923)
++++ Password Hacker/Catching exception/task-info.yaml	(date 1601415211923)
+@@ -0,0 +1,208 @@
++type: edu
++custom_name: stage4
++files:
++- name: hacking/hack.py
++  visible: true
++  text: '# write your code here'
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++    from threading import Thread
++    from time import sleep
++    import socket
++    import random
++    import json
++
++    CheckResult.correct = lambda: CheckResult(True, '')
++    CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
++
++    abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
++
++    logins_list = [
++        'admin', 'Admin', 'admin1', 'admin2', 'admin3',
++        'user1', 'user2', 'root', 'default', 'new_user',
++        'some_user', 'new_admin', 'administrator',
++        'Administrator', 'superuser', 'super', 'su', 'alex',
++        'suser', 'rootuser', 'adminadmin', 'useruser',
++        'superadmin', 'username', 'username1'
++    ]
++
++
++    def logins():
++        for login in logins_list:
++            yield login
++
++
++    def random_password():
++        '''function - generating random password of length from 6 to 10'''
++        return ''.join(random.choice(abc) for i in range(random.randint(6, 10)))
++
++
++    def random_login():
++        return random.choice(list(logins()))
++
++
++    class Hacking(StageTest):
++
++        def __init__(self, module):
++            super().__init__(module)
++            self.ready = False
++            self.sock = None
++            self.serv = None
++            self.connected = False
++            self.message = []
++            self.password = None
++            self.login = None
++
++        def start_server(self):
++            self.serv = Thread(target=lambda: self.server())
++            self.serv.start()
++            self.ready = False
++            while not self.ready:
++                try:
++                    sleep(0.1)  # socket needs to be set up before test
++                except KeyboardInterrupt:
++                    pass
++
++        def stop_server(self):
++            self.sock.close()
++            self.serv.join()
++
++        def server(self):
++            '''function - creating a server and answering clients'''
++            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.sock.bind(('localhost', 9090))
++            self.ready = True
++            try:
++                self.sock.listen(1)
++                conn, addr = self.sock.accept()
++                self.connected = True
++                conn.settimeout(15)
++                while True:
++                    data = conn.recv(1024)
++                    self.message.append(data.decode('utf8'))
++                    if len(self.message) > 1_000_000:
++                        conn.send(
++                            json.dumps({
++                                'result': 'Too many attempts to connect!'
++                            }).encode('utf8'))
++                        break
++                    if not data:
++                        break
++
++                    try:
++                        login_ = json.loads(data.decode('utf8'))['login']
++                        password_ = json.loads(data.decode('utf8'))['password']
++                    except:
++                        conn.send(json.dumps({'result': 'Bad request!'}).encode('utf8'))
++                        continue
++
++                    if login_ == self.login:
++                        if self.password == password_:
++                            conn.send(
++                                json.dumps({
++                                    'result': 'Connection success!'
++                                }).encode('utf8'))
++                            break
++                        elif self.password.startswith(password_):
++                            conn.send(
++                                json.dumps({
++                                    'result': 'Exception happened during login'
++                                }).encode('utf8'))
++                        else:
++                            conn.send(
++                                json.dumps({
++                                    'result': 'Wrong password!'
++                                }).encode('utf8'))
++                    else:
++                        conn.send(json.dumps({'result': 'Wrong login!'}).encode('utf8'))
++                conn.close()
++            except:
++                pass
++
++        def generate(self):
++            self.message = []
++            self.password = random_password()
++            self.login = random_login()
++            self.start_server()
++            return [
++                TestCase(
++                    args=['localhost', '9090'],
++                    attach=[self.password, self.login]
++                )
++            ]
++
++        def check(self, reply, attach):
++            self.stop_server()
++
++            if not self.connected:
++                return CheckResult.wrong("You didn't connect to the server")
++
++            real_password, real_login = attach
++            try:
++                json_reply = json.loads(reply)
++            except:
++                return CheckResult.wrong(
++                    'The output of your program is not a valid JSON:\n' + reply
++                )
++            try:
++                password = json_reply['password']
++            except KeyError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "password":\n' + reply
++                )
++            except TypeError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "password":\n' + reply
++                )
++            try:
++                login = json_reply['login']
++            except KeyError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "login":\n' + reply
++                )
++            except TypeError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "login":\n' + reply
++                )
++            if login != real_login:
++                return CheckResult.wrong('The login you printed is not correct')
++            elif password != real_password:
++                return CheckResult.wrong('The password you printed is not correct')
++            find_first_letter = False
++            for i in self.message:
++                log = json.loads(i)['login']
++                pas = json.loads(i)['password']
++                if find_first_letter is False and len(
++                        pas
++                ) == 1 and log == real_login and real_password.startswith(pas):
++                    find_first_letter = True
++                if find_first_letter is True:
++                    if log != real_login:
++                        return CheckResult.wrong(
++                            'You should find a correct login and then use only it')
++                    if pas[0] != real_password[0]:
++                        return CheckResult.wrong(
++                            'When you find a first letter you should then start your passwords with it'
++                        )
++                if len(pas) > 1:
++                    if pas[0:-1] != real_password[0:len(pas[0:-1]) - 1]:
++                        return CheckResult.wrong(
++                            'You have already found the first %d letters of the password. Use them as a beginning'
++                            % len(pas[0:-1]))
++                return CheckResult.correct()
++
++
++    if __name__ == '__main__':
++        test = Hacking('hacking.hack')
++        test.run_tests()
++        test.stop_server()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/80/stages/445/implement
++status: Unchecked
++record: -1
+Index: Password Hacker/Time-based vulnerability/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Time-based vulnerability/task-info.yaml	(date 1601415211902)
++++ Password Hacker/Time-based vulnerability/task-info.yaml	(date 1601415211902)
+@@ -0,0 +1,192 @@
++type: edu
++custom_name: stage5
++files:
++- name: hacking/hack.py
++  visible: true
++  text: '# write your code here'
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++    from threading import Thread
++    from time import sleep
++    import socket
++    import random
++    import json
++
++    CheckResult.correct = lambda: CheckResult(True, '')
++    CheckResult.wrong = lambda feedback: CheckResult(False, feedback)
++
++    abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
++
++
++    logins_list = [
++        'admin', 'Admin', 'admin1', 'admin2', 'admin3',
++        'user1', 'user2', 'root', 'default', 'new_user',
++        'some_user', 'new_admin', 'administrator',
++        'Administrator', 'superuser', 'super', 'su', 'alex',
++        'suser', 'rootuser', 'adminadmin', 'useruser',
++        'superadmin', 'username', 'username1'
++    ]
++
++
++    def logins():
++        for login in logins_list:
++            yield login
++
++
++    def random_password():
++        '''function - generating random password of length from 6 to 10'''
++        return ''.join(random.choice(abc) for i in range(random.randint(6, 10)))
++
++
++    def random_login():
++        return random.choice(list(logins()))
++
++
++    class TimeVulnerability(StageTest):
++
++        def __init__(self, module):
++            super().__init__(module)
++            self.ready = False
++            self.sock = None
++            self.serv = None
++            self.connected = False
++            self.message = []
++            self.password = None
++            self.login = None
++
++        def start_server(self):
++            self.serv = Thread(target=lambda: self.server())
++            self.serv.start()
++            self.ready = False
++            while not self.ready:
++                try:
++                    sleep(0.1)  # socket needs to be set up before test
++                except KeyboardInterrupt:
++                    pass
++
++        def stop_server(self):
++            self.sock.close()
++            self.serv.join()
++
++        def server(self):
++            '''function - creating a server and answering clients'''
++            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.sock.bind(('localhost', 9090))
++            self.ready = True
++            try:
++                self.sock.listen(1)
++                conn, addr = self.sock.accept()
++                conn.settimeout(15)
++                while True:
++                    data = conn.recv(1024)
++                    self.message.append(data.decode('utf8'))
++                    self.connected = True
++                    if len(self.message) > 100_000_000:
++                        conn.send(json.dumps({'result': 'Too many attempts to connect!'}).encode('utf8'))
++                        break
++                    if not data:
++                        break
++
++                    try:
++                        login_ = json.loads(data.decode('utf8'))['login']
++                        password_ = json.loads(data.decode('utf8'))['password']
++                    except:
++                        conn.send(json.dumps({'result': 'Bad request!'}).encode('utf8'))
++                        continue
++
++                    if login_ == self.login:
++                        if self.password == password_:
++                            conn.send(json.dumps({'result': 'Connection success!'}).encode('utf8'))
++                            break
++                        elif self.password.startswith(password_):
++                            sleep(0.1)
++                            conn.send(json.dumps({'result': 'Wrong password!'}).encode('utf8'))
++                        else:
++                            conn.send(json.dumps({'result': 'Wrong password!'}).encode('utf8'))
++                    else:
++                        conn.send(json.dumps({'result': 'Wrong login!'}).encode('utf8'))
++                conn.close()
++            except:
++                pass
++
++        def generate(self):
++            self.message = []
++            self.password = random_password()
++            self.login = random_login()
++            self.start_server()
++            return [
++                TestCase(args=['localhost', '9090'],
++                         attach=[self.password, self.login])
++            ]
++
++        def check(self, reply, attach):
++            self.stop_server()
++
++            if not self.connected:
++                return CheckResult.wrong("You didn't connect to the server")
++
++            real_password, real_login = attach
++            try:
++                json_reply = json.loads(reply)
++            except:
++                return CheckResult.wrong(
++                    'The output of your program is not a valid JSON:\n' + reply
++                )
++            try:
++                password = json_reply['password']
++            except KeyError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "password":\n' + reply
++                )
++            except TypeError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "password":\n' + reply
++                )
++            try:
++                login = json_reply['login']
++            except KeyError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "login":\n' + reply
++                )
++            except TypeError:
++                return CheckResult.wrong(
++                    'The output of your program did not contain the field "login":\n' + reply
++                )
++            if login != real_login:
++                return CheckResult.wrong('The login you printed is not correct')
++            elif password != real_password:
++                return CheckResult.wrong('The password you printed is not correct')
++            find_first_letter = False
++            for i in self.message:
++                log = json.loads(i)['login']
++                pas = json.loads(i)['password']
++                if find_first_letter is False and len(pas) == 1 and log == real_login and real_password.startswith(pas):
++                    find_first_letter = True
++                if find_first_letter is True:
++                    if log != real_login:
++                        return CheckResult.wrong('You should find a correct login and then use only it')
++                    if pas[0] != real_password[0]:
++                        return CheckResult.wrong(
++                            'When you find a first letter you should then start your passwords with it')
++                if len(pas) > 1:
++                    if pas[0:-1] != real_password[0:len(pas[0:-1]) - 1]:
++                        return CheckResult.wrong(
++                            'You have already found the first %d letters of the password. Use them as a beginning' % len(
++                                pas[0:-1]))
++                return CheckResult.correct()
++
++
++    if __name__ == '__main__':
++        test = TimeVulnerability('hacking.hack')
++        test.run_tests()
++        test.stop_server()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/80/stages/446/implement
++status: Unchecked
++record: -1
+Index: Password Hacker/lesson-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/lesson-info.yaml	(date 1601415211897)
++++ Password Hacker/lesson-info.yaml	(date 1601415211897)
+@@ -0,0 +1,8 @@
++type: framework
++content:
++- Establishing a connection
++- Simple brute force
++- Smarter, dictionary-based brute force
++- Catching exception
++- Time-based vulnerability
++current_task: 0
+Index: Password Hacker/Establishing a connection/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Establishing a connection/task-remote-info.yaml	(date 1601415211912)
++++ Password Hacker/Establishing a connection/task-remote-info.yaml	(date 1601415211912)
+@@ -0,0 +1,2 @@
++id: 7216
++update_date: Wed, 16 Sep 2020 20:04:37 UTC
+Index: Password Hacker/Simple brute force/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Simple brute force/task-remote-info.yaml	(date 1601415211908)
++++ Password Hacker/Simple brute force/task-remote-info.yaml	(date 1601415211908)
+@@ -0,0 +1,2 @@
++id: 7217
++update_date: Wed, 16 Sep 2020 20:04:37 UTC
+Index: Password Hacker/Smarter, dictionary-based brute force/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Smarter, dictionary-based brute force/task-remote-info.yaml	(date 1601415211927)
++++ Password Hacker/Smarter, dictionary-based brute force/task-remote-info.yaml	(date 1601415211927)
+@@ -0,0 +1,2 @@
++id: 7218
++update_date: Wed, 16 Sep 2020 20:04:37 UTC
+Index: Password Hacker/Catching exception/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Catching exception/task-remote-info.yaml	(date 1601415211918)
++++ Password Hacker/Catching exception/task-remote-info.yaml	(date 1601415211918)
+@@ -0,0 +1,2 @@
++id: 7219
++update_date: Wed, 16 Sep 2020 20:04:37 UTC
+Index: Password Hacker/Time-based vulnerability/task-remote-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Password Hacker/Time-based vulnerability/task-remote-info.yaml	(date 1601415211937)
++++ Password Hacker/Time-based vulnerability/task-remote-info.yaml	(date 1601415211937)
+@@ -0,0 +1,2 @@
++id: 7220
++update_date: Wed, 16 Sep 2020 20:04:37 UTC
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/inspectionProfiles/Project_Default.xml	(date 1601415228426)
++++ .idea/inspectionProfiles/Project_Default.xml	(date 1601415228426)
+@@ -0,0 +1,16 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="ignoredPackages">
++        <value>
++          <list size="3">
++            <item index="0" class="java.lang.String" itemvalue="beautifulsoup4" />
++            <item index="1" class="java.lang.String" itemvalue="colorama" />
++            <item index="2" class="java.lang.String" itemvalue="requests" />
++          </list>
++        </value>
++      </option>
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/JetBrainsAcademy.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.8\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PyDocumentationSettings\">\r\n    <option name=\"format\" value=\"PLAIN\" />\r\n    <option name=\"myDocStringFormat\" value=\"Plain\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/JetBrainsAcademy.iml	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ .idea/JetBrainsAcademy.iml	(date 1601415252688)
+@@ -1,12 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
++<module version="4">
+   <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$" />
+     <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+-  <component name="PyDocumentationSettings">
+-    <option name="format" value="PLAIN" />
+-    <option name="myDocStringFormat" value="Plain" />
+-  </component>
+ </module>
+\ No newline at end of file
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>requests==2.24.0\r\nbeautifulsoup4==4.9.1\r\ncolorama==0.4.3\r\nhttps://github.com/hyperskill/hs-test-python/archive/release.tar.gz\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- requirements.txt	(revision a1cbc0f16e5c61345adf350ac92410ab543bb3e1)
++++ requirements.txt	(date 1601415205451)
+@@ -1,5 +1,1 @@
+-requests==2.24.0
+-beautifulsoup4==4.9.1
+-colorama==0.4.3
+ https://github.com/hyperskill/hs-test-python/archive/release.tar.gz
+-
+Index: To-Do List/Plan it/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Plan it/task-info.yaml	(date 1601415109794)
++++ To-Do List/Plan it/task-info.yaml	(date 1601415109794)
+@@ -0,0 +1,45 @@
++type: edu
++files:
++- name: tests.py
++  visible: false
++  text: |
++    from typing import List
++
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from hstest.check_result import CheckResult
++
++    RIGHT_OUTPUT = """
++    Today:
++    1) Do yoga
++    2) Make breakfast
++    3) Learn basics of SQL
++    4) Learn what is ORM
++    """
++
++
++    class ToDoList(StageTest):
++        def generate(self) -> List[TestCase]:
++            return [
++                TestCase()
++            ]
++
++        def check(self, reply, attach):
++            if reply.strip() == RIGHT_OUTPUT.strip():
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your output should be like in example!\n'
++                                         ' Make sure you didn\'t print any extra spaces')
++
++
++    if __name__ == '__main__':
++        ToDoList('todolist.todolist').run_tests()
++  learner_created: false
++- name: todolist/todolist.py
++  visible: true
++  text: |
++    # Write your code here
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/105/stages/570/implement
++status: Unchecked
++record: -1
+Index: To-Do List/I am an Alchemist!/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/I am an Alchemist!/task-info.yaml	(date 1601415109756)
++++ To-Do List/I am an Alchemist!/task-info.yaml	(date 1601415109756)
+@@ -0,0 +1,166 @@
++type: edu
++files:
++- name: todolist/todolist.py
++  visible: true
++  text: |
++    # Write your code here
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from sqlalchemy.ext.declarative import declarative_base
++    from sqlalchemy import Column, Integer, String, Date
++    from hstest.check_result import CheckResult
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++    from datetime import datetime
++    from typing import List
++    import os
++    import shutil
++
++    from sqlalchemy import create_engine
++    from sqlalchemy.orm import sessionmaker
++
++    menu = """
++    1) Today's tasks
++    2) Add task
++    0) Exit
++    """.strip().lower()
++
++
++    class ToDoList(StageTest):
++        db_name = 'todo.db'
++        is_completed = False
++
++        def generate(self) -> List[TestCase]:
++            return [
++                TestCase(
++                    stdin='0',
++                    check_function=ToDoList.check_menu
++                ),
++                TestCase(
++                    stdin='0',
++                    check_function=self.check_db_file
++                ),
++                TestCase(
++                    stdin=[self.clear_table,
++                           self.check_empty_list,
++                           self.check_added_task]
++
++                )
++            ]
++
++        @staticmethod
++        def check_menu(reply, attach):
++            if menu in reply.lower():
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t show the menu from example.\n'
++                                         ' Make sure you didn\'t print any extra spaces')
++
++        def check_db_file(self, reply, attach):
++            if not os.path.exists('todo.db'):
++                return CheckResult.wrong('You didn\'t create the database file. It should be name todo.db')
++            shutil.copy2('todo.db', 'temp.db')
++
++            tables_in_db = self.execute('SELECT  name FROM sqlite_master '
++                                        'WHERE type =\'table\' AND name '
++                                        'NOT LIKE \'sqlite_%\';')
++            try:
++                tables_in_db = [table[0] for table in tables_in_db]
++            except Exception:
++                return CheckResult.wrong('Your database or its content are written in the wrong format.')
++            if 'task' not in tables_in_db:
++                return CheckResult.wrong('Your database doesn\'t have \'task\' table.')
++
++            columns_in_table = self.execute('PRAGMA table_info(task)')
++            columns_in_table = [[*column[1:3]] for column in columns_in_table]
++            correct_columns = ['id', 'INTEGER'], ['task', 'VARCHAR'], ['deadline', 'DATE']
++            for column in correct_columns:
++                if column not in columns_in_table:
++                    return CheckResult.wrong(
++                        'Your table should contain \'{}\' column with \'{}\' type'.format(column[0], column[1]))
++            return CheckResult.correct()
++
++        def clear_table(self, output):
++            self.execute('DELETE FROM task')
++            return '1'
++
++        def check_empty_list(self, output):
++            if 'nothing' not in output.lower():
++                return CheckResult.wrong('When the to-do list is empty you should output \'Nothing to do!\'')
++            return '2\nFirst task\n2\nSecond task\n1'
++
++        def check_added_task(self, output):
++            tasks = self.execute('SELECT * FROM task')
++            if not tasks:
++                return CheckResult.wrong('You should save tasks in the database!')
++            for task in tasks:
++                task = list(task)
++                if 'First task' in task:
++                    today = datetime.today().date()
++                    if not str(today) in task:
++                        return CheckResult.wrong('By default deadline column should be today\' date: {}'.format(today))
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            for task in tasks:
++                task = list(task)
++                if 'Second task' in task:
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            self.is_completed = True
++            return '0'
++
++        def after_all_tests(self):
++            if not os.path.exists('todo.db'):
++                return
++            with open('todo.db', 'w') as main_db:
++                if os.path.exists('temp.db'):
++                    temp_file = open('temp.db', 'r')
++                    main_db.write(temp_file.read())
++                    temp_file.close()
++                    os.remove('temp.db')
++
++        def check(self, reply, attach):
++            if self.is_completed:
++                self.is_completed = False
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t read all inputs!')
++
++        def execute(self, query: str):
++            db = DbTool('main.db')
++            try:
++                result = db.session.execute(query).fetchall()
++            except Exception:
++                result = None
++            db.session.close()
++            return result
++
++
++    class DbTool:
++
++        def __init__(self, file):
++            self.engine = create_engine('sqlite:///todo.db?check_same_thread=false')
++            self.session = sessionmaker(bind=self.engine)()
++
++        def close(self):
++            self.session.close()
++
++        Base = declarative_base()
++
++        class Task(Base):
++            __tablename__ = 'task'
++            id = Column(Integer, primary_key=True)
++            task = Column(String)
++            deadline = Column(Date)
++
++
++    if __name__ == '__main__':
++        ToDoList('todolist.todolist').run_tests()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/105/stages/571/implement
++status: Unchecked
++record: -1
+Index: To-Do List/Deadlines are scary/task-info.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- To-Do List/Deadlines are scary/task-info.yaml	(date 1601415109801)
++++ To-Do List/Deadlines are scary/task-info.yaml	(date 1601415109801)
+@@ -0,0 +1,304 @@
++type: edu
++files:
++- name: todolist/todolist.py
++  visible: true
++  text: |
++    # Write your code here
++  learner_created: false
++- name: tests.py
++  visible: false
++  text: |
++    from hstest.check_result import CheckResult
++    from hstest.stage_test import StageTest
++    from hstest.test_case import TestCase
++
++    from sqlalchemy.ext.declarative import declarative_base
++    from sqlalchemy import Column, Integer, String, Date
++
++    from datetime import datetime, timedelta
++    from typing import List
++    import shutil
++    import os
++
++    from sqlalchemy import create_engine
++    from sqlalchemy.orm import sessionmaker
++
++    menu = """
++    1) Today's tasks
++    2) Week's tasks
++    3) All tasks
++    4) Add task
++    0) Exit
++    """.strip().lower()
++
++    weekdays = [
++        'monday',
++        'tuesday',
++        'wednesday',
++        'thursday',
++        'friday',
++        'saturday',
++        'sunday'
++    ]
++
++
++    class ToDoList(StageTest):
++        db_name = 'todo.db'
++        is_completed = False
++
++        def generate(self) -> List[TestCase]:
++            return [
++                TestCase(
++                    stdin='0',
++                    check_function=ToDoList.check_menu
++                ),
++                TestCase(
++                    stdin='0',
++                    check_function=self.check_db_file
++                ),
++                TestCase(
++                    stdin=[self.clear_table,
++                           self.check_empty_list,
++                           self.check_weeks_tasks,
++                           self.check_added_task]
++
++                ),
++                TestCase(
++                    stdin=[self.add_tasks_with_deadlines,
++                           self.ignore_output,
++                           self.check_weeks_task_output]
++                ),
++                TestCase(
++                    stdin=[self.add_tasks_with_deadlines,
++                           '3',
++                           self.check_all_tasks_list]
++                )
++            ]
++
++        @staticmethod
++        def check_menu(reply, attach):
++            if menu in reply.lower():
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t show the menu from example\n'
++                                         '  Make sure you didn\'t print any extra spaces')
++
++        def check_db_file(self, reply, attach):
++            if not os.path.exists('todo.db'):
++                return CheckResult.wrong('You didn\'t create the database file. It should be name todo.db')
++            shutil.copy2('todo.db', 'temp.db')
++
++            tables_in_db = self.execute('SELECT  name FROM sqlite_master '
++                                        'WHERE type =\'table\' AND name '
++                                        'NOT LIKE \'sqlite_%\';')
++            try:
++                tables_in_db = [table[0] for table in tables_in_db]
++            except Exception:
++                return CheckResult.wrong('Your database or its content are written in the wrong format.')
++            if 'task' not in tables_in_db:
++                return CheckResult.wrong('Your database doesn\'t have \'task\' table.')
++
++            columns_in_table = self.execute('PRAGMA table_info(task)')
++            columns_in_table = [[*column[1:3]] for column in columns_in_table]
++            correct_columns = ['id', 'INTEGER'], ['task', 'VARCHAR'], ['deadline', 'DATE']
++            for column in correct_columns:
++                if column not in columns_in_table:
++                    CheckResult.wrong(
++                        'Your table should contain \'{}\' column with \'{}\' type'.format(column[0], column[1]))
++            return CheckResult.correct()
++
++        def clear_table(self, output):
++            self.execute('DELETE FROM task')
++            return '1'
++
++        def check_empty_list(self, output):
++            if 'nothing' not in output.lower():
++                return CheckResult.wrong('When the to-do list is empty you should output \'Nothing to do!\'')
++            return '2'
++
++        def check_weeks_tasks(self, output):
++            for day in weekdays:
++                if day not in output.lower():
++                    return CheckResult.wrong(
++                        'There is no {} in the output.\nIn week\'s task you should output all the tasks for 7 days.'.format(
++                            day.title()))
++
++            today = datetime.today().date()
++            return '4\nFirst task\n{}\n4\nSecond task\n{}\n1'.format(today, today)
++
++        def check_added_task(self, output):
++            tasks = self.execute('SELECT * FROM task')
++            if not tasks:
++                return CheckResult.wrong('You should save tasks in the database!')
++            for task in tasks:
++                task = list(task)
++                if 'First task' in task:
++                    today = datetime.today().date()
++                    if not str(today) in task:
++                        return CheckResult.wrong('You saved wrong deadline for the tasks. Expected {}'.format(today))
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            for task in tasks:
++                task = list(task)
++                if 'Second task' in task:
++                    today = datetime.today().date()
++                    if not str(today) in task:
++                        return CheckResult.wrong('You saved wrong deadline for the tasks. Expected {}'.format(today))
++                    break
++            else:
++                return CheckResult.wrong('You didn\'t save just added task!')
++            self.execute("DELETE FROM task")
++            self.is_completed = True
++            return '0'
++
++        def add_tasks_with_deadlines(self, output):
++            self.execute('DELETE FROM task')
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++            test_input = "4\nDeadline in 3 days\n{}\n4\nDeadline in 6 days\n{}\n4\nDeadline is today\n{}" \
++                .format(second_date, last_date, first_date).strip()
++            return test_input
++
++        def ignore_output(self, output):
++            return '2'
++
++        def check_weeks_task_output(self, output):
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++            first_date_month = first_date.strftime('%b').lower()
++            second_date_month = second_date.strftime('%b').lower()
++            last_date_month = last_date.strftime('%b').lower()
++            first_date_day = first_date.day
++            second_date_day = second_date.day
++            last_date_day = last_date.day
++            first_date_weekday = weekdays[first_date.weekday()]
++            second_date_weekday = weekdays[second_date.weekday()]
++            last_date_weekday = weekdays[last_date.weekday()]
++
++            blocks = output.strip().split('\n\n')
++            if len(blocks) < 7:
++                return CheckResult.wrong('There is should be 7 days when you output the week\'s task.\n'
++                                         'Make sure that you print empty lines before and after output and between each day')
++
++            first_block = blocks[0].lower()
++            second_block = blocks[3].lower()
++            last_block = blocks[6].lower()
++
++            if (first_date_month not in first_block
++                    or str(first_date_day) not in first_block
++                    or first_date_weekday not in first_block):
++                return CheckResult.wrong('When you output the week\'s tasks the first date should be today\'s date.\n'
++                                         'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline is today' not in first_block:
++                return CheckResult.wrong('When you output the week\'s tasks the first date doesn\'t contain added task.')
++
++            if (second_date_month not in second_block
++                    or str(second_date_day) not in second_block
++                    or second_date_weekday not in second_block):
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the fourth date should be the day that in 4 days from today.\n'
++                    'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline in 3 days' not in second_block:
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the fourth date doesn\'t contain added task for which deadline is'
++                    ' in 4 days.')
++
++            if (last_date_month not in last_block
++                    or str(last_date_day) not in last_block
++                    or last_date_weekday not in last_block):
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the last date should be the day that in 6 days from today.\n'
++                    'You should print weekday, number of the day and the short form of the month.')
++
++            if 'deadline in 6 days' not in last_block:
++                return CheckResult.wrong(
++                    'When you output the week\'s tasks the last date doesn\'t contain added task for which deadline is'
++                    ' in 6 days.')
++
++            self.is_completed = True
++            return '0'
++
++        def check_all_tasks_list(self, output):
++
++            first_date = datetime.today().date()
++            second_date = first_date + timedelta(days=3)
++            last_date = first_date + timedelta(days=6)
++
++            firs_task = f'Deadline is today. {first_date.day} {first_date.strftime("%b")}'
++            second_task = f'Deadline in 3 days. {second_date.day} {second_date.strftime("%b")}'
++            third_task = f'Deadline in 6 days. {last_date.day} {last_date.strftime("%b")}'
++
++            if firs_task not in output:
++                return CheckResult.wrong(f"Can't find '{firs_task}' task in the all tasks list!")
++            if second_task not in output:
++                return CheckResult.wrong(f"Can't find '{second_task}' task in the all tasks list!")
++            if third_task not in output:
++                return CheckResult.wrong(f"Can't find '{third_task}' task in the all tasks list!")
++
++            first = output.index('Deadline is today')
++            second = output.index('Deadline in 3 days')
++            third = output.index('Deadline in 6 days')
++
++            if first > second or second > third:
++                return CheckResult.wrong("In the all tasks list tasks should be sorted by their deadlines!")
++
++            self.is_completed = True
++            return '0'
++
++        def after_all_tests(self):
++            if not os.path.exists('todo.db'):
++                return
++            with open('todo.db', 'w') as main_db:
++                if os.path.exists('temp.db'):
++                    temp_file = open('temp.db', 'r')
++                    main_db.write(temp_file.read())
++                    temp_file.close()
++                    os.remove('temp.db')
++
++        def check(self, reply, attach):
++            if self.is_completed:
++                self.is_completed = False
++                return CheckResult.correct()
++            else:
++                return CheckResult.wrong('Your program doesn\'t read all inputs!')
++
++        def execute(self, query: str):
++            db = DbTool('main.db')
++            try:
++                result = db.session.execute(query).fetchall()
++            except Exception:
++                result = None
++            db.session.commit()
++            db.session.close()
++            return result
++
++
++    class DbTool:
++
++        def __init__(self, file):
++            self.engine = create_engine('sqlite:///todo.db?check_same_thread=false')
++            self.session = sessionmaker(bind=self.engine)()
++
++        def close(self):
++            self.session.close()
++
++        Base = declarative_base()
++
++        class Task(Base):
++            __tablename__ = 'task'
++            id = Column(Integer, primary_key=True)
++            task = Column(String)
++            deadline = Column(Date)
++
++
++    if __name__ == '__main__':
++        ToDoList('todolist.todolist').run_tests()
++  learner_created: false
++feedback_link: https://hyperskill.org/projects/105/stages/572/implement
++status: Unchecked
++record: -1
+diff --git main.py main.py
+diff --git .idea/inspectionProfiles/profiles_settings.xml .idea/inspectionProfiles/profiles_settings.xml
+diff --git test_helper.py test_helper.py

@@ -48,6 +48,13 @@ class TicTacToe:
         self.player = None
         self.next_player = None
 
+    def reset(self):
+        self.state = [' '] * 9
+        self.turn = 'X'
+        self.opp_turn = 'O'
+        self.player = None
+        self.next_player = None
+
     def get_state(self):
         return self.state
 
@@ -72,9 +79,9 @@ class TicTacToe:
         print(' -------->x')
         print('   1 2 3')
 
-    def state_analyze(self, command):
+    def state_analyze(self, cmnd):
         """
-        Checking state of the game. Defining is the game finished and how
+        Checking state of the game. Is the game finished and how
         """
         wins = ''
         for pos in self.MEANINGFUL_POSITIONS:
@@ -86,9 +93,9 @@ class TicTacToe:
         elif wins == '' and ' ' not in self.state:
             return 'Draw'
         elif wins == 'X':
-            return f'{command[1] + (" AI" if command[1] != "user" else ("" if command[2] != "user" else " 1"))} wins'
+            return f'{cmnd[1] + (" AI" if cmnd[1] != "user" else "") + (" 1" if cmnd[1] == cmnd[2] else "")} wins'
         elif wins == 'O':
-            return f'{command[2] + (" AI" if command[2] != "user" else ("" if command[1] != "user" else " 2"))} wins'
+            return f'{cmnd[2] + (" AI" if cmnd[2] != "user" else "") + (" 2" if cmnd[1] == cmnd[2] else "")} wins'
         else:
             return 'Wrong state!'
 
@@ -124,7 +131,8 @@ class TicTacToeUser:
         # Проверить, что split вернул ровно два значения, и их уже проверять на is_digit()
         #
         # Так же забыты скобки: второго параметра isdigit не вызывается
-        if x_y[0].isdigit() and x_y[2].isdigit:
+        # if x_y[0].isdigit() and x_y[2].isdigit:
+        if len(x_y) == 3 and x_y[0].isdigit() and x_y[2].isdigit:
             if 0 < int(x_y[0]) < 4 and 0 < int(x_y[2]) < 4:
                 if state[TicTacToeUser.POSITION[x_y]] == ' ':
                     return True
@@ -133,7 +141,7 @@ class TicTacToeUser:
             else:
                 print('Coordinates should be from 1 to 3!')
         else:
-            print('You should enter numbers!')
+            print('You should enter two numbers!')
         return False
 
 
@@ -188,7 +196,7 @@ class TicTacToeMediumAI(TicTacToeAI):
     @staticmethod
     def ready_to_win(state, xo):
         """
-        helper function for medium AI, determines is X o O player ready to vin in one move
+        helper function for medium AI, determines if X or O player ready to win in one move
         """
         for pos in TicTacToeAI.MEANINGFUL_POSITIONS:
             line = state[pos[0]] + state[pos[1]] + state[pos[2]]
@@ -198,35 +206,59 @@ class TicTacToeMediumAI(TicTacToeAI):
 
 
 class TicTacToeHardAI(TicTacToeAI):
+    BEST_MOVES_FILE = 'pickles.txt'
 
-    @staticmethod
-    def make_move(state, xo):
+    def __init__(self):  # reading file to memory
+        self.pickles = {}
+        with open(TicTacToeHardAI.BEST_MOVES_FILE, 'a+', encoding='utf-8') as f:
+            f.seek(0, 0)
+            for line in f:
+                best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
+                position = [str(i) for i in line.split(';')[0].split(',')]
+                self.pickles[tuple(position)] = best_moves
+
+    def make_move(self, state, xo):
         """
-        hard AI, check for best move in pickles.txt, if not found: use minimax on every possible move
-        randomly select from the best moves, add best moves to pickles.txt
+        hard AI, check for best move in self.pickles, if not found: use minimax on every possible move
+        randomly select from the best moves, add best moves to BEST_MOVES_FILE
         """
         # Тут происходит полный перебор, что не очень эффективно.
         # Можно составить dict, где ключ – ','.join(str(i) for i in state), а значение – best_moves
         # Его можно дампить в файл с помощью pickle или json. Если в нем не нашлось нужного состояния,
         # то добавить и перезаписать в файл. В целях оптимизации стоит загружать этот словарь при запуске приложения,
         # а сохранять в файл при выходе из него
-        with open('pickles.txt', 'a+') as file:
-            file.seek(0, 0)
-            for line in file:
-                if ','.join(str(i) for i in state) in line:
-                    best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
-                    file.seek(0, 2)
-                    break
-            else:
-                new_state = state[:]
-                moves = [' '] * 9
-                for idx in TicTacToeAI.empty_indexes(state):
-                    new_state[idx] = xo
-                    moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
-                    new_state[idx] = ' '
-                best_moves = [i for i, n in enumerate(moves) if (n == 1
-                                                                 or n == 0 and 1 not in moves
-                                                                 or n == -1 and 1 not in moves and 0 not in moves)]
+        # with open('pickles.txt', 'a+') as file:
+        #    file.seek(0, 0)
+        #    for line in file:
+        #        if ','.join(str(i) for i in state) in line:
+        #            best_moves = [int(i) for i in line.split(';')[1].rstrip().split(',')]
+        #            file.seek(0, 2)
+        #            break
+        #    else:
+        #        new_state = state[:]
+        #        moves = [' '] * 9
+        #        for idx in TicTacToeAI.empty_indexes(state):
+        #            new_state[idx] = xo
+        #            moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
+        #            new_state[idx] = ' '
+        #        best_moves = [i for i, n in enumerate(moves) if (n == 1
+        #                                                         or n == 0 and 1 not in moves
+        #                                                         or n == -1 and 1 not in moves and 0 not in moves)]
+
+        if tuple(state) in self.pickles:
+            best_moves = self.pickles[tuple(state)]
+        else:
+            new_state = state[:]
+            moves = [' '] * 9
+            for idx in TicTacToeAI.empty_indexes(state):
+                new_state[idx] = xo
+                moves[idx] = TicTacToeHardAI.min_max(new_state, xo)
+                new_state[idx] = ' '
+            best_moves = [i for i, n in enumerate(moves) if (n == 1
+                                                             or n == 0 and 1 not in moves
+                                                             or n == -1 and 1 not in moves and 0 not in moves)]
+            self.pickles[tuple(state)] = best_moves
+            with open('pickles.txt', 'a+') as file:
                 file.write(','.join(str(i) for i in state) + ';' + ','.join(str(i) for i in best_moves) + '\n')
         state[random.choice(best_moves)] = xo
         print(f'Making move level "hard" with "{xo}"')
@@ -271,8 +303,8 @@ class TicTacToeHardAI(TicTacToeAI):
 
 def main():
     # Все ключи сделать константами в константы
-    POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
-                        'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
+    # POSSIBLE_PLAYERS = {'user': TicTacToeUser, 'easy': TicTacToeEasyAI,
+    #                    'medium': TicTacToeMediumAI, 'hard': TicTacToeHardAI}
     print('''
 possible commands: "start <player1> <player2>", "exit"
 possible players: "user", "easy", "medium", "hard"
@@ -280,16 +312,23 @@ coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom cor
 "X" plays first
         ''')
     game = TicTacToe()
+    user = TicTacToeUser()
+    easy = TicTacToeEasyAI()
+    medium = TicTacToeMediumAI()
+    hard = TicTacToeHardAI()
+    possible_players = {'user': user, 'easy': easy,
+                        'medium': medium, 'hard': hard}
     while True:
         command = input('Input command: ').split()
-        if command[0] == 'start' and command[1] in POSSIBLE_PLAYERS and command[2] in POSSIBLE_PLAYERS:
+        if command[0] == 'start' and command[1] in possible_players and command[2] in possible_players:
             if command[1] == 'user' or command[2] == 'user':
                 game.print_state()
-            game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
+            # game.set_players(POSSIBLE_PLAYERS[command[1]], POSSIBLE_PLAYERS[command[2]])
             # 'Game not finished' и все остальные возвращаемые строки стоит сделать константами,
             # чтобы их легче было переиспользовать
             # Это и защитит от опечаток, и улучшит читаемость
             # Так же можно сделать enum, чтобы их объединить
+            game.set_players(possible_players[command[1]], possible_players[command[2]])
             while game.state_analyze(command) == 'Game not finished':
                 # Не стоит напрямую обращаться к game.player, у game есть метод, который его вернет
                 game.set_state(game.player.make_move(game.get_state(), game.get_xo()))
@@ -297,6 +336,7 @@ coordinates are in form "x y" <x> - columns, <y> - rows, "1 1" - left bottom cor
                 game.change_turn()
                 print()
             print(game.state_analyze(command) + '\n')
+            game.reset()
         elif command[0] == 'exit':
             break
         else:
